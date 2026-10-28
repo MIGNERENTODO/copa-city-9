@@ -1,0 +1,5 @@
+{
+  "name": "copa-city-9",
+  "private": true,
+  "engines": { "node": ">=18" }
+}

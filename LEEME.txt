@@ -1,0 +1,35 @@
+COPA CITY 9 · CÓMO PUBLICAR LA PÁGINA EN VERCEL (una sola vez)
+
+1. En GitHub, dentro del repositorio vacío, toca "uploading an existing file".
+   Abre la carpeta copacity9, selecciona TODO lo que hay adentro (api, assets, datos,
+   admin.html, index.html, LEEME.txt, package.json, vercel.json) y arrástralo junto
+   a la ventana de GitHub. Son menos de 100 archivos, entran de una vez.
+   Revisa que en la lista aparezcan con su carpeta, por ejemplo "assets/logos/pumas.png".
+   Toca "Commit changes".
+
+2. Entra a vercel.com con tu cuenta de GitHub. Toca "Add New" > "Project",
+   elige el repositorio copa-city-9 y toca "Deploy".
+
+3. En el proyecto, abre la pestaña "Storage" > "Create Database" (o "Connect"),
+   elige "Upstash for Redis" con el plan gratis y conéctala al proyecto.
+   Esto crea solo las variables KV_REST_API_URL y KV_REST_API_TOKEN.
+
+4. En "Settings" > "Environment Variables" agrega:
+     ADMIN_KEY        tu clave secreta para entrar al panel (inventa una larga)
+     RESEND_API_KEY   (opcional) para que el buzón llegue a mignerentodo@gmail.com
+   Para la clave de Resend: crea una cuenta gratis en resend.com usando
+   mignerentodo@gmail.com, entra a "API Keys" > "Create API Key" y copia la clave.
+
+5. Ve a "Deployments", toca los tres puntos del último y elige "Redeploy".
+
+LISTO. Tu página queda en https://copa-city-9.vercel.app (o el nombre que elijas)
+y tu panel privado en https://copa-city-9.vercel.app/admin.html
+
+DESDE EL PANEL PUEDES:
+- Publicar artículos de opinión, resúmenes de juegos, resúmenes de reuniones
+  y el jugador de la semana, con fotos (se les pone el logo de la Copa City 9).
+- Crear, cerrar, reabrir o poner en cero votaciones y MVP del público.
+- Subir el respaldo del programa Anotador para actualizar resultados y estadísticas.
+- Ver visitas por día y leer el buzón de sugerencias.
+
+Nadie más puede cambiar nada: todo lo que se guarda pide tu clave.
