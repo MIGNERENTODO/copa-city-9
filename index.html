@@ -434,6 +434,7 @@ footer ul{list-style:none;margin:0;padding:0;display:grid;gap:5px}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="datos/sitio.js"></script>
+<script src="datos/cierre.js"></script>
 <script src="datos/fotos-jugadores.js"></script>
 <script>
 (function(){
@@ -745,7 +746,9 @@ try{ VOTADO=JSON.parse(localStorage.getItem("cc9-votado")||"{}")||{}; }catch(e){
 function guardarVotado(){ try{ localStorage.setItem("cc9-votado",JSON.stringify(VOTADO)); }catch(e){} }
 function encs(){ return Array.isArray(M.encuestas)?M.encuestas:(S.encuestas||[]); }
 var VDIAS={};
-function destacada(){ var P=encs(); for(var i=0;i<P.length;i++) if(P[i].estado!=="cerrada") return P[i]; return P[0]; }
+function destacada(){ var P=encs(); for(var i=0;i<P.length;i++) if(abiertaP(P[i])) return P[i]; return P[0]; }
+function abiertaP(p){ return window.CIERRE ? CIERRE.estaAbierta(p) : p.estado!=="cerrada"; }
+function cierreTxt(p){ var c=window.CIERRE&&CIERRE.cierreDe(p); if(!c) return ""; return (abiertaP(p)?"Cierra el ":"Cerró el ")+CIERRE.textoCierre(c).replace(",", "")+" h"; }
 function candidatosAuto(fecha,k){
   var f=fecha||M.ultimo, m={};
   M.games.forEach(function(g){ if(g.fecha!==f) return; g.lineas.forEach(function(l){ var p=M.players[l.jugadorId]; if(!p) return;
@@ -761,7 +764,7 @@ function opcionesDe(p){
 }
 function pollCard(p,mini){
   if(!p) return '';
-  var ops=opcionesDe(p), live=VOTOS[p.id]||{}, abierta=p.estado!=="cerrada", mio=VOTADO[p.id];
+  var ops=opcionesDe(p), live=VOTOS[p.id]||{}, abierta=abiertaP(p), mio=VOTADO[p.id];
   ops.forEach(function(o){ o.total=n(o.votos)+n(live[o.id]); });
   var tot=ops.reduce(function(s,o){return s+o.total;},0), max=Math.max.apply(null,ops.map(function(o){return o.total;}).concat([0]));
   var puede=abierta && API===true && !mio, verRes=!puede && tot>0;
@@ -776,6 +779,7 @@ function pollCard(p,mini){
       (verRes?'<div class="bar"><i style="width:'+pc+'%"></i></div>':'')+'</div>'; });
   if(corta) h+='<a class="more" href="#encuestas">Ver los '+ops.length+' candidatos →</a>';
   if(mio) h+='<span class="thanks">Tu voto quedó registrado. ¡Gracias!</span>';
+  if(cierreTxt(p)) h+='<span class="small" style="font-weight:600">'+esc(cierreTxt(p))+'</span>';
   h+='<span class="muted small">'+(tot?tot.toLocaleString("es-CL")+(tot===1?" voto":" votos"):(abierta?"Sé el primero en votar":"Sin votos"))+(abierta&&API===true?" · Un voto por persona":"")+'</span>';
   if(abierta && API===false) h+='<p class="nota" style="margin:0">La votación se activa en la versión publicada de la página.</p>';
   if(!mini && tot) h+=partHTML(p.id);
@@ -1008,7 +1012,7 @@ V.directiva=function(){
 V.encuestas=function(){
   var P=encs(), h=head("La afición opina","Votaciones","MVP del público y encuestas de la Copa City 9. Cada persona vota una vez por encuesta.");
   if(!P.length) return h+empty("No hay votaciones abiertas","La próxima votación se publica aquí.");
-  var ab=P.filter(function(p){return p.estado!=="cerrada";}), ce=P.filter(function(p){return p.estado==="cerrada";});
+  var ab=P.filter(abiertaP), ce=P.filter(function(p){return !abiertaP(p);});
   if(ab.length) h+='<div class="grid g2">'+ab.map(function(p){return pollCard(p,false);}).join("")+'</div>';
   if(ce.length) h+='<section>'+secH("Votaciones cerradas")+'<div class="grid g2">'+ce.map(function(p){return pollCard(p,false);}).join("")+'</div></section>';
   return h;

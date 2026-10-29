@@ -330,7 +330,7 @@ window.SITIO = {
   ],
 
   /* Encuestas y votaciones del público. Cada persona vota una vez por encuesta.
-     estado: "abierta" o "cerrada".
+     estado: "abierta" o "cerrada". Todas cierran solas el viernes a las 22:00 (hora de Chile).
      tipo "mvp": candidatos: "auto" toma los 6 bateadores más destacados de la fecha indicada
      (o de la última fecha jugada si no se indica). También se puede dar una lista:
        opciones: [{ id: "jugador-1", texto: "Nombre", equipo: "pumas", linea: "3-4, 1 HR" }]
@@ -343,6 +343,7 @@ window.SITIO = {
       pregunta: "MVP del público · Fecha del 18 de octubre",
       descripcion: "Los candidatos son los seis bateadores más destacados de la fecha.",
       estado: "abierta",
+      cierra: "2026-10-30T22:00:00-03:00",
       fecha: "2026-10-18",
       candidatos: "auto"
     },
@@ -351,6 +352,7 @@ window.SITIO = {
       tipo: "equipos",
       pregunta: "¿Quién será el campeón de la Copa City 9?",
       estado: "abierta",
+      cierra: "2026-10-30T22:00:00-03:00",
       opciones: [
         { equipo: "atleticos", texto: "Atléticos del Caribe" },
         { equipo: "masterpumas", texto: "Máster Pumas" },

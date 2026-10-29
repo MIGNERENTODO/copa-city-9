@@ -2,6 +2,10 @@
 // GET  /api/votos?e=id1,id2   -> { conteo: { id1: { opcion: n } }, dias: { id1: { "2026-10-28": n } } }
 // POST /api/votos { encuesta, opcion }
 const { pipe, hoy, huella, cuerpo, idOk, hash2obj, enviar, fallo, P } = require("./_db");
+const CIERRE = require("../datos/cierre.js");
+global.window = global.window || {};
+require("../datos/sitio.js");
+const INICIALES = (global.window.SITIO && global.window.SITIO.encuestas) || [];
 
 async function leer(ids) {
   const cmds = [];
@@ -27,12 +31,11 @@ module.exports = async (req, res) => {
 
     // Si el administrador publicó encuestas desde el panel, solo se aceptan votos de encuestas abiertas.
     const [conf] = await pipe([["GET", P + "encuestas:conf"]]);
-    if (conf) {
-      let lista = []; try { lista = JSON.parse(conf) || []; } catch (e) {}
-      const e = lista.find(x => x.id === b.encuesta);
-      if (!e) return enviar(res, 404, { error: "Encuesta no encontrada" });
-      if (e.estado === "cerrada") return enviar(res, 403, { error: "La votación está cerrada" });
-    }
+    let lista = INICIALES;
+    if (conf) { try { lista = JSON.parse(conf) || []; } catch (e) { lista = []; } }
+    const e = lista.find(x => x.id === b.encuesta);
+    if (!e) return enviar(res, 404, { error: "Encuesta no encontrada" });
+    if (!CIERRE.estaAbierta(e)) return enviar(res, 403, { error: "La votación ya cerró" });
 
     const llave = P + "votos:" + b.encuesta;
     const [nuevo, opciones] = await pipe([

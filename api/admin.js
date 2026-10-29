@@ -12,6 +12,7 @@
 //   galeria { lista }                  guarda las fotos de la galería [{ id, pie, fecha }]
 const crypto = require("crypto");
 const { pipe, hoy, cuerpo, idOk, hash2obj, enviar, fallo, P } = require("./_db");
+const CIERRE = require("../datos/cierre.js");
 
 function autorizado(req) {
   const clave = process.env.ADMIN_KEY || "";
@@ -59,6 +60,8 @@ function limpiarEncuesta(e) {
     estado: e.estado === "cerrada" ? "cerrada" : "abierta",
     creada: /^\d{4}-\d{2}-\d{2}$/.test(e.creada) ? e.creada : hoy()
   };
+  const c = CIERRE.cierreDe(e) || CIERRE.proximoCierre(new Date());
+  o.cierra = c.toISOString();
   if (!o.pregunta) return null;
   if (e.tipo === "mvp" && e.candidatos === "auto") { o.candidatos = "auto"; o.fecha = /^\d{4}-\d{2}-\d{2}$/.test(e.fecha) ? e.fecha : ""; o.cantidad = Math.min(10, Math.max(2, parseInt(e.cantidad, 10) || 6)); }
   else {

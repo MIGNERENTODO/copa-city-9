@@ -90,6 +90,7 @@ textarea{min-height:110px;resize:vertical;line-height:1.5}
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <input type="file" id="fileImg" accept="image/*" multiple hidden>
 <script src="datos/sitio.js"></script>
+<script src="datos/cierre.js"></script>
 <script>
 (function(){
 "use strict";
@@ -258,12 +259,14 @@ function vVotaciones(){
     '<label>Fecha del MVP<select id="vFecha">'+fechasStats().map(function(f){ return '<option>'+f+'</option>'; }).join("")+'</select></label>'+
     '<label>Candidatos del MVP<select id="vCant"><option>4</option><option>5</option><option selected>6</option><option>8</option><option>10</option></select></label></div>'+
     '<label>Opciones <small>(solo para "Opciones que yo escribo": una por línea)</small><textarea id="vOps" style="min-height:90px"></textarea></label>'+
+    '<p class="hint" style="margin:0">Cierre automático: <b>'+esc(CIERRE.textoCierre(CIERRE.proximoCierre(new Date())))+' h</b>. Todas las votaciones cierran solas el viernes a las 22:00.</p>'+
     '<div class="row"><button class="red" data-act="crearVot">Crear y publicar votación</button></div></section>';
   h+='<section><h2>Votaciones publicadas</h2>'+(D.encuestasDesdeArchivo?'<p class="hint">Estas son las votaciones iniciales de la página. Cualquier cambio que hagas aquí queda guardado en el panel.</p>':'')+(L.length?'<div class="polls">'+L.map(function(e,i){
       var c=D.votos[e.id]||{}, tot=0; Object.keys(c).forEach(function(k){ tot+=c[k]; });
-      return '<div class="card"><span class="tag">'+(e.tipo==="mvp"?"MVP":"Votación")+' · '+(e.estado==="cerrada"?"Cerrada":"Abierta")+'</span><h3>'+esc(e.pregunta)+'</h3><p class="muted" style="margin:0 0 8px">'+tot+(tot===1?' voto':' votos')+'</p>'+
+      var ab=CIERRE.estaAbierta(e), ci=CIERRE.cierreDe(e);
+      return '<div class="card"><span class="tag">'+(e.tipo==="mvp"?"MVP":"Votación")+' · '+(ab?"Abierta":"Cerrada")+'</span><h3>'+esc(e.pregunta)+'</h3>'+(ci?'<p class="muted" style="margin:0;font-size:13px">'+(ab?"Cierra: ":"Cerró: ")+esc(CIERRE.textoCierre(ci))+' h</p>':'')+'<p class="muted" style="margin:0 0 8px">'+tot+(tot===1?' voto':' votos')+'</p>'+
         Object.keys(c).sort(function(a,b){return c[b]-c[a];}).map(function(k){ var pc=tot?Math.round(c[k]*100/tot):0; return '<div class="opt"><span>'+esc(NOMBRES[k]||nombreOpcion(e,k))+'</span><b>'+c[k]+' · '+pc+'%</b><div class="bar"><i style="width:'+pc+'%"></i></div></div>'; }).join("")+
-        '<div class="row" style="margin-top:10px"><button class="sm" data-act="toggleVot" data-i="'+i+'">'+(e.estado==="cerrada"?"Reabrir":"Cerrar votación")+'</button><button class="sm" data-act="reiniciar" data-id="'+esc(e.id)+'">Poner en cero</button><button class="sm" data-act="borrarVot" data-i="'+i+'">Quitar de la página</button></div></div>'; }).join("")+'</div>':'<p class="muted">No hay votaciones.</p>')+'</section>';
+        '<div class="row" style="margin-top:10px"><button class="sm" data-act="toggleVot" data-i="'+i+'">'+(ab?"Cerrar ahora":"Reabrir hasta el viernes")+'</button><button class="sm" data-act="reiniciar" data-id="'+esc(e.id)+'">Poner en cero</button><button class="sm" data-act="borrarVot" data-i="'+i+'">Quitar de la página</button></div></div>'; }).join("")+'</div>':'<p class="muted">No hay votaciones.</p>')+'</section>';
   return h;
 }
 function nombreOpcion(e,k){ var r=k; (e.opciones||[]).forEach(function(o){ if(o.id===k) r=o.texto; }); return r; }
@@ -274,7 +277,7 @@ function guardarVotaciones(msg){
 function crearVotacion(){
   var preg=document.getElementById("vPreg").value.trim(), tipo=document.getElementById("vTipo").value;
   if(!preg){ toast("Escribe la pregunta."); return; }
-  var e={id:(tipo==="mvp"?"mvp-":"v-")+uid(),tipo:tipo,pregunta:preg,descripcion:document.getElementById("vDesc").value.trim(),estado:"abierta",creada:hoy()};
+  var e={id:(tipo==="mvp"?"mvp-":"v-")+uid(),tipo:tipo,pregunta:preg,descripcion:document.getElementById("vDesc").value.trim(),estado:"abierta",creada:hoy(),cierra:CIERRE.proximoCierre(new Date()).toISOString()};
   if(tipo==="mvp"){ e.candidatos="auto"; e.fecha=document.getElementById("vFecha").value; e.cantidad=+document.getElementById("vCant").value; if(!e.descripcion) e.descripcion="Los candidatos son los bateadores más destacados de la fecha."; }
   else if(tipo==="equipos") e.opciones=(S.equipos||[]).map(function(t){ return {id:t.id,equipo:t.id,texto:t.nombre}; });
   else { e.opciones=document.getElementById("vOps").value.split("\n").map(function(x){return x.trim();}).filter(Boolean).map(function(x,i){ return {id:"op"+(i+1),texto:x}; });
@@ -387,7 +390,9 @@ document.addEventListener("click",function(e){
   else if(a==="borrarPub"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="¿Seguro? Toca otra vez"; return; }
     api("POST",{accion:"borrarPub",id:b.dataset.id}).then(function(){ D.publicaciones=D.publicaciones.filter(function(p){return p.id!==b.dataset.id;}); if(ED&&ED.id===b.dataset.id){ ED=nuevoED(); guardarLocal(); } toast("Publicación borrada."); pintar(); }).catch(function(e){ toast(e.message); }); }
   else if(a==="crearVot") crearVotacion();
-  else if(a==="toggleVot"){ NUEVAS[i].estado=NUEVAS[i].estado==="cerrada"?"abierta":"cerrada"; guardarVotaciones(NUEVAS[i].estado==="cerrada"?"Votación cerrada.":"Votación reabierta."); }
+  else if(a==="toggleVot"){ var e0=NUEVAS[i];
+    if(CIERRE.estaAbierta(e0)){ e0.estado="cerrada"; guardarVotaciones("Votación cerrada."); }
+    else { e0.estado="abierta"; e0.cierra=CIERRE.proximoCierre(new Date()).toISOString(); guardarVotaciones("Votación reabierta hasta el viernes a las 22:00."); } }
   else if(a==="borrarVot"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="¿Seguro? Toca otra vez"; return; } NUEVAS.splice(i,1); guardarVotaciones("Votación quitada de la página."); }
   else if(a==="reiniciar"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="Se borran todos los votos. Toca otra vez"; return; }
     api("POST",{accion:"reiniciar",encuesta:b.dataset.id}).then(function(){ return api("GET"); }).then(function(j){ D.votos=j.votos; toast("Votos en cero."); pintar(); }).catch(function(e){ toast(e.message); }); }
