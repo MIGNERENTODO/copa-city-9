@@ -30,9 +30,11 @@ module.exports = async (req, res) => {
     if (!idOk(b.encuesta) || !idOk(b.opcion)) return enviar(res, 400, { error: "Voto no válido" });
 
     // Si el administrador publicó encuestas desde el panel, solo se aceptan votos de encuestas abiertas.
-    const [conf] = await pipe([["GET", P + "encuestas:conf"]]);
-    let lista = INICIALES;
-    if (conf) { try { lista = JSON.parse(conf) || []; } catch (e) { lista = []; } }
+    const [conf, ocu] = await pipe([["GET", P + "encuestas:conf"], ["GET", P + "encuestas:ocultas"]]);
+    let panel = null, ocultas = [];
+    try { panel = conf ? JSON.parse(conf) : null; } catch (e) { panel = null; }
+    try { ocultas = ocu ? JSON.parse(ocu) || [] : []; } catch (e) { ocultas = []; }
+    const lista = CIERRE.fusionar(panel, INICIALES, ocultas);
     const e = lista.find(x => x.id === b.encuesta);
     if (!e) return enviar(res, 404, { error: "Encuesta no encontrada" });
     if (!CIERRE.estaAbierta(e)) return enviar(res, 403, { error: "La votación ya cerró" });

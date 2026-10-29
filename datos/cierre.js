@@ -42,6 +42,16 @@
     if (!fecha) return "";
     return new Intl.DateTimeFormat("es-CL", { timeZone: TZ, weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(fecha);
   }
-  var api = { proximoCierre: proximoCierre, cierreDe: cierreDe, estaAbierta: estaAbierta, textoCierre: textoCierre };
+  /* Une las votaciones del panel con las publicadas en datos/sitio.js (las que publica Claude).
+     Las del panel mandan; las del archivo aparecen si no están en el panel ni fueron quitadas. */
+  function fusionar(panel, archivo, ocultas) {
+    var out = [], ids = {}, oc = {};
+    (ocultas || []).forEach(function (x) { oc[x] = 1; });
+    (Array.isArray(panel) ? panel : []).forEach(function (e) { if (e && e.id && !ids[e.id]) { ids[e.id] = 1; out.push(e); } });
+    (archivo || []).forEach(function (e) { if (e && e.id && !ids[e.id] && !oc[e.id]) { ids[e.id] = 1; var c = JSON.parse(JSON.stringify(e)); c._archivo = true; out.push(c); } });
+    out.sort(function (a, b) { var ca = cierreDe(a), cb = cierreDe(b); return (cb ? cb.getTime() : 0) - (ca ? ca.getTime() : 0); });
+    return out;
+  }
+  var api = { proximoCierre: proximoCierre, cierreDe: cierreDe, estaAbierta: estaAbierta, textoCierre: textoCierre, fusionar: fusionar };
   if (typeof module !== "undefined" && module.exports) module.exports = api; else raiz.CIERRE = api;
 })(typeof window !== "undefined" ? window : this);

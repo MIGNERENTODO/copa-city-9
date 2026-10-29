@@ -94,7 +94,7 @@ textarea{min-height:110px;resize:vertical;line-height:1.5}
 <script>
 (function(){
 "use strict";
-var PROG=[], GAL=[];
+var PROG=[], GAL=[], OCULTAS=[];
 var S=window.SITIO||{}, CLAVE="", D=null, TAB="resumen", STATS=null, NOMBRES={}, ED=null, NUEVAS=null, ESTJSON=null;
 var TIPOS={opinion:"Artículo de opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia"};
 function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
@@ -117,7 +117,7 @@ function cargarStats(){
 }
 function cargar(){
   return api("GET").then(function(j){ D=j; try{ sessionStorage.setItem("cc9-clave",CLAVE); }catch(e){}
-      if(!Array.isArray(D.encuestas)) { NUEVAS=JSON.parse(JSON.stringify(S.encuestas||[])); D.encuestasDesdeArchivo=true; } else NUEVAS=JSON.parse(JSON.stringify(D.encuestas));
+      OCULTAS=(D.ocultas||[]).slice(); NUEVAS=CIERRE.fusionar(D.encuestas, S.encuestas||[], OCULTAS);
       PROG=JSON.parse(JSON.stringify(Array.isArray(D.programacion)?D.programacion:(S.programacion||[]))); GAL=(D.galeria||[]).slice();
       pintar(); })
     .catch(function(e){ var m=document.getElementById("msg"); if(m) m.textContent=e.message; else toast(e.message); try{ sessionStorage.removeItem("cc9-clave"); }catch(x){} });
@@ -261,17 +261,18 @@ function vVotaciones(){
     '<label>Opciones <small>(solo para "Opciones que yo escribo": una por línea)</small><textarea id="vOps" style="min-height:90px"></textarea></label>'+
     '<p class="hint" style="margin:0">Cierre automático: <b>'+esc(CIERRE.textoCierre(CIERRE.proximoCierre(new Date())))+' h</b>. Todas las votaciones cierran solas el viernes a las 22:00.</p>'+
     '<div class="row"><button class="red" data-act="crearVot">Crear y publicar votación</button></div></section>';
-  h+='<section><h2>Votaciones publicadas</h2>'+(D.encuestasDesdeArchivo?'<p class="hint">Estas son las votaciones iniciales de la página. Cualquier cambio que hagas aquí queda guardado en el panel.</p>':'')+(L.length?'<div class="polls">'+L.map(function(e,i){
+  h+='<section><h2>Votaciones publicadas</h2>'+(NUEVAS.some(function(e){return e._archivo;})?'<p class="hint">Las marcadas "Publicada por Claude" son las que preparamos juntos. Puedes cerrarlas, reabrirlas o quitarlas igual que las tuyas.</p>':'')+(L.length?'<div class="polls">'+L.map(function(e,i){
       var c=D.votos[e.id]||{}, tot=0; Object.keys(c).forEach(function(k){ tot+=c[k]; });
       var ab=CIERRE.estaAbierta(e), ci=CIERRE.cierreDe(e);
-      return '<div class="card"><span class="tag">'+(e.tipo==="mvp"?"MVP":"Votación")+' · '+(ab?"Abierta":"Cerrada")+'</span><h3>'+esc(e.pregunta)+'</h3>'+(ci?'<p class="muted" style="margin:0;font-size:13px">'+(ab?"Cierra: ":"Cerró: ")+esc(CIERRE.textoCierre(ci))+' h</p>':'')+'<p class="muted" style="margin:0 0 8px">'+tot+(tot===1?' voto':' votos')+'</p>'+
+      return '<div class="card"><span class="tag">'+(e.tipo==="mvp"?"MVP":"Votación")+' · '+(ab?"Abierta":"Cerrada")+(e._archivo?' · Publicada por Claude':'')+'</span><h3>'+esc(e.pregunta)+'</h3>'+(ci?'<p class="muted" style="margin:0;font-size:13px">'+(ab?"Cierra: ":"Cerró: ")+esc(CIERRE.textoCierre(ci))+' h</p>':'')+'<p class="muted" style="margin:0 0 8px">'+tot+(tot===1?' voto':' votos')+'</p>'+
         Object.keys(c).sort(function(a,b){return c[b]-c[a];}).map(function(k){ var pc=tot?Math.round(c[k]*100/tot):0; return '<div class="opt"><span>'+esc(NOMBRES[k]||nombreOpcion(e,k))+'</span><b>'+c[k]+' · '+pc+'%</b><div class="bar"><i style="width:'+pc+'%"></i></div></div>'; }).join("")+
         '<div class="row" style="margin-top:10px"><button class="sm" data-act="toggleVot" data-i="'+i+'">'+(ab?"Cerrar ahora":"Reabrir hasta el viernes")+'</button><button class="sm" data-act="reiniciar" data-id="'+esc(e.id)+'">Poner en cero</button><button class="sm" data-act="borrarVot" data-i="'+i+'">Quitar de la página</button></div></div>'; }).join("")+'</div>':'<p class="muted">No hay votaciones.</p>')+'</section>';
   return h;
 }
 function nombreOpcion(e,k){ var r=k; (e.opciones||[]).forEach(function(o){ if(o.id===k) r=o.texto; }); return r; }
 function guardarVotaciones(msg){
-  return api("POST",{accion:"encuestas",lista:NUEVAS}).then(function(r){ NUEVAS=r.lista; D.encuestas=r.lista; D.encuestasDesdeArchivo=false; toast(msg||"Votaciones guardadas."); return api("GET").then(function(j){ D.votos=j.votos; pintar(); }); })
+  var lista=NUEVAS.filter(function(e){ return !e._archivo || e._mod; });
+  return api("POST",{accion:"encuestas",lista:lista,ocultas:OCULTAS}).then(function(r){ D.encuestas=r.lista; D.ocultas=OCULTAS; NUEVAS=CIERRE.fusionar(r.lista, S.encuestas||[], OCULTAS); toast(msg||"Votaciones guardadas."); return api("GET").then(function(j){ D.votos=j.votos; pintar(); }); })
     .catch(function(e){ toast(e.message); });
 }
 function crearVotacion(){
@@ -391,9 +392,10 @@ document.addEventListener("click",function(e){
     api("POST",{accion:"borrarPub",id:b.dataset.id}).then(function(){ D.publicaciones=D.publicaciones.filter(function(p){return p.id!==b.dataset.id;}); if(ED&&ED.id===b.dataset.id){ ED=nuevoED(); guardarLocal(); } toast("Publicación borrada."); pintar(); }).catch(function(e){ toast(e.message); }); }
   else if(a==="crearVot") crearVotacion();
   else if(a==="toggleVot"){ var e0=NUEVAS[i];
+    e0._mod=true;
     if(CIERRE.estaAbierta(e0)){ e0.estado="cerrada"; guardarVotaciones("Votación cerrada."); }
     else { e0.estado="abierta"; e0.cierra=CIERRE.proximoCierre(new Date()).toISOString(); guardarVotaciones("Votación reabierta hasta el viernes a las 22:00."); } }
-  else if(a==="borrarVot"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="¿Seguro? Toca otra vez"; return; } NUEVAS.splice(i,1); guardarVotaciones("Votación quitada de la página."); }
+  else if(a==="borrarVot"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="¿Seguro? Toca otra vez"; return; } var qx=NUEVAS.splice(i,1)[0]; if(qx&&qx._archivo&&OCULTAS.indexOf(qx.id)<0) OCULTAS.push(qx.id); guardarVotaciones("Votación quitada de la página."); }
   else if(a==="reiniciar"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="Se borran todos los votos. Toca otra vez"; return; }
     api("POST",{accion:"reiniciar",encuesta:b.dataset.id}).then(function(){ return api("GET"); }).then(function(j){ D.votos=j.votos; toast("Votos en cero."); pintar(); }).catch(function(e){ toast(e.message); }); }
   else if(a==="pubStats"){ if(!ESTJSON) return; b.disabled=true;

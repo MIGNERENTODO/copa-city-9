@@ -60,6 +60,7 @@ function limpiarEncuesta(e) {
     estado: e.estado === "cerrada" ? "cerrada" : "abierta",
     creada: /^\d{4}-\d{2}-\d{2}$/.test(e.creada) ? e.creada : hoy()
   };
+  if (/^\d{4}-\d{2}-\d{2}$/.test(e.fecha || "")) o.fecha = e.fecha;
   const c = CIERRE.cierreDe(e) || CIERRE.proximoCierre(new Date());
   o.cierra = c.toISOString();
   if (!o.pregunta) return null;
@@ -123,9 +124,12 @@ module.exports = async (req, res) => {
           return enviar(res, 200, { ok: true });
         }
         case "encuestas": {
-          const lista = (Array.isArray(b.lista) ? b.lista : []).map(limpiarEncuesta).filter(Boolean).slice(0, 40);
-          await pipe([["SET", P + "encuestas:conf", JSON.stringify(lista)]]);
-          return enviar(res, 200, { ok: true, lista });
+          const lista = (Array.isArray(b.lista) ? b.lista : []).map(limpiarEncuesta).filter(Boolean).slice(0, 60);
+          const cmds = [["SET", P + "encuestas:conf", JSON.stringify(lista)]];
+          let ocultas = null;
+          if (Array.isArray(b.ocultas)) { ocultas = b.ocultas.filter(idOk).slice(0, 300); cmds.push(["SET", P + "encuestas:ocultas", JSON.stringify(ocultas)]); }
+          await pipe(cmds);
+          return enviar(res, 200, { ok: true, lista, ocultas });
         }
         case "programacion": {
           const lista = (Array.isArray(b.lista) ? b.lista : []).slice(0, 60).map(j => ({
@@ -162,7 +166,7 @@ module.exports = async (req, res) => {
     const dias = [];
     for (let i = 0; i < 30; i++) dias.push(hoy(new Date(Date.now() - i * 86400000)));
     const cmds = [["GET", P + "visitas"], ["PFCOUNT", P + "personas"], ["LRANGE", P + "sugerencias", 0, 299], ["SMEMBERS", P + "encuestas"],
-      ["GET", P + "publicaciones"], ["GET", P + "encuestas:conf"], ["GET", P + "estadisticas:fecha"], ["GET", P + "programacion"], ["GET", P + "galeria"]];
+      ["GET", P + "publicaciones"], ["GET", P + "encuestas:conf"], ["GET", P + "estadisticas:fecha"], ["GET", P + "programacion"], ["GET", P + "galeria"], ["GET", P + "encuestas:ocultas"]];
     const base = cmds.length;
     dias.forEach(d => { cmds.push(["GET", P + "visitas:" + d]); cmds.push(["PFCOUNT", P + "personas:" + d]); });
     const r = await pipe(cmds);
@@ -182,7 +186,8 @@ module.exports = async (req, res) => {
       encuestas: conf,
       estadisticasFecha: r[6] || null,
       programacion: (() => { try { return JSON.parse(r[7]); } catch (e) { return null; } })(),
-      galeria: (() => { try { return JSON.parse(r[8]) || []; } catch (e) { return []; } })()
+      galeria: (() => { try { return JSON.parse(r[8]) || []; } catch (e) { return []; } })(),
+      ocultas: (() => { try { return JSON.parse(r[9]) || []; } catch (e) { return []; } })()
     });
   } catch (e) { return fallo(res, e); }
 };

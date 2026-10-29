@@ -7,12 +7,13 @@ function parse(x, def) { if (!x) return def; try { return JSON.parse(x); } catch
 module.exports = async (req, res) => {
   try {
     if (req.method !== "GET") return enviar(res, 405, { error: "Método no permitido" });
-    const [stats, pubs, enc, prog, gal] = await pipe([
+    const [stats, pubs, enc, prog, gal, ocu] = await pipe([
       ["GET", P + "estadisticas"],
       ["GET", P + "publicaciones"],
       ["GET", P + "encuestas:conf"],
       ["GET", P + "programacion"],
-      ["GET", P + "galeria"]
+      ["GET", P + "galeria"],
+      ["GET", P + "encuestas:ocultas"]
     ]);
     res.setHeader("CDN-Cache-Control", "public, s-maxage=10");
     return enviar(res, 200, {
@@ -20,7 +21,8 @@ module.exports = async (req, res) => {
       publicaciones: parse(pubs, []).filter(p => !p.borrador),
       encuestas: parse(enc, null),
       programacion: parse(prog, null),
-      galeria: parse(gal, [])
+      galeria: parse(gal, []),
+      ocultas: parse(ocu, [])
     });
   } catch (e) { return fallo(res, e); }
 };

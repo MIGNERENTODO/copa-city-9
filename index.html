@@ -385,6 +385,11 @@ th.sorted{color:var(--red)}
 .cruce{display:flex;align-items:center;gap:7px;padding:9px 10px;font-weight:700;font-family:var(--display);font-size:16px;letter-spacing:.03em;border-bottom:1px solid var(--line)}
 .cruce .muted{font-size:13px;font-weight:600}
 .cruce .pill{margin-left:auto}
+.salon{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.mvpw{display:flex;gap:14px;align-items:center;padding:16px}
+.mvpw.last{border-top:4px solid var(--red)}
+.mvpw .tx{display:grid;gap:3px;min-width:0}
+.mvpw b{font-family:var(--display);font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.05}
 /* ---------- Participation chart ---------- */
 .part{display:grid;gap:6px}
 .part svg{width:100%;height:auto;display:block}
@@ -730,6 +735,7 @@ V.inicio=function(){
   h+='<div>'+secH("Líderes de bateo","estadisticas","Todas las estadísticas")+'<div class="leaders" style="grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))">'+[0,1,2,3].map(function(i){ return leaderCard(CAT_BAT[i],M.bat,3); }).join("")+'</div></div></section>';
 
   h+='<section class="grid g3">'+pollCard(destacada(),true)+jsCard()+streamCard()+'</section>';
+  h+='<section data-salon="4"></section>';
   h+='<section>'+secH("Galería","galeria","Ver galería")+'<div class="strip">'+galeria().slice(0,6).map(function(f,i){ return '<button data-act="foto" data-i="'+i+'" aria-label="Ver foto: '+esc(f.pie)+'"><img src="'+esc(f.src)+'" alt="'+esc(f.pie)+'" loading="lazy"></button>'; }).join("")+'</div></section>';
   h+='<section class="card pad" style="display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap"><div><div class="eyebrow">Buzón de sugerencias</div><h2 style="font-size:26px;text-transform:uppercase;font-weight:800">¿Tienes una idea para la Copa City 9?</h2><p class="muted" style="margin:4px 0 0">Escríbela y le llega directamente a la directiva.</p></div><a class="btn btn-red" href="#buzon">Escribir sugerencia</a></section>';
   return h;
@@ -744,7 +750,24 @@ function jsCard(){
 var API=null, VOTOS={}, VISITAS=null, VOTADO={};
 try{ VOTADO=JSON.parse(localStorage.getItem("cc9-votado")||"{}")||{}; }catch(e){ VOTADO={}; }
 function guardarVotado(){ try{ localStorage.setItem("cc9-votado",JSON.stringify(VOTADO)); }catch(e){} }
-function encs(){ return Array.isArray(M.encuestas)?M.encuestas:(S.encuestas||[]); }
+function encs(){ return window.CIERRE ? CIERRE.fusionar(M.encuestas, S.encuestas||[], M.ocultas) : (Array.isArray(M.encuestas)?M.encuestas:(S.encuestas||[])); }
+/* Ganadores del MVP del público: votaciones MVP cerradas con votos */
+function ganadoresMVP(){
+  return encs().filter(function(p){ return p.tipo==="mvp" && !abiertaP(p); }).map(function(p){
+    var ops=opcionesDe(p), live=VOTOS[p.id]||{}; ops.forEach(function(o){ o.total=n(o.votos)+n(live[o.id]); });
+    var tot=ops.reduce(function(s,o){return s+o.total;},0), max=Math.max.apply(null,ops.map(function(o){return o.total;}).concat([0]));
+    if(!max) return null;
+    return {p:p, tot:tot, gan:ops.filter(function(o){ return o.total===max; }), max:max};
+  }).filter(Boolean);
+}
+function salonHTML(lim){
+  var G=ganadoresMVP(); if(lim) G=G.slice(0,lim); if(!G.length) return '';
+  return '<div class="salon">'+G.map(function(g,i){ return g.gan.map(function(o){ var t=teamOf(o.equipo), c=CIERRE.cierreDe(g.p);
+    return '<div class="card mvpw'+(i===0?" last":"")+'">'+avatar(o.texto,o.equipo,72)+'<div class="tx"><span class="eyebrow">'+(i===0?"Último MVP del público":"MVP del público")+'</span><b>'+esc(o.texto)+'</b>'+
+      '<span class="muted small" style="display:flex;gap:6px;align-items:center">'+logo(t.id)+esc(t.nombre)+'</span>'+(o.linea?'<span class="small">'+esc(o.linea)+'</span>':'')+
+      '<span class="small"><b>'+Math.round(g.max*100/g.tot)+'%</b> de '+g.tot+(g.tot===1?' voto':' votos')+(g.p.fecha?' · Jornada del '+esc(flarga(g.p.fecha)).toLowerCase():(c?' · Semana al '+esc(CIERRE.textoCierre(c).split(",").slice(0,2).join(",")):''))+'</span></div></div>'; }).join(""); }).join("")+'</div>';
+}
+function refrescarSalon(){ document.querySelectorAll("[data-salon]").forEach(function(el){ var lim=+el.getAttribute("data-salon")||0, h=salonHTML(lim); el.innerHTML=h?secH("Ganadores del MVP del público",lim?"encuestas":"",lim?"Ver todos":"")+h:""; el.hidden=!h; }); }
 var VDIAS={};
 function destacada(){ var P=encs(); for(var i=0;i<P.length;i++) if(abiertaP(P[i])) return P[i]; return P[0]; }
 function abiertaP(p){ return window.CIERRE ? CIERRE.estaAbierta(p) : p.estado!=="cerrada"; }
@@ -817,7 +840,7 @@ function votar(btn){
 function cargarVotos(){
   var ids=encs().map(function(p){return p.id;}).filter(Boolean); if(!ids.length) return;
   fetch("api/votos?e="+encodeURIComponent(ids.join(",")),{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-    .then(function(j){ VOTOS=j.conteo||{}; VDIAS=j.dias||{}; refrescarPolls(); }).catch(function(){});
+    .then(function(j){ VOTOS=j.conteo||{}; VDIAS=j.dias||{}; refrescarPolls(); refrescarSalon(); }).catch(function(){});
 }
 function contarVisita(){
   fetch("api/visita",{method:"POST",cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
@@ -1013,6 +1036,7 @@ V.encuestas=function(){
   var P=encs(), h=head("La afición opina","Votaciones","MVP del público y encuestas de la Copa City 9. Cada persona vota una vez por encuesta.");
   if(!P.length) return h+empty("No hay votaciones abiertas","La próxima votación se publica aquí.");
   var ab=P.filter(abiertaP), ce=P.filter(function(p){return !abiertaP(p);});
+  h+='<section data-salon="0"></section>';
   if(ab.length) h+='<div class="grid g2">'+ab.map(function(p){return pollCard(p,false);}).join("")+'</div>';
   if(ce.length) h+='<section>'+secH("Votaciones cerradas")+'<div class="grid g2">'+ce.map(function(p){return pollCard(p,false);}).join("")+'</div></section>';
   return h;
@@ -1112,6 +1136,7 @@ function render(keepScroll){
   var html=r.v==="equipo"?V.equipo(r.id):(r.v==="articulo"?V.articulo(r.id):V[r.v]());
   if(r.v==="inicio"||r.v==="galeria"||r.v==="directiva") html+='<section>'+secH("Síguenos")+'<div class="social">'+socialList()+'</div></section>';
   app.innerHTML=html;
+  refrescarSalon();
   var key=r.v+(r.id||"")+(r.ancla||"");
   if(!keepScroll && key!==ULTIMA){ var an=r.ancla&&document.getElementById(r.ancla); if(an) an.scrollIntoView(); else window.scrollTo(0,0); }
   ULTIMA=key;
@@ -1179,7 +1204,7 @@ function musica(){
 function iniciar(raw){ try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
 function estatico(){ return fetch("datos/estadisticas.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return window.ESTADISTICAS||null; }); }
 fetch("api/contenido",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-  .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; return c.estadisticas||estatico(); })
+  .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; return c.estadisticas||estatico(); })
   .catch(function(){ return estatico(); })
   .then(function(j){ iniciar(j); });
 })();
