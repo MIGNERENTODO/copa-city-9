@@ -356,6 +356,10 @@ th.sorted{color:var(--red)}
 .art-body figure{margin:0;display:grid;gap:6px}
 .art-body figure button{padding:0;border:0;background:none;cursor:zoom-in;border-radius:8px;overflow:hidden}
 .art-body figure img{width:100%;max-height:75vh;object-fit:contain;background:var(--surface-2)}
+.vid{position:relative;width:100%;aspect-ratio:16/9;max-width:100%;border-radius:8px;overflow:hidden;background:#000}
+.vid.short{aspect-ratio:9/16;max-width:min(100%,380px);margin:0 auto}
+.vid.ig{aspect-ratio:auto;height:640px;max-width:min(100%,460px);margin:0 auto;background:var(--surface)}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .art-body figcaption{font-size:13px;color:var(--muted)}
 .jstat{display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-weight:600}
 /* ---------- Calendar ---------- */
@@ -867,6 +871,12 @@ V.calendario=function(){
   return h+'</section>';
 };
 var TIPOS={opinion:"Opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia"};
+function videoInfo(u){
+  u=String(u||"").trim(); var m;
+  if((m=u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/))) return {tipo:"youtube",id:m[1],corto:/shorts\//.test(u)};
+  if((m=u.match(/instagram\.com\/(?:[A-Za-z0-9_.]+\/)?(p|reel|reels|tv)\/([A-Za-z0-9_-]+)/))) return {tipo:"instagram",id:m[2],clase:m[1]==="reels"?"reel":m[1]};
+  return null;
+}
 function fotoURL(id){ return "api/foto?id="+encodeURIComponent(id); }
 function pubs(tipo){ return (M.pubs||[]).filter(function(p){ return !tipo||p.tipo===tipo; }).sort(function(a,b){ return String(b.fecha).localeCompare(String(a.fecha)); }); }
 function newsCard(p){
@@ -887,6 +897,11 @@ function bloquesHTML(p){
     if(b.t==="p") return '<p>'+esc(b.x).replace(/\n/g,"<br>")+'</p>';
     if(b.t==="h") return '<h2>'+esc(b.x)+'</h2>';
     if(b.t==="cita") return '<blockquote>'+esc(b.x)+'</blockquote>';
+    if(b.t==="video"){ var vi=videoInfo(b.url); if(!vi) return '';
+      var src=vi.tipo==="youtube"?"https://www.youtube-nocookie.com/embed/"+vi.id+"?rel=0":"https://www.instagram.com/"+vi.clase+"/"+vi.id+"/embed";
+      var cls=vi.tipo==="instagram"?"vid ig":(vi.corto?"vid short":"vid");
+      return '<figure><div class="'+cls+'"><iframe src="'+esc(src)+'" title="'+esc(b.pie||"Video")+'" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>'+
+        '<figcaption>'+(b.pie?esc(b.pie)+' · ':'')+'<a href="'+esc(b.url)+'" target="_blank" rel="noopener">Ver en '+(vi.tipo==="youtube"?"YouTube":"Instagram")+'</a></figcaption></figure>'; }
     if(b.t==="lista") return '<ul>'+b.items.map(function(x){return '<li>'+esc(x)+'</li>';}).join("")+'</ul>';
     if(b.t==="img"){ AIMG.push({src:fotoURL(b.id),pie:b.pie||p.titulo}); return '<figure><button data-act="aimg" data-i="'+(AIMG.length-1)+'"><img src="'+esc(fotoURL(b.id))+'" alt="'+esc(b.pie||"")+'" loading="lazy"></button>'+(b.pie?'<figcaption>'+esc(b.pie)+'</figcaption>':'')+'</figure>'; }
     return '';

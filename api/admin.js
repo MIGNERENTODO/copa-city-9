@@ -43,6 +43,7 @@ function limpiarPub(p) {
     if (!b) return;
     if ((b.t === "p" || b.t === "h" || b.t === "cita") && txt(b.x, 6000).trim()) o.bloques.push({ t: b.t, x: txt(b.x, 6000).trim() });
     if (b.t === "img" && fotoOk(b.id)) o.bloques.push({ t: "img", id: b.id, pie: txt(b.pie, 200).trim() });
+    if (b.t === "video") { const u = txt(b.url, 300).trim(); if (/^https:\/\/(www\.|m\.)?(youtube\.com|youtu\.be|instagram\.com)\//i.test(u)) o.bloques.push({ t: "video", url: u, pie: txt(b.pie, 200).trim() }); }
     if (b.t === "lista") { const it = (Array.isArray(b.items) ? b.items : []).map(x => txt(x, 600).trim()).filter(Boolean).slice(0, 40); if (it.length) o.bloques.push({ t: "lista", items: it }); }
   });
   return o;

@@ -163,14 +163,19 @@ function vPublicar(){
     '<label style="display:flex;flex-wrap:nowrap;gap:8px;align-items:center;font-weight:500"><input type="checkbox" id="chkMarca" style="width:auto;flex:0 0 auto" checked> Poner el logo de la Copa City 9 en las fotos que subo</label>'+
     '<div style="display:grid;gap:10px"><b style="font-size:14px">Contenido</b>';
   ED.bloques.forEach(function(b,i){
-    var nm={p:"Párrafo",h:"Subtítulo",cita:"Cita destacada",lista:"Lista",img:"Foto"}[b.t];
+    var nm={p:"Párrafo",h:"Subtítulo",cita:"Cita destacada",lista:"Lista",img:"Foto",video:"Video de YouTube o Instagram"}[b.t];
     h+='<div class="blk"><div class="bh"><b>'+nm+'</b><button class="sm" data-act="up" data-i="'+i+'" aria-label="Subir">↑</button><button class="sm" data-act="down" data-i="'+i+'" aria-label="Bajar">↓</button><button class="sm" data-act="del" data-i="'+i+'" aria-label="Quitar">✕</button></div>';
     if(b.t==="img") h+='<img src="'+esc(fotoURL(b.id))+'" alt=""><input data-b="'+i+'" data-k="pie" value="'+esc(b.pie||"")+'" placeholder="Pie de foto (opcional)" maxlength="200">';
+    else if(b.t==="video"){ var vi=videoInfo(b.url);
+      h+='<input data-b="'+i+'" data-k="url" value="'+esc(b.url||"")+'" placeholder="Pega aquí el enlace del video (YouTube o Instagram)" maxlength="300">'+
+        '<span class="'+(b.url?(vi?"ok":"err"):"muted")+'" data-vchk="'+i+'" style="font-size:13px">'+(b.url?(vi?(vi.tipo==="youtube"?"Video de YouTube reconocido.":"Publicación de Instagram reconocida."):"No reconozco ese enlace. Copia el enlace con el botón Compartir del video."):"Ejemplo: https://youtube.com/shorts/... o https://www.instagram.com/reel/...")+'</span>'+
+        (vi&&vi.tipo==="youtube"?'<img src="https://i.ytimg.com/vi/'+vi.id+'/hqdefault.jpg" alt="">':'')+
+        '<input data-b="'+i+'" data-k="pie" value="'+esc(b.pie||"")+'" placeholder="Pie del video (opcional)" maxlength="200">'; }
     else if(b.t==="lista") h+='<textarea data-b="'+i+'" data-k="items" placeholder="Un punto por línea">'+esc((b.items||[]).join("\n"))+'</textarea>';
     else h+='<textarea data-b="'+i+'" data-k="x" '+(b.t==="h"?'style="min-height:44px"':'')+' placeholder="'+(b.t==="p"?"Escribe el párrafo":"Escribe aquí")+'">'+esc(b.x||"")+'</textarea>';
     h+='</div>';
   });
-  h+='<div class="row"><button data-act="add" data-v="p">+ Párrafo</button><button data-act="add" data-v="h">+ Subtítulo</button><button data-act="add" data-v="cita">+ Cita</button><button data-act="add" data-v="lista">+ Lista</button><button data-act="fotos">+ Fotos</button></div></div>'+
+  h+='<div class="row"><button data-act="add" data-v="p">+ Párrafo</button><button data-act="add" data-v="h">+ Subtítulo</button><button data-act="add" data-v="cita">+ Cita</button><button data-act="add" data-v="lista">+ Lista</button><button data-act="add" data-v="video">+ Video</button><button data-act="fotos">+ Fotos</button></div></div>'+
     (ED.tipo==="reunion"?'<p class="hint">Para los acuerdos de la reunión usa una lista: un acuerdo por línea.</p>':'')+
     '<div class="row" style="border-top:1px solid var(--line);padding-top:14px"><button class="red" data-act="publicar">'+(ED.id?"Guardar y publicar":"Publicar")+'</button><button data-act="borrador">Guardar como borrador</button><span id="edEstado" class="muted" role="status"></span></div></section>';
   return h;
@@ -193,6 +198,12 @@ function enviarPub(borrador){
   }).catch(function(e){ est.innerHTML='<span class="err">'+esc(e.message)+'</span>'; });
 }
 
+function videoInfo(u){
+  u=String(u||"").trim(); var m;
+  if((m=u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/))) return {tipo:"youtube",id:m[1],corto:/shorts\//.test(u)};
+  if((m=u.match(/instagram\.com\/(?:[A-Za-z0-9_.]+\/)?(p|reel|reels|tv)\/([A-Za-z0-9_-]+)/))) return {tipo:"instagram",id:m[2],clase:m[1]==="reels"?"reel":m[1]};
+  return null;
+}
 /* ---------------- Fotos ---------------- */
 var LOGO=new Image(); LOGO.src="assets/logos/copacity9.png";
 var DESTINO=null;
@@ -354,7 +365,7 @@ function vBuzon(){
 /* ---------------- Eventos ---------------- */
 document.addEventListener("submit",function(e){ if(e.target.id!=="fLogin") return; e.preventDefault(); CLAVE=document.getElementById("clave").value; Promise.all([cargarStats()]).then(cargar); });
 document.addEventListener("input",function(e){ if(e.target.closest("[data-f],[data-b]")) leerCampos(); if(e.target.hasAttribute("data-pj")) leerProg(e.target); if(e.target.hasAttribute("data-gal")) GAL[+e.target.getAttribute("data-gal")].pie=e.target.value; });
-document.addEventListener("change",function(e){ if(e.target.hasAttribute("data-pj")) leerProg(e.target); });
+document.addEventListener("change",function(e){ if(e.target.hasAttribute("data-pj")) leerProg(e.target); if(e.target.getAttribute("data-k")==="url"){ leerCampos(); pintar(); } });
 document.addEventListener("change",function(e){
   if(e.target.getAttribute("data-f")==="tipo"){ leerCampos(); pintar(); }
   if(e.target.id==="fileStats"&&e.target.files[0]) previewStats(e.target.files[0]);
@@ -363,7 +374,7 @@ document.addEventListener("click",function(e){
   var b=e.target.closest("button,[data-tab]"); if(!b) return;
   if(b.dataset.tab){ if(TAB==="publicar") leerCampos(); TAB=b.dataset.tab; pintar(); window.scrollTo(0,0); return; }
   var a=b.dataset.act, i=+b.dataset.i;
-  if(a==="add"){ leerCampos(); ED.bloques.push(b.dataset.v==="lista"?{t:"lista",items:[]}:{t:b.dataset.v,x:""}); guardarLocal(); pintar(); }
+  if(a==="add"){ leerCampos(); ED.bloques.push(b.dataset.v==="lista"?{t:"lista",items:[]}:(b.dataset.v==="video"?{t:"video",url:"",pie:""}:{t:b.dataset.v,x:""})); guardarLocal(); pintar(); }
   else if(a==="fotos"){ DESTINO="bloques"; document.getElementById("fileImg").multiple=true; document.getElementById("fileImg").click(); }
   else if(a==="portada"){ DESTINO="portada"; document.getElementById("fileImg").multiple=false; document.getElementById("fileImg").click(); }
   else if(a==="sinportada"){ leerCampos(); ED.portada=""; guardarLocal(); pintar(); }
