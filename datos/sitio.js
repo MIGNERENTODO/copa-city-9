@@ -79,7 +79,8 @@ window.SITIO = {
         { nombre: "Roys Rebollo", posicion: "Outfield", foto: "assets/jugadores/pumas-roys-rebollo.jpg" },
         { nombre: "David Munares", posicion: "Outfield", foto: "assets/jugadores/pumas-david-munares.jpg" },
         { nombre: "Víctor Sarmiento", posicion: "Infield", foto: "assets/jugadores/pumas-victor-sarmiento.jpg" },
-        { nombre: "Cristian Toro", posicion: "Utility", foto: "assets/jugadores/pumas-cristian-toro.jpg" }
+        { nombre: "Cristian Toro", posicion: "Utility", foto: "assets/jugadores/pumas-cristian-toro.jpg" },
+        { nombre: "Ronaly Vera", posicion: "Utility", foto: "assets/jugadores/pumas-ronaly-vera.jpg" }
       ]
     },
     atleticos: {
