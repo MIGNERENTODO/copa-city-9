@@ -351,6 +351,9 @@ th.sorted{color:var(--red)}
 .art-body{display:grid;gap:16px;font-size:17px;line-height:1.65}
 .art-body p{margin:0}
 .art-body h2{font-size:26px;font-weight:800;text-transform:uppercase;font-style:italic;margin-top:6px}
+.art-body .qa-q{font-weight:700;margin-top:10px}
+.art-body .qa-q strong{color:var(--red)}
+.art-body .qa-r strong{color:inherit}
 .art-body blockquote{margin:0;padding:6px 0 6px 18px;border-left:4px solid var(--red);font-family:var(--display);font-size:24px;font-weight:700;line-height:1.2}
 .art-body ul{margin:0;padding-left:22px;display:grid;gap:6px}
 .art-body figure{margin:0;display:grid;gap:6px}
@@ -897,14 +900,14 @@ V.calendario=function(){
   porFecha(res).forEach(function(gr){ h+='<div class="day"><div class="jhead"><h2>'+esc(flarga(gr.fecha))+'</h2><span class="d">'+gr.items.length+(gr.items.length===1?' juego':' juegos')+'</span></div><div class="card">'+gr.items.map(matchRow).join("")+'</div></div>'; });
   return h+'</section>';
 };
-var TIPOS={opinion:"Opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia"};
+var TIPOS={opinion:"Opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia",entrevista:"Entrevista"};
 function videoInfo(u){
   u=String(u||"").trim(); var m;
   if((m=u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/))) return {tipo:"youtube",id:m[1],corto:/shorts\//.test(u)};
   if((m=u.match(/instagram\.com\/(?:[A-Za-z0-9_.]+\/)?(p|reel|reels|tv)\/([A-Za-z0-9_-]+)/))) return {tipo:"instagram",id:m[2],clase:m[1]==="reels"?"reel":m[1]};
   return null;
 }
-function fotoURL(id){ return "api/foto?id="+encodeURIComponent(id); }
+function fotoURL(id){ if(/^assets\//.test(String(id||""))) return id; return "api/foto?id="+encodeURIComponent(id); }
 function pubs(tipo){ return (M.pubs||[]).filter(function(p){ return !tipo||p.tipo===tipo; }).sort(function(a,b){ return String(b.fecha).localeCompare(String(a.fecha)); }); }
 function newsCard(p){
   return '<a class="card nc" href="#articulo-'+esc(p.id)+'"><div class="im">'+(p.portada?'<img src="'+esc(fotoURL(p.portada))+'" alt="" loading="lazy">':'<img class="ph" src="assets/logos/copacity9.png" alt="">')+'</div>'+
@@ -912,7 +915,7 @@ function newsCard(p){
 }
 V.noticias=function(){
   var L=pubs(UI.ntipo||""), h=head("Copa City 9","Noticias","Artículos de opinión y resúmenes de juegos y reuniones de la liga.");
-  var tipos=[["","Todo"],["opinion","Opinión"],["juego","Juegos"],["reunion","Reuniones"],["jugador","Jugador de la semana"]];
+  var tipos=[["","Todo"],["opinion","Opinión"],["juego","Juegos"],["reunion","Reuniones"],["jugador","Jugador de la semana"],["entrevista","Entrevistas"]];
   h+='<div class="chips" role="group" aria-label="Filtrar">'+tipos.map(function(t){ return '<button data-act="ntipo" data-v="'+t[0]+'" class="'+((UI.ntipo||"")===t[0]?"on":"")+'">'+t[1]+'</button>'; }).join("")+'</div>';
   if(!L.length) return h+empty("Todavía no hay publicaciones","Aquí aparecerán los artículos de opinión y los resúmenes de cada jornada y de cada reunión.");
   return h+'<div class="news">'+L.map(newsCard).join("")+'</div>';
@@ -924,6 +927,8 @@ function bloquesHTML(p){
     if(b.t==="p") return '<p>'+esc(b.x).replace(/\n/g,"<br>")+'</p>';
     if(b.t==="h") return '<h2>'+esc(b.x)+'</h2>';
     if(b.t==="cita") return '<blockquote>'+esc(b.x)+'</blockquote>';
+    if(b.t==="q") return '<p class="qa-q"><strong>'+esc(b.quien||"Copa City 9")+':</strong> '+esc(b.x)+'</p>';
+    if(b.t==="r") return '<p class="qa-r"><strong>'+esc(b.quien||"")+':</strong> '+esc(b.x)+'</p>';
     if(b.t==="video"){ var vi=videoInfo(b.url); if(!vi) return '';
       var src=vi.tipo==="youtube"?"https://www.youtube-nocookie.com/embed/"+vi.id+"?rel=0":"https://www.instagram.com/"+vi.clase+"/"+vi.id+"/embed";
       var cls=vi.tipo==="instagram"?"vid ig":(vi.corto?"vid short":"vid");
@@ -1201,7 +1206,9 @@ function musica(){
 }
 
 /* ================= Arranque ================= */
-function iniciar(raw){ try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
+/* Une las publicaciones del panel con las de datos/sitio.js (las que publica Claude). Las del panel mandan. */
+function fusionarPubs(){ var ids={}, out=[]; (M.pubs||[]).forEach(function(p){ if(p&&p.id){ ids[p.id]=1; out.push(p); } }); ((window.SITIO||{}).publicaciones||[]).forEach(function(p){ if(p&&p.id&&!ids[p.id]&&!p.borrador){ ids[p.id]=1; out.push(p); } }); M.pubs=out; }
+function iniciar(raw){ fusionarPubs(); try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
 function estatico(){ return fetch("datos/estadisticas.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return window.ESTADISTICAS||null; }); }
 fetch("api/contenido",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
   .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; return c.estadisticas||estatico(); })

@@ -102,7 +102,7 @@ function hoy(){ var d=new Date(); return d.getFullYear()+"-"+String(d.getMonth()
 function uid(){ return Math.random().toString(36).slice(2,10); }
 function tit(s){ return String(s||"").toLowerCase().replace(/(^|\s)\S/g,function(c){return c.toUpperCase();}); }
 function toast(m){ var t=document.getElementById("toast"); t.textContent=m; t.hidden=false; clearTimeout(toast.k); toast.k=setTimeout(function(){t.hidden=true;},3500); }
-function fotoURL(id){ return "api/foto?id="+encodeURIComponent(id); }
+function fotoURL(id){ if(/^assets\//.test(String(id||""))) return id; return "api/foto?id="+encodeURIComponent(id); }
 (S.equipos||[]).forEach(function(t){ NOMBRES[t.id]=t.nombre; });
 try{ CLAVE=sessionStorage.getItem("cc9-clave")||""; }catch(e){}
 

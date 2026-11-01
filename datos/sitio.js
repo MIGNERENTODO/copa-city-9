@@ -442,5 +442,109 @@ window.SITIO = {
     { src: "assets/galeria/cc9-17.jpg", pie: "Saludo entre rivales" },
     { src: "assets/galeria/cc9-16.jpg", pie: "Amigos del sóftbol" },
     { src: "assets/galeria/cc9-13.jpg", pie: "La familia en el estadio" }
+  ],
+
+  /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
+     Formato igual al del panel. Las fotos van en assets/noticias/. */
+  publicaciones: [
+    {
+      "id": "entrevista-antonio-olivares-j9",
+      "tipo": "entrevista",
+      "titulo": "Antonio Olivares: “Este equipo está para llegar a la final”",
+      "bajada": "El lanzador de Pumas de Salamanca fue pieza clave en los dos triunfos de su equipo en la Jornada 9. Habla del exceso de confianza del primer juego, de su salida al rescate y de su reto pendiente: ser campeón con Pumas.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-01",
+      "equipo": "pumas",
+      "portada": "assets/noticias/antonio-olivares-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Antonio Olivares, una de las bujías de Pumas de Salamanca, fue pieza fundamental en los dos triunfos de su equipo en la jornada de este domingo en el Estadio La Ligua Park. Tras un primer juego en que los felinos arrancaron lentos y solo después del quinto episodio alinearon los bates para voltear el marcador, conversamos con él sobre su labor desde el montículo, la pelea por la clasificación y sus metas en la Copa City 9."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Antonio, coméntanos tus impresiones del primer partido, donde Pumas arrancó lento y no fue sino hasta después del quinto episodio que los bates se alinearon para voltear el encuentro."
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Gracias por la entrevista y gracias también por la oportunidad de jugar con Pumas, por invitarme a su equipo. En el primer partido nos relajamos un poco; fue como un exceso de confianza. Pero después el equipo fue engranando, empezamos a hacer las cosas, nos fueron saliendo y terminamos ganando por amplio margen de carreras. Este equipo está hecho para esto: cuando nos empiezan a salir las cosas, volteamos la partida y ganamos por un score abultado."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Desde que debutaste en la Copa City 9 venías siendo el apagafuegos del equipo. Hoy no tuviste ese protagonismo al inicio del primer juego, porque estaba Julio Piñeiro en el montículo, pero después te tocó salir al rescate."
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Sí. El mánager tomó la decisión de traerme en un inning crucial para el juego. Estábamos abajo por una carrera y, gracias a Dios, logré sacar los dos innings en blanco y pudimos llevarnos la victoria. Salí a tope, llegué a cerrar la partida y todo salió bien."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/antonio-olivares.jpg",
+          "pie": "Antonio Olivares, lanzador de Pumas de Salamanca."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Con los resultados de hoy, Pumas llega a 15 puntos, pero todavía no está matemáticamente clasificado. Recordemos que es un campeonato por puntuación y faltan tres juegos. ¿Cómo ves a este equipo para lo que resta de la ronda regular?"
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Sin quitarle mérito a ningún equipo: yo vengo jugando en Santiago y allá la exigencia es un poco mayor. Esta liga todavía es un torneo que está como en exploración; quieren traer peloteros de Santiago y que sea una liga más competitiva."
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Viendo el torneo como está, yo creo que Pumas está para grandes cosas. Por mi parte, en cada equipo donde juego siempre pienso hasta dónde podemos llegar, y creo que este equipo está para llegar a la final."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Eres de esos jugadores que han defendido muchas camisetas. Hace algunas semanas te vimos jugando la final de la Liga de Cerro Navia con Santiago Bistró, y también te hemos visto ganar títulos de bateo y campeonatos con otros equipos. ¿Cuáles son tus metas en esta Copa City 9?"
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Primero, llegar a la final. Para mí llegar a la final ya es un logro, es la ganancia, y obviamente después ganarla. Mi reto es que este equipo, que es un conjunto que trabaja en unión, llegue a la final y la gane."
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "He jugado en muchos equipos que han llegado a finales, pero con Pumas tengo un reto pendiente. Hace seis meses llegamos a semifinales allá en Santiago y no pudimos pasar a la final. Pero aquí vamos a llegar a la final, y estoy 100 % seguro de que la vamos a ganar."
+        },
+        {
+          "t": "cita",
+          "x": "“Aquí vamos a llegar a la final, y estoy 100 % seguro de que la vamos a ganar.”"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Para finalizar: a Juan Chirinos, a ti y a Wilmer Borjas les dicen “el Padre, el Hijo y el Espíritu Santo”. Pero ahora llegó Julio Piñeiro. ¿Qué nombre le ponemos al grupo?"
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Julio Piñeiro también es de los nuestros, así que ahora somos un cuarteto: yo creo que vamos a ser “los cuatro mosqueteros”. Julio es una pieza fundamental para nosotros, y en el pitcheo es una de nuestras cartas a favor, porque lanza muy duro para el pitcheo modificado que se está jugando ahora. Con él, yo creo que lo vamos a lograr."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "Un mensaje final para la fanaticada que te sigue a través de la página de la Copa City 9."
+        },
+        {
+          "t": "r",
+          "quien": "Antonio Olivares",
+          "x": "Que nos apoyen siempre. Vamos a venir con todas las ganas, a dar un buen show y a competir, porque la idea es competir y ganar. Como siempre, se gana y se pierde, pero que la fanaticada nos apoye. Ahí vamos a estar para ellos, y que ellos estén para nosotros también. Muchas gracias."
+        },
+        {
+          "t": "p",
+          "x": "Fueron las impresiones de Antonio Olivares, de Pumas de Salamanca."
+        }
+      ]
+    }
   ]
 };
