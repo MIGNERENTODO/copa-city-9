@@ -451,7 +451,7 @@ window.SITIO = {
       "id": "entrevista-antonio-olivares-j9",
       "tipo": "entrevista",
       "titulo": "Antonio Olivares: “Este equipo está para llegar a la final”",
-      "bajada": "El lanzador de Pumas de Salamanca fue pieza clave en los dos triunfos de su equipo en la Jornada 9. Habla del exceso de confianza del primer juego, de su salida al rescate y de su reto pendiente: ser campeón con Pumas.",
+      "bajada": "El utility de Pumas de Salamanca fue pieza clave en los dos triunfos de su equipo en la Jornada 9. Habla del exceso de confianza del primer juego, de su salida al rescate y de su reto pendiente: ser campeón con Pumas.",
       "autor": "Migner Acosta",
       "fecha": "2026-11-01",
       "equipo": "pumas",
@@ -484,7 +484,7 @@ window.SITIO = {
         {
           "t": "img",
           "id": "assets/noticias/antonio-olivares.jpg",
-          "pie": "Antonio Olivares, lanzador de Pumas de Salamanca."
+          "pie": "Antonio Olivares, de Pumas de Salamanca."
         },
         {
           "t": "q",
