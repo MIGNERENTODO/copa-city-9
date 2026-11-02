@@ -321,6 +321,45 @@ window.SITIO = {
      { jornada: "Jornada 1", fecha: "2026-11-08", nombre: "...", equipo: "pumas",
        numero: "12", posicion: "Infield", foto: "assets/jugadores/....jpg",
        linea: "4-5, 2 HR, 6 CI", bio: ["Párrafo 1", "Párrafo 2"] } */
+  /* Portada rotativa de la página de inicio: titulares de la última jornada.
+     Cada titular es una "diapositiva". Si trae visita/local se dibuja el marcador con los logos;
+     si trae img, se usa la foto de fondo. El primero es el que aparece al abrir la página. */
+  portada: {
+    jornada: "Jornada 9",
+    fecha: "2026-11-01",
+    slides: [
+      { tag: "Jornada 9 · Domingo 1 de noviembre", img: "assets/jornadas/j9-pumas-celebra.jpg", pos: "center 40%", alt: "Pumas de Salamanca celebra en el Estadio La Ligua Park",
+        titulo: "Pumas ruge dos veces y manda en la Copa City 9",
+        bajada: "Doblete de Pumas de Salamanca, se acabó el invicto de Bravos y Guaros sigue con vida. Así se vivió una jornada de cinco juegos en el Estadio La Ligua Park.",
+        corto: "Resumen de la jornada", link: "#calendario" },
+      { tag: "Juego 1 · Jornada 9", visita: "atleticos", cv: 11, local: "pumas", cl: 21,
+        img: "assets/jornadas/j9-dugout-pumas.jpg", pos: "center 46%", alt: "Jugadores de Pumas de Salamanca en el dugout",
+        titulo: "¡Remontada felina!",
+        bajada: "Pumas de Salamanca vino de atrás, encendió los bates y terminó arrollando 21 carreras por 11 a Atléticos del Caribe en el juego que abrió la Jornada 9.",
+        corto: "Pumas vino de atrás y aplastó a Atléticos" },
+      { tag: "Juego 2 · Jornada 9", visita: "pumas", cv: 14, local: "andes", cl: 6,
+        img: "assets/jornadas/j9-pumas-ronda.jpg", pos: "center 60%", alt: "Pumas de Salamanca reunido en el campo antes del juego",
+        titulo: "Pumas va por la segunda y no perdona",
+        bajada: "Sin tiempo para respirar, Pumas de Salamanca firmó su segunda victoria del día: 14 carreras por 6 ante Los Andes, y se queda solo en la cima de la tabla.",
+        corto: "Segunda victoria del día para Pumas" },
+      { tag: "Juego 3 · Jornada 9", visita: "bombarderos", cv: 6, local: "bravos", cl: 2,
+        img: "assets/jornadas/j9-bombarderos.jpg", pos: "center 28%", alt: "Jugador de Bombarderos de Illapel lanza la bola a primera",
+        titulo: "¡Se acabó el invicto!",
+        bajada: "Bravos de La Calera llegaba con marca perfecta de 4-0, pero Bombarderos de Illapel lo frenó en seco y lo derrotó 6 carreras por 2 en el juego más cerrado de la jornada.",
+        corto: "Bombarderos le quitó el invicto a Bravos" },
+      { tag: "Juego 4 · Jornada 9", visita: "pandas", cv: 3, local: "guaros", cl: 16,
+        img: "assets/jornadas/j9-pandas-guaros.jpg", pos: "center 52%", alt: "Bateador de Pandas frente al receptor de Guaros",
+        titulo: "Guaros sigue con vida",
+        bajada: "Con la espalda contra la pared, Guaros de San Felipe respondió con 16 carreras, despachó 16 por 3 a Pandas de Quillota y se mantiene en la pelea por la clasificación.",
+        corto: "Guaros goleó a Pandas y sigue en carrera" },
+      { tag: "Juego 5 · Jornada 9", visita: "bravos", cv: 7, local: "pandas", cl: 14,
+        img: "assets/jornadas/j9-pandas.jpg", pos: "center 42%", alt: "Jugadores de Pandas de Quillota en el Estadio La Ligua Park",
+        titulo: "Pandas divide honores",
+        bajada: "Pandas de Quillota se levantó del golpe de la mañana, venció 14 carreras por 7 a Bravos de La Calera y le propinó su segunda derrota seguida en el mismo domingo.",
+        corto: "Pandas se levantó y hundió a Bravos" }
+    ]
+  },
+
   jugadorSemana: [],
 
   /* Programación semanal. Se carga desde el panel privado (pestaña Programación).

@@ -393,6 +393,54 @@ th.sorted{color:var(--red)}
 .mvpw.last{border-top:4px solid var(--red)}
 .mvpw .tx{display:grid;gap:3px;min-width:0}
 .mvpw b{font-family:var(--display);font-size:22px;font-weight:800;text-transform:uppercase;line-height:1.05}
+
+/* ---------- Portada rotativa (titulares de la jornada) ---------- */
+.portada{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:20px}
+.car{position:relative;overflow:hidden;border-radius:var(--r);min-height:560px;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.slide{position:absolute;inset:0;display:flex;align-items:flex-end;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
+.slide.on{opacity:1;visibility:visible}
+.slide>img.bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.04);transition:transform 7s linear}
+.slide.on>img.bgimg{transform:scale(1)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,30,66,0) 25%,rgba(4,30,66,.85) 68%,rgba(4,30,66,.97))}
+.slide .duelo{position:absolute;inset:0}
+.slide .duelo::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,var(--ca) 0 49.8%,var(--cb) 50.2% 100%);opacity:.92}
+.slide .duelo.tinte::before{opacity:.42}
+.slide .duelo.tinte::after{display:none}
+.slide .duelo::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.marcador{position:absolute;z-index:1;top:34px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:clamp(10px,3vw,34px)}
+.marcador .eq{display:grid;justify-items:center;gap:6px;width:clamp(96px,22vw,170px)}
+.marcador .eq img,.marcador .eq .ini{width:clamp(70px,14vw,124px);height:clamp(70px,14vw,124px);object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.marcador .eq span{font-family:var(--display);font-weight:800;font-size:clamp(14px,2vw,18px);letter-spacing:.06em;text-transform:uppercase;text-align:center;line-height:1.05;text-shadow:0 2px 6px rgba(0,0,0,.5)}
+.marcador .rs{display:flex;align-items:center;gap:clamp(8px,1.6vw,16px);font-family:var(--display);font-weight:800;font-size:clamp(54px,9vw,96px);line-height:1;text-shadow:0 4px 16px rgba(0,0,0,.45)}
+.marcador .rs i{font-style:normal;font-size:.4em;opacity:.8}
+.marcador .rs .pierde{opacity:.6}
+.marcador .fin{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.45);font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:12px;padding:3px 10px;border-radius:4px}
+.slide-in{position:relative;z-index:1;padding:24px 24px 52px;display:grid;gap:10px}
+.slide-in .tag{display:inline-block;background:var(--red);color:#fff;font-family:var(--display);font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase;padding:4px 10px;border-radius:4px;justify-self:start}
+.slide-in h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92}
+.slide-in p{margin:0;max-width:60ch;color:#D8E1EE;font-size:16px}
+.slide .crest{position:absolute;z-index:1;top:16px;right:16px;width:96px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+.car-ctl{position:absolute;z-index:2;left:24px;right:16px;bottom:16px;display:flex;align-items:center;gap:8px}
+.car-ctl .dots{display:flex;gap:6px;margin-left:auto;margin-right:6px}
+.car-ctl .dots button{flex:0 0 34px;height:4px;border:0;border-radius:2px;background:rgba(255,255,255,.3);padding:0;cursor:pointer;position:relative;overflow:hidden}
+.car-ctl .dots button.on::after{content:"";position:absolute;inset:0;background:#fff;transform-origin:left;animation:carbar 7s linear forwards}
+.car.pausa .car-ctl .dots button.on::after{animation-play-state:paused}
+@keyframes carbar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.car-ctl .ar{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:rgba(4,30,66,.5);color:#fff;font-size:16px;cursor:pointer;display:grid;place-items:center}
+.titulares{display:grid;align-content:start;padding:0;overflow:hidden}
+.titulares .th{padding:16px 18px 10px;border-bottom:1px solid var(--line)}
+.titulares .th h2{font-size:24px;text-transform:uppercase;font-weight:800;margin-top:2px}
+.titulares button{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;text-align:left;border:0;border-left:4px solid transparent;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);padding:11px 16px 11px 14px;cursor:pointer;font:inherit}
+.titulares button:last-child{border-bottom:0}
+.titulares button:hover{background:var(--surface-2)}
+.titulares button.on{border-left-color:var(--red);background:var(--surface-2)}
+.titulares .mini{display:flex;align-items:center;gap:4px;font-family:var(--display);font-weight:800;font-size:17px;min-width:96px}
+.titulares .mini .logo-s{width:24px;height:24px}
+.titulares .mini.ico{justify-content:center}
+.titulares b{display:block;font-family:var(--display);font-weight:800;font-size:17px;text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+.titulares small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;line-height:1.3}
+@media (max-width:860px){.portada{grid-template-columns:1fr}.car{min-height:500px}.titulares small{display:none}}
+@media (prefers-reduced-motion:reduce){.slide,.slide>img.bgimg{transition:none}.car-ctl .dots button.on::after{animation:none;transform:none}}
 /* ---------- Participation chart ---------- */
 .part{display:grid;gap:6px}
 .part svg{width:100%;height:auto;display:block}
@@ -716,20 +764,71 @@ function porFecha(list){
   return orden.map(function(k){ return {fecha:k,items:grupos[k]}; });
 }
 
+/* ================= Portada rotativa: titulares de la jornada (datos/sitio.js → portada) ================= */
+var CAR={i:0,t:null,pausa:false,n:0};
+function portadaHTML(){
+  var P=S.portada; if(!P||!(P.slides||[]).length) return "";
+  var sl=P.slides;
+  var h='<section class="portada"><div class="car" id="car" aria-roledescription="carrusel" aria-label="Titulares de la '+esc(P.jornada||"jornada")+'">';
+  sl.forEach(function(x,i){
+    h+='<a class="slide'+(i===CAR.i?' on':'')+'" href="'+esc(x.link||"#calendario")+'" style="text-decoration:none;color:#fff" aria-hidden="'+(i===CAR.i?"false":"true")+'" tabindex="'+(i===CAR.i?"0":"-1")+'">';
+    var foto=x.img?'<img class="bgimg" src="'+esc(x.img)+'" alt="'+esc(x.alt||"")+'"'+(x.pos?' style="object-position:'+esc(x.pos)+'"':'')+'>':'';
+    if(x.visita){ var A=teamOf(x.visita), B=teamOf(x.local), gv=n(x.cv)>n(x.cl);
+      h+=foto+'<div class="duelo'+(foto?' tinte':'')+'" style="--ca:'+esc(A.color)+';--cb:'+esc(B.color)+'"></div>'+
+        '<div class="marcador"><span class="fin">FINAL</span><div class="eq">'+logo(A.id,"x")+'<span>'+esc(A.nombre)+'</span></div>'+
+        '<div class="rs"><span class="'+(gv?'':'pierde')+'">'+esc(x.cv)+'</span><i>–</i><span class="'+(gv?'pierde':'')+'">'+esc(x.cl)+'</span></div>'+
+        '<div class="eq">'+logo(B.id,"x")+'<span>'+esc(B.nombre)+'</span></div></div>';
+    } else if(foto){ h+=foto+'<img class="crest" src="assets/logos/copacity9.png" alt="">'; }
+    h+='<div class="slide-in"><span class="tag">'+esc(x.tag||P.jornada||"")+'</span><h1>'+esc(x.titulo)+'</h1>'+(x.bajada?'<p>'+esc(x.bajada)+'</p>':'')+'</div></a>';
+  });
+  h+='<div class="car-ctl"><div class="dots">'+sl.map(function(x,i){ return '<button data-act="car" data-v="'+i+'" class="'+(i===CAR.i?'on':'')+'" aria-label="Titular '+(i+1)+'"></button>'; }).join("")+'</div>'+
+     '<button class="ar" data-act="carp" aria-label="Anterior">‹</button><button class="ar" data-act="carn" aria-label="Siguiente">›</button></div></div>';
+  h+='<div class="card titulares"><div class="th"><div class="eyebrow">'+esc(P.jornada||"")+(P.fecha?' · '+esc(flarga(P.fecha)):'')+'</div><h2>Titulares de la jornada</h2></div>';
+  sl.forEach(function(x,i){
+    var mini=x.visita?'<span class="mini">'+logo(x.visita)+'<span>'+esc(x.cv)+'</span><span class="muted">-</span><span>'+esc(x.cl)+'</span>'+logo(x.local)+'</span>':'<span class="mini ico"><img src="assets/logos/copacity9.png" alt="" style="height:30px"></span>';
+    h+='<button data-act="car" data-v="'+i+'" class="'+(i===CAR.i?'on':'')+'">'+mini+'<span><b>'+esc(x.titulo)+'</b>'+(x.corto?'<small>'+esc(x.corto)+'</small>':'')+'</span></button>';
+  });
+  return h+'</div></section>';
+}
+function carIr(i){
+  var c=document.getElementById("car"); if(!c) return;
+  var sl=c.querySelectorAll(".slide"), N=sl.length; if(!N) return;
+  CAR.i=((i%N)+N)%N;
+  sl.forEach(function(e,k){ var on=k===CAR.i; e.classList.toggle("on",on); e.setAttribute("aria-hidden",on?"false":"true"); e.tabIndex=on?0:-1; });
+  document.querySelectorAll('[data-act="car"]').forEach(function(b){ var on=+b.getAttribute("data-v")===CAR.i; b.classList.remove("on"); if(on){ void b.offsetWidth; b.classList.add("on"); } });
+  carProg();
+}
+function carProg(){
+  clearTimeout(CAR.t); var c=document.getElementById("car"); if(!c) return;
+  if(CAR.pausa || (window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  CAR.t=setTimeout(function(){ carIr(CAR.i+1); },7000);
+}
+function carIniciar(){
+  var c=document.getElementById("car"); clearTimeout(CAR.t); if(!c) return;
+  var pa=function(v){ CAR.pausa=v; c.classList.toggle("pausa",v); carProg(); };
+  c.addEventListener("mouseenter",function(){ pa(true); }); c.addEventListener("mouseleave",function(){ pa(false); });
+  c.addEventListener("focusin",function(){ pa(true); }); c.addEventListener("focusout",function(){ pa(false); });
+  var x0=null; c.addEventListener("touchstart",function(e){ x0=e.touches[0].clientX; },{passive:true});
+  c.addEventListener("touchend",function(e){ if(x0==null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) carIr(CAR.i+(dx<0?1:-1)); x0=null; },{passive:true});
+  CAR.pausa=false; carProg();
+}
+
 var V={};
 V.inicio=function(){
   var prox=proximos(), pf=prox.length?prox[0].fecha:null, sig=prox.filter(function(c){return c.fecha===pf;});
   var ult=M.cal.filter(function(c){return c.juego;}), uf=ult.length?ult[ult.length-1].fecha:null;
-  var h='<section class="hero"><div class="feature"><img class="bgimg" src="assets/portada.jpg" alt="Equipo de los Pumas de Salamanca en el campo"><img class="crest" src="assets/logos/copacity9.png" alt="">'+
+  var ph=portadaHTML();
+  var h=ph||'<section class="hero"><div class="feature"><img class="bgimg" src="assets/portada.jpg" alt="Equipo de los Pumas de Salamanca en el campo"><img class="crest" src="assets/logos/copacity9.png" alt="">'+
     '<div class="feature-in"><span class="tag">Temporada '+esc(LIGA.temporada||"")+'</span><h1>'+esc(LIGA.torneo||"Copa City 9")+'</h1><p>'+esc(LIGA.subtitulo||"")+' · '+esc(LIGA.zona||"")+'. '+esc(LIGA.resumen||"")+'</p>'+
     '<div class="acts"><a class="btn btn-red" href="#calendario">Calendario</a><a class="btn btn-ghost" href="#posiciones">Tabla de posiciones</a></div></div></div>';
-  h+='<div class="card pad next"><div class="eyebrow">'+(sig.length?"Próxima jornada":"Calendario")+'</div><h2 style="font-size:26px;text-transform:uppercase;font-weight:800;margin:2px 0 6px">'+(sig.length?esc(flarga(pf)):"Por publicar")+'</h2>';
+  var nx='<div class="card pad next"><div class="eyebrow">'+(sig.length?"Próxima jornada":"Calendario")+'</div><h2 style="font-size:26px;text-transform:uppercase;font-weight:800;margin:2px 0 6px">'+(sig.length?esc(flarga(pf)):"Por publicar")+'</h2>';
   if(sig.length){ sig.forEach(function(c){ var L=teamOf(c.local),Vv=teamOf(c.visita);
-      h+='<div class="game"><span class="team-mini">'+logo(Vv.id)+'<span>'+esc(Vv.abrev)+'</span></span><div class="vs"><b>'+esc(c.hora||"—")+'</b>'+esc(c.sede||"")+'</div><span class="team-mini right">'+logo(L.id)+'<span>'+esc(L.abrev)+'</span></span></div>'; });
-    var jx=jornadaDe(pf), dsc=jx?descansanDe(jx):[]; if(dsc.length) h+='<p class="muted small" style="margin:8px 0 6px">Descansan: '+dsc.map(function(t){return esc(teamOf(t).abrev);}).join(", ")+'</p>';
-    h+='<a class="more" href="#calendario">Calendario completo →</a>';
-  } else h+='<p style="margin:0 0 10px"><span class="muted">Sede única</span><br><b style="font-family:var(--display);font-size:22px;text-transform:uppercase">'+esc(LIGA.sede||"Por confirmar")+'</b></p><p class="muted" style="margin:0 0 10px">Las próximas fechas se publican aquí apenas queden confirmadas.</p><a class="more" href="#calendario">Ver todos los resultados →</a>';
-  h+='</div></section>';
+      nx+='<div class="game"><span class="team-mini">'+logo(Vv.id)+'<span>'+esc(Vv.abrev)+'</span></span><div class="vs"><b>'+esc(c.hora||"—")+'</b>'+esc(c.sede||"")+'</div><span class="team-mini right">'+logo(L.id)+'<span>'+esc(L.abrev)+'</span></span></div>'; });
+    var jx=jornadaDe(pf), dsc=jx?descansanDe(jx):[]; if(dsc.length) nx+='<p class="muted small" style="margin:8px 0 6px">Descansan: '+dsc.map(function(t){return esc(teamOf(t).abrev);}).join(", ")+'</p>';
+    nx+='<a class="more" href="#calendario">Calendario completo →</a>';
+  } else nx+='<p style="margin:0 0 10px"><span class="muted">Sede única</span><br><b style="font-family:var(--display);font-size:22px;text-transform:uppercase">'+esc(LIGA.sede||"Por confirmar")+'</b></p><p class="muted" style="margin:0 0 10px">Las próximas fechas se publican aquí apenas queden confirmadas.</p><a class="more" href="#calendario">Ver todos los resultados →</a>';
+  nx+='</div>';
+  if(!ph) h+=nx+'</section>';
 
   if(uf){ h+='<section>'+secH("Resultados · "+fcorta(uf),"calendario","Todos los resultados")+'<div class="card">'+ult.filter(function(c){return c.fecha===uf;}).map(matchRow).join("")+'</div></section>'; }
 
@@ -1142,6 +1241,7 @@ function render(keepScroll){
   if(r.v==="inicio"||r.v==="galeria"||r.v==="directiva") html+='<section>'+secH("Síguenos")+'<div class="social">'+socialList()+'</div></section>';
   app.innerHTML=html;
   refrescarSalon();
+  carIniciar();
   var key=r.v+(r.id||"")+(r.ancla||"");
   if(!keepScroll && key!==ULTIMA){ var an=r.ancla&&document.getElementById(r.ancla); if(an) an.scrollIntoView(); else window.scrollTo(0,0); }
   ULTIMA=key;
@@ -1169,6 +1269,9 @@ document.addEventListener("click",function(e){
   else if(a==="foto"){ lb(n(b.getAttribute("data-i")),galeria()); }
   else if(a==="aimg"){ lb(n(b.getAttribute("data-i")),AIMG.slice()); }
   else if(a==="ntipo"){ UI.ntipo=v||""; render(true); }
+  else if(a==="car"){ e.preventDefault(); carIr(n(v)); }
+  else if(a==="carp"){ e.preventDefault(); carIr(CAR.i-1); }
+  else if(a==="carn"){ e.preventDefault(); carIr(CAR.i+1); }
   else if(a==="lbx"){ lb(-1); }
   else if(a==="lbp"){ lb(LB-1); }
   else if(a==="lbn"){ lb(LB+1); }
