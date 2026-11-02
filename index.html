@@ -452,6 +452,46 @@ th.sorted{color:var(--red)}
 .ig-link{display:inline-flex;gap:6px;align-items:center;font-weight:600;color:var(--red);text-decoration:none}
 .ig-link svg{width:16px;height:16px}
 
+
+
+/* ---------- Las 9 ciudades ---------- */
+.ciudades{position:relative;overflow:hidden;border-radius:var(--r);background:var(--navy);color:#fff;box-shadow:var(--shadow);padding:22px 22px 18px}
+.ciudades::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0,rgba(191,13,62,.35),transparent 60%),repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 16px)}
+.ciudades>*{position:relative}
+.ciudades .cab{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.ciudades h2{font-size:clamp(28px,4vw,44px);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95}
+.ciudades h2 em{color:#F2B705;font-style:italic}
+.ciudades .cab p{margin:4px 0 0;color:#D8E1EE;max-width:60ch}
+.ruta{list-style:none;margin:0;padding:0;display:grid;align-items:start;grid-template-columns:repeat(9,minmax(0,1fr));gap:8px;position:relative}
+.ruta::before{content:"";position:absolute;left:4%;right:4%;top:31px;height:3px;background:linear-gradient(90deg,#F2B705,var(--red));border-radius:2px;opacity:.85}
+.ruta li{display:grid;justify-items:center;align-content:start;text-align:center;gap:6px;min-width:0}
+.ruta .pin{width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.35);border:3px solid #F2B705;overflow:hidden}
+.ruta .pin img{width:50px;height:50px;object-fit:contain}
+.ruta .pin.dos{grid-template-columns:1fr 1fr;padding:0 4px}
+.ruta .pin.dos img{width:28px;height:40px}
+.ruta .pin.cap{background:var(--red);border-color:#fff;font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;color:#fff}
+.ruta b{font-family:var(--display);font-weight:800;font-size:17px;text-transform:uppercase;letter-spacing:.03em;line-height:1}
+.ruta small{color:var(--navy-mute);font-size:11.5px;line-height:1.2}
+.ruta .n{font-family:var(--display);font-weight:700;font-size:12px;color:#F2B705;letter-spacing:.1em}
+@media (max-width:900px){.ruta{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 8px}.ruta::before{display:none}.ruta b{font-size:14px;letter-spacing:0;overflow-wrap:anywhere}.ruta .pin{width:56px;height:56px}.ruta .pin img{width:42px;height:42px}}
+/* ---------- Patrocinadores ---------- */
+.patro{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:stretch;border-radius:var(--r);background:var(--navy);color:#fff;box-shadow:var(--shadow);text-decoration:none}
+.patro .plate{background:#fff;display:grid;place-items:center;padding:28px 26px;position:relative;z-index:1}
+.patro .plate::after{content:"";position:absolute;top:0;bottom:0;right:-38px;width:76px;background:#fff;transform:skewX(-12deg);z-index:0}
+.patro .plate img{position:relative;z-index:1;width:100%;max-width:400px;height:auto}
+.patro .txt{position:relative;padding:26px 28px 26px 62px;display:grid;gap:8px;align-content:center;background:linear-gradient(110deg,var(--navy) 0%,var(--navy-2) 100%)}
+.patro .txt::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 16px)}
+.patro .txt>*{position:relative}
+.patro .lbl{display:inline-flex;gap:8px;align-items:center;justify-self:start;background:var(--red);font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:12.5px;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+.patro h2{font-size:clamp(26px,3.4vw,40px);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.95}
+.patro p{margin:0;color:#D8E1EE;max-width:52ch}
+.patro .rubro{font-family:var(--display);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px;color:var(--navy-mute)}
+.patro .c9{position:absolute;right:16px;bottom:12px;width:62px;opacity:.9}
+@media (max-width:760px){.patro{grid-template-columns:1fr}.patro .plate::after{display:none}.patro .txt{padding:22px 20px 70px}}
+.patros{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 26px;padding:16px 18px}
+.patros .t{flex-basis:100%;text-align:center;font-family:var(--display);font-weight:700;letter-spacing:.16em;font-size:12.5px;text-transform:uppercase;color:var(--muted)}
+.patros a,.patros span.l{display:grid;place-items:center;background:#fff;border-radius:8px;padding:8px 14px;height:64px}
+.patros img{max-height:46px;max-width:220px;width:auto}
 /* ---------- Social / footer ---------- */
 .social{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
 .soc{display:flex;align-items:center;gap:12px;padding:14px 16px;text-decoration:none}
@@ -813,6 +853,36 @@ function carIniciar(){
   CAR.pausa=false; carProg();
 }
 
+/* ================= La Copa de las 9 ciudades (datos/sitio.js → ciudades) ================= */
+function ciudadesHTML(){
+  var C=S.ciudades||[]; if(!C.length) return "";
+  return '<section class="ciudades" aria-label="Las 9 ciudades de la Copa City 9"><div class="cab"><div><div class="eyebrow" style="color:#F2B705">Copa City 9 · '+esc(LIGA.temporada||"")+'</div><h2>La Copa de las <em>'+C.length+'</em> ciudades</h2><p>'+esc(String(LIGA.zona||"").replace(/\.$/,""))+'. Todos los juegos en el '+esc(LIGA.sede||"Estadio La Ligua Park")+'.</p></div><a class="btn btn-red" href="#equipos">Ver equipos</a></div>'+
+    '<ol class="ruta">'+C.map(function(c,i){
+      var eq=(c.equipos||[]), pin;
+      if(!eq.length) pin='<span class="pin cap">'+esc(c.sigla||"★")+'</span>';
+      else pin='<span class="pin'+(eq.length>1?' dos':'')+'">'+eq.map(function(t){ var T=teamOf(t); return T.logo?'<img src="'+esc(T.logo)+'" alt="'+esc(T.nombre)+'" loading="lazy">':''; }).join("")+'</span>';
+      var sub=c.nota||eq.map(function(t){ return teamOf(t).nombre; }).join(" · ");
+      return '<li><span class="n">'+(i+1)+'</span>'+pin+'<b>'+esc(c.nombre)+'</b><small>'+esc(sub)+'</small></li>';
+    }).join("")+'</ol></section>';
+}
+
+/* ================= Patrocinadores (datos/sitio.js → patrocinadores) ================= */
+function patros(){ return (S.patrocinadores||[]).filter(function(p){ return p && p.logo; }); }
+function patroDestacado(){
+  var p=patros()[0]; if(!p) return "";
+  var tag=p.url?'a href="'+esc(p.url)+'" target="_blank" rel="noopener"':'div';
+  return '<section><'+tag+' class="patro" aria-label="Patrocinador: '+esc(p.nombre)+'"><div class="plate"><img src="'+esc(p.logo)+'" alt="'+esc(p.nombre)+'" loading="lazy"></div>'+
+    '<div class="txt"><span class="lbl">'+esc(p.etiqueta||"Patrocinador oficial")+'</span><h2>'+esc(p.titulo||p.nombre)+'</h2>'+(p.lema?'<p>'+esc(p.lema)+'</p>':'')+(p.rubro?'<span class="rubro">'+esc(p.nombre)+' · '+esc(p.rubro)+'</span>':'')+
+    '<img class="c9" src="assets/logos/copacity9.png" alt=""></div></'+(p.url?'a':'div')+'></section>';
+}
+function patroStrip(){
+  var L=patros(); if(!L.length) return "";
+  return '<section class="card patros"><span class="t">'+(L.length>1?'Patrocinadores oficiales de la Copa City 9':'Patrocinador oficial de la Copa City 9')+'</span>'+L.map(function(p){
+    var img='<img src="'+esc(p.logo)+'" alt="'+esc(p.nombre)+'" loading="lazy">';
+    return p.url?'<a href="'+esc(p.url)+'" target="_blank" rel="noopener" title="'+esc(p.nombre)+'">'+img+'</a>':'<span class="l" title="'+esc(p.nombre)+'">'+img+'</span>';
+  }).join("")+'</section>';
+}
+
 var V={};
 V.inicio=function(){
   var prox=proximos(), pf=prox.length?prox[0].fecha:null, sig=prox.filter(function(c){return c.fecha===pf;});
@@ -831,6 +901,8 @@ V.inicio=function(){
   if(!ph) h+=nx+'</section>';
 
   if(uf){ h+='<section>'+secH("Resultados · "+fcorta(uf),"calendario","Todos los resultados")+'<div class="card">'+ult.filter(function(c){return c.fecha===uf;}).map(matchRow).join("")+'</div></section>'; }
+  h+=patroDestacado();
+  h+=ciudadesHTML();
 
   var ns=pubs("").slice(0,3); if(ns.length) h+='<section>'+secH("Noticias","noticias","Todas las noticias")+'<div class="news">'+ns.map(newsCard).join("")+'</div></section>';
   h+='<section class="grid g2"><div>'+secH("Tabla de posiciones","posiciones","Tabla completa")+'<div class="card">'+tablaHTML(true)+'</div></div>';
@@ -1206,7 +1278,7 @@ function marco(ruta){
   document.getElementById("nav").innerHTML=NAV.map(function(x){ var on=ruta===x[0]||(x[0]==="equipos"&&ruta==="equipo"); return '<a href="#'+x[0]+'"'+(on?' class="on" aria-current="page"':'')+'>'+x[1]+'</a>'; }).join("");
 }
 function piezasFijas(){
-  document.getElementById("brandSub").textContent=(LIGA.nombre||"Liga de La Ligua")+" · "+(LIGA.subtitulo||"Softbol");
+  document.getElementById("brandSub").textContent=(LIGA.lema?LIGA.lema+" · ":"")+(LIGA.nombre||"Liga de La Ligua")+(LIGA.lema?"":" · "+(LIGA.subtitulo||"Softbol"));
   var r=S.redes||{}, ml='';
   (r.instagram||[]).slice(0,1).forEach(function(x){ ml+='<a class="chip-link" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+ICON_CAM+esc(x.usuario)+'</a>'; });
   (r.youtube||[]).slice(0,1).forEach(function(x){ ml+='<a class="chip-link" href="'+esc(x.url)+'" target="_blank" rel="noopener">'+ICON_PLAY+'En vivo</a>'; });
@@ -1239,6 +1311,7 @@ function render(keepScroll){
   marco(r.v==="articulo"?"noticias":r.v);
   var html=r.v==="equipo"?V.equipo(r.id):(r.v==="articulo"?V.articulo(r.id):V[r.v]());
   if(r.v==="inicio"||r.v==="galeria"||r.v==="directiva") html+='<section>'+secH("Síguenos")+'<div class="social">'+socialList()+'</div></section>';
+  if(r.v!=="inicio") html+=patroStrip();
   app.innerHTML=html;
   refrescarSalon();
   carIniciar();

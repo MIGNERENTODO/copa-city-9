@@ -14,6 +14,7 @@ window.SITIO = {
     nombre: "Liga de La Ligua",
     torneo: "Copa City 9",
     subtitulo: "Torneo Interregional de Softbol",
+    lema: "La Copa de las 9 ciudades",
     zona: "Zona Centro de Chile · 4ª, 5ª y R.M.",
     temporada: "2026",
     sede: "Estadio La Ligua Park",   /* sede única de todos los juegos */
@@ -41,7 +42,7 @@ window.SITIO = {
     { id: "guaros", nombre: "Guaros de San Felipe", ciudad: "San Felipe", abrev: "GUA", logo: "assets/logos/guaros.png", color: "#C8202B", color2: "#2A2A2A", alias: ["guaros", "san felipe", "gua"] },
     { id: "andes", nombre: "Los Andes", ciudad: "Los Andes", abrev: "AND", logo: "assets/logos/andes.png", color: "#B5121B", color2: "#141414", alias: ["andes", "and"] },
     { id: "pandas", nombre: "Pandas de Quillota", ciudad: "Quillota", abrev: "PAN", logo: "assets/logos/pandas.png", color: "#E0368C", color2: "#141414", alias: ["pandas", "quillota", "pan"] },
-    { id: "blessed", nombre: "Blessed Barber's", ciudad: "Club invitado", abrev: "BLE", logo: "assets/logos/blessed.png", color: "#5B2A9E", color2: "#3FC1D6", alias: ["blessed", "barber", "ble"] },
+    { id: "blessed", nombre: "Blessed Barber's", ciudad: "La Ligua", abrev: "BLE", logo: "assets/logos/blessed.png", color: "#5B2A9E", color2: "#3FC1D6", alias: ["blessed", "barber", "ble"] },
     { id: "maitencillo", nombre: "Litoral Maitencillo", ciudad: "Maitencillo", abrev: "MAI", logo: "assets/logos/maitencillo.png", color: "#2E6A35", color2: "#E9EFE6", alias: ["maitencillo", "litoral", "mai"] },
     { id: "bravos", nombre: "Bravos de La Calera", ciudad: "La Calera", abrev: "BRA", logo: "assets/logos/bravos.png", color: "#6E1423", color2: "#C9A227", alias: ["bravos", "calera", "bra"] },
     { id: "pumas", nombre: "Pumas de Salamanca", ciudad: "Salamanca", abrev: "PUM", logo: "assets/logos/pumas.png", color: "#0B4FD8", color2: "#F2B705", alias: ["pumas", "salamanca", "pum"] }
@@ -324,6 +325,24 @@ window.SITIO = {
   /* Portada rotativa de la página de inicio: titulares de la última jornada.
      Cada titular es una "diapositiva". Si trae visita/local se dibuja el marcador con los logos;
      si trae img, se usa la foto de fondo. El primero es el que aparece al abrir la página. */
+  /* La Copa de las 9 ciudades, de norte a sur. equipos = ids de los equipos de cada ciudad.
+     Santiago no tiene equipo propio: aporta jugadores (por eso va con sigla y una nota). */
+  ciudades: [
+    { nombre: "Illapel", equipos: ["bombarderos"] },
+    { nombre: "Salamanca", equipos: ["pumas", "masterpumas"] },
+    { nombre: "La Ligua", equipos: ["atleticos", "blessed"] },
+    { nombre: "Maitencillo", equipos: ["maitencillo"] },
+    { nombre: "La Calera", equipos: ["bravos"] },
+    { nombre: "Quillota", equipos: ["pandas"] },
+    { nombre: "San Felipe", equipos: ["guaros"] },
+    { nombre: "Los Andes", equipos: ["andes"] },
+    { nombre: "Santiago", equipos: [], sigla: "RM", nota: "La capital, presente en el roster de Pumas" }
+  ],
+
+  /* Patrocinadores. El primero aparece destacado en la página de inicio; todos salen en la franja
+     "Patrocinador oficial" al final de las demás secciones. url es opcional (Instagram o página web). */
+  patrocinadores: [],
+
   portada: {
     jornada: "Jornada 9",
     fecha: "2026-11-01",
