@@ -516,6 +516,92 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "perfil-yonny-torres",
+      "tipo": "perfil",
+      "titulo": "Yonny Torres: el llanero que lanza con el corazón",
+      "bajada": "El manager y lanzador de Pandas de Quillota lleva más de dos décadas en el softbol y una vida entera de sabana venezolana a cuestas. Desde Barinas hasta los diamantes de Chile, su historia es la de un pelotero que juega con fe, humildad y cariño por la gente.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-03",
+      "equipo": "pandas",
+      "portada": "assets/noticias/yonny-torres-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "“Ante todo, siempre llevo la bendición de Dios”. Con esa frase empieza Yonny Benito Torres Betancourt cuando le piden que hable de sí mismo, y no es casualidad. La fe es el punto de partida de un hombre que ha hecho del softbol mucho más que un deporte: un modo de vivir, de compartir y de mantenerse en pie lejos de su tierra."
+        },
+        { "t": "h", "x": "De Sabaneta al diamante chileno" },
+        {
+          "t": "p",
+          "x": "Yonny nació en Sabaneta, un pueblo del estado Barinas, en pleno corazón de los llanos venezolanos. Allí, entre la sabana y el horizonte abierto, creció con un sueño sencillo y profundo: mantenerse siempre unido a su familia. Nunca imaginó que algún día tendría que dejar Venezuela."
+        },
+        {
+          "t": "p",
+          "x": "La vida, sin embargo, lo trajo a Chile hace cuatro años. Llegó junto a su esposa, que hoy es su compañera de camino en este país, mientras sus dos hijos permanecen en Venezuela. Esa distancia es parte de la historia que cargan miles de migrantes venezolanos, y Yonny la lleva con la entereza de quien sabe que cada esfuerzo tiene un propósito."
+        },
+        { "t": "h", "x": "Veintitrés años de pasión por el softbol" },
+        {
+          "t": "p",
+          "x": "Si hay algo que define a Yonny dentro del terreno es la pasión. Suma cerca de 23 años como jugador activo de softbol, una trayectoria que habla de constancia, disciplina y amor por el juego. Es un lanzador de calidad, de esos que se paran en el círculo con temple y saben leer a cada bateador, y además asumió la responsabilidad de dirigir como manager a Pandas de Quillota."
+        },
+        {
+          "t": "p",
+          "x": "Como líder, su filosofía es clara: seguir dando lo mejor de sí y apoyar a todos los peloteros. No se trata solo de ganar juegos, sino de sostener al compañero, de animar al que está empezando y de hacer equipo dentro y fuera del campo."
+        },
+        { "t": "cita", "x": "“Sigo dando lo mejor de mí y apoyando a todos los peloteros.”" },
+        {
+          "t": "img",
+          "id": "assets/noticias/yonny-torres.jpg",
+          "pie": "Yonny Torres, pelota en mano y guante listo: más de dos décadas sobre el diamante."
+        },
+        { "t": "h", "x": "Un llanero de pies a cabeza" },
+        {
+          "t": "p",
+          "x": "Yonny es un llanero cien por ciento, y lo demuestra en cada detalle. Su gran pasión fuera del diamante es la música llanera venezolana, ese canto de arpa, cuatro y maracas que cuenta la vida del llano. Entre sus artistas favoritos están Eliza Guerrero y Jorge Guerrero, voces que lo acompañan y lo devuelven, aunque sea por un rato, a su Barinas natal."
+        },
+        {
+          "t": "p",
+          "x": "El orgullo por sus raíces también pasa por la mesa: su comida favorita es el pescado de su país, ese sabor que no se olvida aunque se cambie de latitud. Y en el béisbol, el deporte que alimentó su infancia, su corazón tiene dueño: los Navegantes del Magallanes, uno de los equipos más tradicionales de la pelota venezolana. Su jugador favorito es Edgardo Alfonzo, referente del Magallanes y de las Grandes Ligas."
+        },
+        { "t": "h", "x": "La calidad humana detrás del uniforme" },
+        {
+          "t": "p",
+          "x": "Más allá de los lanzamientos y las estrategias, lo que más destaca de Yonny es su calidad humana. Los niños que lo ven jugar se le acercan, y también personas que quieren conocerlo o preguntarle algo. Él responde a todos con cariño y paciencia, convencido de que un pelotero también es un ejemplo para quienes lo miran desde la tribuna."
+        },
+        {
+          "t": "p",
+          "x": "Se define como una persona humilde y amigable, y quienes lo conocen lo confirman. Para él, alejarse de alguien o cerrarle la puerta tiene que ser por algo realmente grave; su forma natural de ser es tender la mano. Esa actitud lo convierte en un compañero respetado y en un rival al que siempre da gusto enfrentar."
+        },
+        { "t": "h", "x": "Un migrante que suma a Chile" },
+        {
+          "t": "p",
+          "x": "La historia de Yonny es también la de una comunidad. Como tantos venezolanos que llegaron a Chile, encontró en el softbol un espacio para reconstruir lazos, hacer amigos y aportar lo mejor de su cultura. En cada juego trae consigo la alegría del llano, la disciplina del deporte y el respeto por el país que hoy lo acoge."
+        },
+        {
+          "t": "p",
+          "x": "La Copa City 9, el torneo de las nueve ciudades, existe precisamente para eso: para que el deporte una a personas de distintos orígenes en torno a una misma pasión. Peloteros como Yonny Torres le dan sentido a esta competencia, porque recuerdan que detrás de cada uniforme hay una historia, una familia y un sueño que sigue vivo."
+        },
+        { "t": "h", "x": "Ficha del pelotero" },
+        {
+          "t": "lista",
+          "items": [
+            "Nombre: Yonny Benito Torres Betancourt",
+            "Origen: Sabaneta, estado Barinas, Venezuela",
+            "Equipo: Pandas de Quillota",
+            "Rol: manager y lanzador (pitcher)",
+            "Trayectoria: cerca de 23 años como jugador activo de softbol",
+            "En Chile: desde hace 4 años",
+            "Música: llanera venezolana (Eliza Guerrero y Jorge Guerrero)",
+            "Béisbol: Navegantes del Magallanes · Ídolo: Edgardo Alfonzo",
+            "Plato favorito: el pescado de su tierra venezolana"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Desde la Copa City 9, un reconocimiento a Yonny Torres: pelotero, manager, llanero y gran ser humano."
+        }
+      ]
+    },
+    {
       "id": "entrevista-antonio-olivares-j9",
       "tipo": "entrevista",
       "titulo": "Antonio Olivares: “Este equipo está para llegar a la final”",

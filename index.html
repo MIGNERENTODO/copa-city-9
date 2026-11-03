@@ -1079,7 +1079,7 @@ V.calendario=function(){
   porFecha(res).forEach(function(gr){ h+='<div class="day"><div class="jhead"><h2>'+esc(flarga(gr.fecha))+'</h2><span class="d">'+gr.items.length+(gr.items.length===1?' juego':' juegos')+'</span></div><div class="card">'+gr.items.map(matchRow).join("")+'</div></div>'; });
   return h+'</section>';
 };
-var TIPOS={opinion:"Opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia",entrevista:"Entrevista"};
+var TIPOS={opinion:"Opinión",juego:"Resumen de juego",reunion:"Resumen de reunión",jugador:"Jugador de la semana",noticia:"Noticia",entrevista:"Entrevista",perfil:"Perfil"};
 function videoInfo(u){
   u=String(u||"").trim(); var m;
   if((m=u.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/))) return {tipo:"youtube",id:m[1],corto:/shorts\//.test(u)};
@@ -1094,7 +1094,7 @@ function newsCard(p){
 }
 V.noticias=function(){
   var L=pubs(UI.ntipo||""), h=head("Copa City 9","Noticias","Artículos de opinión y resúmenes de juegos y reuniones de la liga.");
-  var tipos=[["","Todo"],["opinion","Opinión"],["juego","Juegos"],["reunion","Reuniones"],["jugador","Jugador de la semana"],["entrevista","Entrevistas"]];
+  var tipos=[["","Todo"],["opinion","Opinión"],["juego","Juegos"],["reunion","Reuniones"],["jugador","Jugador de la semana"],["entrevista","Entrevistas"],["perfil","Perfiles"]];
   h+='<div class="chips" role="group" aria-label="Filtrar">'+tipos.map(function(t){ return '<button data-act="ntipo" data-v="'+t[0]+'" class="'+((UI.ntipo||"")===t[0]?"on":"")+'">'+t[1]+'</button>'; }).join("")+'</div>';
   if(!L.length) return h+empty("Todavía no hay publicaciones","Aquí aparecerán los artículos de opinión y los resúmenes de cada jornada y de cada reunión.");
   return h+'<div class="news">'+L.map(newsCard).join("")+'</div>';
