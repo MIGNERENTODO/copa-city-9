@@ -516,6 +516,267 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "perfil-jorge-arenas",
+      "tipo": "perfil",
+      "titulo": "Perfil City 9: 20 preguntas con Jorge Arenas",
+      "bajada": "El bateador designado de Atléticos del Caribe llegó de Maracaibo en 2017 y descubrió el softbol a los 34 años. Habla de su fe, de su familia, de la tarde en Puchuncaví en que bateó de 9-8 y de por qué cada domingo de pelota lo devuelve a su tierra.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-03",
+      "equipo": "atleticos",
+      "portada": "assets/noticias/jorge-arenas-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Jorge Luis Arenas Zambrano es maracucho de nacimiento y hombre de fe. Técnico en telecomunicaciones, llegó a Chile en diciembre de 2017 y hoy vive junto a su esposa y sus dos hijos. Encontró el softbol a los 34 años y, desde entonces, cada domingo en el diamante le devuelve la alegría del niño que soñaba con las Grandes Ligas. Hoy batea para Atléticos del Caribe. Estas son sus 20 respuestas."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 1: La persona, la familia y el día a día"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "1. ¿Cómo te llamas y de qué ciudad y país vienes?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Mi nombre es Jorge Luis Arenas Zambrano y soy de Maracaibo, Venezuela."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "2. ¿Con quién vives en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "¡Sí! Vivo con mi esposa y mis dos hermosos hijos."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "3. ¿Cuál era tu sueño cuando eras niño?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Jugar en las Grandes Ligas."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "4. ¿A qué te dedicabas en tu país y qué haces hoy en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "En Venezuela era técnico en una empresa de telecomunicaciones de televisión por cable llamada Net Uno. Hoy en Chile, afortunadamente, trabajo en el mismo rubro, en Cable de la Costa, que pertenece a GTD Manquehue."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "5. ¿En qué año llegaste a Chile y qué fue lo más duro al principio?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Llegué en diciembre de 2017. Lo más duro al principio fue adaptarme al cambio de clima y al entorno; algunas personas no eran nada amables."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "6. ¿Cuál es tu comida favorita de tu tierra y tu plato chileno preferido?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "De mi tierra me encanta la corvina con yuca y queso de mano. Y de Chile me gusta el pastel de choclo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "7. ¿Qué música o artista no puede faltar en tu auto o en tus audífonos?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Realmente no tengo un género definido. Me gusta todo tipo de música, pero mayormente escucho música cristiana."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "8. Si pudieras tener el auto de tus sueños, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Honestamente no soy materialista, pero si pudiera elegir, elegiría una camioneta Chevrolet del año."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "9. ¿Qué consejo le das hoy a los niños y jóvenes que te ven jugar o trabajar?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Les diría que confíen en Dios y que no se apoyen en su propia prudencia. Que amen, obedezcan y respeten a sus padres. Que a veces la vida los va a golpear y a herir (nos pasa a todos), pero que vale la pena luchar por sus sueños; que luchen por lo que realmente los haga felices y los llene de paz."
+        },
+        {
+          "t": "cita",
+          "x": "“Vale la pena luchar por sus sueños; que luchen por lo que realmente los haga felices y los llene de paz.”"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "10. En una sola palabra: ¿qué significa tu familia para ti?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Todo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jorge-arenas.jpg",
+          "pie": "Jorge Arenas, bateador designado de Atléticos del Caribe."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 2: La pasión por el softbol"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "11. ¿A qué edad empezaste a jugar o a meterte en el softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "A los 34 años."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "12. ¿Por qué juegas softbol y no otro deporte?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Me gusta porque me recuerda mi niñez y me hace sentir como el niño que fue feliz jugando al béisbol, sin importar nada más."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "13. ¿Cuál es tu posición en el campo o tu rol en el equipo?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Me gusta jugar en la segunda base, pero mayormente juego como bateador designado."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "14. ¿Cuál ha sido tu momento o logro más grande en el softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Mi momento fue en un triangular que se realizó en Puchuncaví, que además ganamos. Bateé de 9-8, incluyendo un cuadrangular."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "15. ¿Qué es lo que más te gusta del ambiente de los domingos de softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Lo que más me gusta es que me hace sentir como si estuviera en mi tierra."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "16. Si tuvieras que definir el softbol en una palabra, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Adrenalina."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 3: La Copa City 9"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "17. ¿En qué equipo juegas o qué función cumples en la Copa City 9?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Juego en Atléticos del Caribe."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "18. ¿Cuál es tu meta principal con tu equipo para este torneo?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Mejorar tanto a nivel ofensivo como defensivo, para poder aportar solidez al equipo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "19. ¿Cómo ves el trabajo y la gestión de la actual directiva de la Liga de La Ligua?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Les pondría un 6, en la escala del 1 al 7. Lo han hecho muy bien, pero queda un toque por mejorar."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "20. ¿Qué le dices a la fanaticada y a las familias que nos acompañan cada fin de semana?"
+        },
+        {
+          "t": "r",
+          "quien": "Jorge Arenas",
+          "x": "Les digo que estamos felices, y que más que una fanaticada somos una familia luchando por un mismo sentir. Son una parte muy importante para nosotros. Les diría que nos sigan apoyando, que todo esto forma parte de nosotros, de nuestras raíces, y que no lo dejemos morir. Valoremos lo que nos identifica, lo que nos pertenece, y sigamos disfrutando sanamente."
+        },
+        {
+          "t": "h",
+          "x": "Ficha del pelotero"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Nombre: Jorge Luis Arenas Zambrano",
+            "Origen: Maracaibo, Venezuela",
+            "En Chile: desde diciembre de 2017",
+            "Familia: su esposa y sus dos hijos",
+            "Oficio: técnico en telecomunicaciones (televisión por cable)",
+            "Equipo: Atléticos del Caribe",
+            "Posición: bateador designado y segunda base",
+            "Su gran tarde: 9-8 con un cuadrangular en el triangular de Puchuncaví, que ganaron",
+            "Comida: corvina con yuca y queso de mano (Venezuela) · pastel de choclo (Chile)",
+            "Música: cristiana",
+            "El softbol en una palabra: adrenalina"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Fueron las 20 respuestas de Jorge Arenas, de Atléticos del Caribe. Gracias, Jorge, por compartir tu historia con la familia de la Copa City 9."
+        }
+      ]
+    },
+    {
       "id": "perfil-pedro-rojas-rossell",
       "tipo": "perfil",
       "titulo": "Perfil City 9: 20 preguntas con Pedro Rojas Rossell",
