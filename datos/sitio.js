@@ -516,6 +516,266 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "perfil-pedro-rojas-rossell",
+      "tipo": "perfil",
+      "titulo": "Perfil City 9: 20 preguntas con Pedro Rojas Rossell",
+      "bajada": "El center field de Atléticos del Caribe y secretario de la Copa City 9 llegó desde Adícora, en el estado Falcón, con el sueño intacto de la pelota. Hablamos de su familia, de su vida en Chile, de cómo se enamoró del softbol en Bogotá y de su meta en el torneo: ser campeón.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-03",
+      "equipo": "atleticos",
+      "portada": "assets/noticias/pedro-rojas-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Pedro José Rojas Rossell es de esos peloteros que se hacen notar sin levantar la voz. Desde el center field cubre terreno, lee a los bateadores rivales y ordena a sus compañeros; fuera del diamante, trabaja como secretario de la Copa City 9. Nacido en Adícora, en la península de Paraguaná, estado Falcón, llegó a Chile en 2021 y hoy defiende los colores de Atléticos del Caribe. Estas son sus 20 respuestas."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 1: La persona, la familia y el día a día"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "1. ¿Cómo te llamas y de qué ciudad y país vienes?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Me llamo Pedro José Rojas Rossell. Vengo de Adícora, en el estado Falcón, Venezuela."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "2. ¿Con quién vives en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Vivo con mi hermano, Staling Rossell, que también juega en la liga, con su esposa y con mi sobrina."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "3. ¿Cuál era tu sueño cuando eras niño?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Jugar béisbol profesional. Ese siempre fue mi sueño de niño."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "4. ¿A qué te dedicabas en tu país y qué haces hoy en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "En Venezuela entrené béisbol hasta los 17 años y salí del país a los 18. Actualmente trabajo en una pescadería aquí en Chile."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "5. ¿En qué año llegaste a Chile y qué fue lo más duro al principio?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Llegué a Chile en 2021. Creo que lo más duro fue adaptarme al clima."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "6. ¿Cuál es tu comida favorita de tu tierra y tu plato chileno preferido?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "De mi tierra, el chivo en coco. Y de Chile me gustan el charquicán y los churrascos italianos."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "7. ¿Qué música o artista no puede faltar en tu auto o en tus audífonos?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Una buena salsa."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "8. Si pudieras tener el auto de tus sueños, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Una Mercedes G-Wagon."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "9. ¿Qué consejo le das hoy a los niños y jóvenes que te ven jugar o trabajar?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Que no dejen de luchar por sus sueños y sus metas. Con esfuerzo y dedicación se puede llegar adonde uno quiere."
+        },
+        {
+          "t": "cita",
+          "x": "“Con esfuerzo y dedicación se puede llegar adonde uno quiere.”"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "10. En una sola palabra: ¿qué significa tu familia para ti?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Maravillosa."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pedro-rojas.jpg",
+          "pie": "Pedro Rojas Rossell, center field de Atléticos del Caribe."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 2: La pasión por el softbol"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "11. ¿A qué edad empezaste a jugar o a meterte en el softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Empecé a jugar béisbol a los 7 años y lo dejé a los 17. Después jugué varios torneos de softbol en Venezuela, pero al principio no me gustaba, porque sentía que estaba dejando el béisbol. Eso fue por allá en 2017. Volví a jugar softbol en 2021 en Bogotá, Colombia, y allí se veía un softbol muy competitivo. Fue ahí donde me empecé a apasionar, por la pasión y la competitividad con que se jugaba."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "12. ¿Por qué juegas softbol y no otro deporte?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Siempre he jugado muchos deportes, me gusta mucho el deporte: fútbol sala, baloncesto, voleibol, pádel, balonmano. Pero la pasión que siento por el béisbol y el softbol supera la de cualquier otro."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "13. ¿Cuál es tu posición en el campo o tu rol en el equipo?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Juego en el center field. Mi rol es cubrir mucho terreno y analizar bien a los bateadores contrarios, para organizar a mis compañeros y poder moverme mejor cuando salga un buen batazo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "14. ¿Cuál ha sido tu momento o logro más grande en el softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Si se puede decir, en la Liga de La Ligua: un jonrón de campeonato la temporada anterior y ganar el Home Run Derby."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "15. ¿Qué es lo que más te gusta del ambiente de los domingos de softbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Que volvemos a esos domingos que vivíamos en Venezuela, de buena pelota y de amistades."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "16. Si tuvieras que definir el softbol en una palabra, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Pasión."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 3: La Copa City 9"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "17. ¿En qué equipo juegas o qué función cumples en la Copa City 9?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Soy secretario de la Copa City 9 y actualmente juego con Atléticos del Caribe."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "18. ¿Cuál es tu meta principal con tu equipo para este torneo?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Clasificar entre los cuatro mejores y quedar campeones."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "19. ¿Cómo ves el trabajo y la gestión de la actual directiva de la Liga de La Ligua?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Muy bien. Están haciendo un buen trabajo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "20. ¿Qué le dices a la fanaticada y a las familias que nos acompañan cada fin de semana?"
+        },
+        {
+          "t": "r",
+          "quien": "Pedro Rojas",
+          "x": "Gracias a todos los fanáticos que nos apoyan. Y a los que aún no han ido a ver los juegos, los invito a que visiten la liga, que cada vez va mejorando como liga y como organización."
+        },
+        {
+          "t": "h",
+          "x": "Ficha del pelotero"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Nombre: Pedro José Rojas Rossell",
+            "Origen: Adícora, estado Falcón, Venezuela",
+            "En Chile: desde 2021",
+            "Equipo: Atléticos del Caribe",
+            "Posición: center field",
+            "Cargo: secretario de la Copa City 9",
+            "Logros: jonrón de campeonato y campeón del Home Run Derby en la Liga de La Ligua",
+            "Comida: chivo en coco (Venezuela) · charquicán y churrasco italiano (Chile)",
+            "Música: salsa",
+            "El softbol en una palabra: pasión"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Fueron las 20 respuestas de Pedro Rojas Rossell, de Atléticos del Caribe. Gracias, Pedro, por abrirnos las puertas de tu historia."
+        }
+      ]
+    },
+    {
       "id": "perfil-yonny-torres",
       "tipo": "perfil",
       "titulo": "Yonny Torres: el llanero que lanza con el corazón",
