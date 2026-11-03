@@ -396,7 +396,7 @@ th.sorted{color:var(--red)}
 
 /* ---------- Portada rotativa (titulares de la jornada) ---------- */
 .portada{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:20px}
-.car{position:relative;overflow:hidden;border-radius:var(--r);min-height:560px;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
+.car{position:relative;overflow:hidden;border-radius:var(--r);min-height:600px;background:var(--navy);color:#fff;box-shadow:var(--shadow)}
 .slide{position:absolute;inset:0;display:flex;align-items:flex-end;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility .6s}
 .slide.on{opacity:1;visibility:visible}
 .slide>img.bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.04);transition:transform 7s linear}
@@ -417,7 +417,7 @@ th.sorted{color:var(--red)}
 .marcador .fin{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.45);font-family:var(--display);font-weight:700;letter-spacing:.14em;font-size:12px;padding:3px 10px;border-radius:4px}
 .slide-in{position:relative;z-index:1;padding:24px 24px 52px;display:grid;gap:10px}
 .slide-in .tag{display:inline-block;background:var(--red);color:#fff;font-family:var(--display);font-weight:700;letter-spacing:.12em;font-size:13px;text-transform:uppercase;padding:4px 10px;border-radius:4px;justify-self:start}
-.slide-in h1{font-size:clamp(34px,5.4vw,60px);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92}
+.slide-in h1{font-size:clamp(32px,4.8vw,54px);font-weight:800;font-style:italic;text-transform:uppercase;line-height:.92}
 .slide-in p{margin:0;max-width:60ch;color:#D8E1EE;font-size:16px}
 .slide .crest{position:absolute;z-index:1;top:16px;right:16px;width:96px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
 .car-ctl{position:absolute;z-index:2;left:24px;right:16px;bottom:16px;display:flex;align-items:center;gap:8px}
@@ -454,6 +454,9 @@ th.sorted{color:var(--red)}
 
 
 
+.slide-in .vbtn{display:inline-flex;align-items:center;gap:8px;justify-self:start;background:#FF0033;color:#fff;font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:15px;padding:8px 14px;border-radius:999px;margin-top:2px;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.meta a.yt{display:inline-flex;align-items:center;gap:5px;color:#E0002B;font-weight:700;text-decoration:none}
+.meta a.yt:hover{text-decoration:underline}
 /* ---------- Las 9 ciudades ---------- */
 .ciudades{position:relative;overflow:hidden;border-radius:var(--r);background:var(--navy);color:#fff;box-shadow:var(--shadow);padding:22px 22px 18px}
 .ciudades::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 100% 0,rgba(191,13,62,.35),transparent 60%),repeating-linear-gradient(115deg,rgba(255,255,255,.03) 0 2px,transparent 2px 16px)}
@@ -789,12 +792,16 @@ function tablaHTML(compacta){
     h+='</tr>'; });
   return h+'</tbody></table></div>';
 }
+/* Videos de los juegos en YouTube (datos/sitio.js → videos): se busca por fecha y par de equipos */
+function videoDe(a,b,f){ var r=""; (S.videos||[]).forEach(function(v){ if(v&&v.url&&(!f||!v.fecha||v.fecha===f)&&((v.equipos||[]).indexOf(a)>=0)&&((v.equipos||[]).indexOf(b)>=0)) r=v.url; }); return r; }
 function matchRow(c){
   var g=c.juego, L=teamOf(c.local), V=teamOf(c.visita), mid;
   if(g){ var vl=g.local===c.local?g.cl:g.cv, vv=g.local===c.local?g.cv:g.cl;
     mid='<div class="score"><span class="'+(vv<vl?"l":"")+'">'+vv+'</span><small>FINAL</small><span class="'+(vl<vv?"l":"")+'">'+vl+'</span></div>';
   } else { var pend=c.fecha&&c.fecha<hoyISO(); mid='<div class="vs"><b>'+(pend?"Pendiente":esc(c.hora||"—"))+'</b>vs</div>'; }
-  var meta='<div class="meta">'+(c.sede?'<b>'+esc(c.sede)+'</b><br>':'')+(c.jornada?'Jornada '+esc(c.jornada):'')+(c.reprog&&c.fechaProg?' · se jugó el '+esc(fcorta(c.fecha)):'')+(c.transmision?' · <a href="'+esc(c.transmision)+'" target="_blank" rel="noopener">Ver transmisión</a>':'')+'</div>';
+  var meta='<div class="meta">'+(c.sede?'<b>'+esc(c.sede)+'</b><br>':'')+(c.jornada?'Jornada '+esc(c.jornada):'')+(c.reprog&&c.fechaProg?' · se jugó el '+esc(fcorta(c.fecha)):'')+'</div>';
+  var vid=c.transmision||videoDe(c.local,c.visita,c.fecha)||videoDe(c.local,c.visita,c.fechaProg);
+  if(vid) meta=meta.replace(/<\/div>$/,'<br><a class="yt" href="'+esc(vid)+'" target="_blank" rel="noopener">'+ICON_PLAY.replace('<svg','<svg width="13" height="13"')+'Ver juego en YouTube</a></div>');
   return '<div class="match"><a class="team-mini" href="#equipo-'+esc(V.id)+'" style="text-decoration:none">'+logo(V.id,"logo-m")+'<span><span class="full">'+esc(V.nombre)+'</span><span class="ab">'+esc(V.abrev)+'</span><br><span class="muted small">Visita</span></span></a>'+mid+
     '<a class="team-mini right" href="#equipo-'+esc(L.id)+'" style="text-decoration:none">'+logo(L.id,"logo-m")+'<span><span class="full">'+esc(L.nombre)+'</span><span class="ab">'+esc(L.abrev)+'</span><br><span class="muted small">Local</span></span></a>'+meta+'</div>';
 }
@@ -811,7 +818,8 @@ function portadaHTML(){
   var sl=P.slides;
   var h='<section class="portada"><div class="car" id="car" aria-roledescription="carrusel" aria-label="Titulares de la '+esc(P.jornada||"jornada")+'">';
   sl.forEach(function(x,i){
-    h+='<a class="slide'+(i===CAR.i?' on':'')+'" href="'+esc(x.link||"#calendario")+'" style="text-decoration:none;color:#fff" aria-hidden="'+(i===CAR.i?"false":"true")+'" tabindex="'+(i===CAR.i?"0":"-1")+'">';
+    var vurl=x.visita?videoDe(x.visita,x.local,P.fecha):"";
+    h+='<a class="slide'+(i===CAR.i?' on':'')+'" href="'+esc(vurl||x.link||"#calendario")+'"'+(vurl?' target="_blank" rel="noopener"':'')+' style="text-decoration:none;color:#fff" aria-hidden="'+(i===CAR.i?"false":"true")+'" tabindex="'+(i===CAR.i?"0":"-1")+'">';
     var foto=x.img?'<img class="bgimg" src="'+esc(x.img)+'" alt="'+esc(x.alt||"")+'"'+(x.pos?' style="object-position:'+esc(x.pos)+'"':'')+'>':'';
     if(x.visita){ var A=teamOf(x.visita), B=teamOf(x.local), gv=n(x.cv)>n(x.cl);
       h+=foto+'<div class="duelo'+(foto?' tinte':'')+'" style="--ca:'+esc(A.color)+';--cb:'+esc(B.color)+'"></div>'+
@@ -819,7 +827,7 @@ function portadaHTML(){
         '<div class="rs"><span class="'+(gv?'':'pierde')+'">'+esc(x.cv)+'</span><i>–</i><span class="'+(gv?'pierde':'')+'">'+esc(x.cl)+'</span></div>'+
         '<div class="eq">'+logo(B.id,"x")+'<span>'+esc(B.nombre)+'</span></div></div>';
     } else if(foto){ h+=foto+'<img class="crest" src="assets/logos/copacity9.png" alt="">'; }
-    h+='<div class="slide-in"><span class="tag">'+esc(x.tag||P.jornada||"")+'</span><h1>'+esc(x.titulo)+'</h1>'+(x.bajada?'<p>'+esc(x.bajada)+'</p>':'')+'</div></a>';
+    h+='<div class="slide-in"><span class="tag">'+esc(x.tag||P.jornada||"")+'</span><h1>'+esc(x.titulo)+'</h1>'+(x.bajada?'<p>'+esc(x.bajada)+'</p>':'')+(vurl?'<span class="vbtn">'+ICON_PLAY.replace('<svg','<svg width="16" height="16"')+'Ver el juego en YouTube</span>':'')+'</div></a>';
   });
   h+='<div class="car-ctl"><div class="dots">'+sl.map(function(x,i){ return '<button data-act="car" data-v="'+i+'" class="'+(i===CAR.i?'on':'')+'" aria-label="Titular '+(i+1)+'"></button>'; }).join("")+'</div>'+
      '<button class="ar" data-act="carp" aria-label="Anterior">‹</button><button class="ar" data-act="carn" aria-label="Siguiente">›</button></div></div>';

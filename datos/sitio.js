@@ -339,6 +339,16 @@ window.SITIO = {
     { nombre: "Santiago", equipos: [], sigla: "RM", nota: "La capital, presente en el roster de Pumas" }
   ],
 
+  /* Videos de los juegos en YouTube (solo el enlace, no ocupan espacio en la página).
+     Se muestran en la portada rotativa y en los resultados del calendario. */
+  videos: [
+    { fecha: "2026-11-01", equipos: ["atleticos", "pumas"], url: "https://www.youtube.com/live/cZ3_jgf5_o4" },
+    { fecha: "2026-11-01", equipos: ["pumas", "andes"], url: "https://www.youtube.com/live/rBpI-Nb_UO0" },
+    { fecha: "2026-11-01", equipos: ["bombarderos", "bravos"], url: "https://www.youtube.com/live/LzdozK4Mh94" },
+    { fecha: "2026-11-01", equipos: ["pandas", "guaros"], url: "https://www.youtube.com/live/BLR1xgPEfPs" },
+    { fecha: "2026-11-01", equipos: ["bravos", "pandas"], url: "https://www.youtube.com/live/t8dnIr70Db4" }
+  ],
+
   /* Patrocinadores. El primero aparece destacado en la página de inicio; todos salen en la franja
      "Patrocinador oficial" al final de las demás secciones. url es opcional (Instagram o página web). */
   patrocinadores: [],
