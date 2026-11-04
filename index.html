@@ -1393,9 +1393,11 @@ function musica(){
 /* Une las publicaciones del panel con las de datos/sitio.js (las que publica Claude). Las del panel mandan. */
 function fusionarPubs(){ var ids={}, out=[]; (M.pubs||[]).forEach(function(p){ if(p&&p.id){ ids[p.id]=1; out.push(p); } }); ((window.SITIO||{}).publicaciones||[]).forEach(function(p){ if(p&&p.id&&!ids[p.id]&&!p.borrador){ ids[p.id]=1; out.push(p); } }); M.pubs=out; }
 function iniciar(raw){ fusionarPubs(); try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
+/* Usa las estadísticas con más juegos cargados: las del panel o las del archivo datos/estadisticas.json */
+function masCompleto(a,b){ var na=a&&a.juegos?a.juegos.length:0, nb=b&&b.juegos?b.juegos.length:0; return nb>na?b:(a||b); }
 function estatico(){ return fetch("datos/estadisticas.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return window.ESTADISTICAS||null; }); }
 fetch("api/contenido",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
-  .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; return c.estadisticas||estatico(); })
+  .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; var kv=c.estadisticas||null; return estatico().then(function(f){ return masCompleto(kv,f); }); })
   .catch(function(){ return estatico(); })
   .then(function(j){ iniciar(j); });
 })();
