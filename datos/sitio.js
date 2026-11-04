@@ -407,6 +407,23 @@ window.SITIO = {
      votos: votos contados fuera de la página (por ejemplo, en Instagram); se suman a los de la página. */
   encuestas: [
     {
+      id: "mvp-2026-11-01",
+      tipo: "mvp",
+      pregunta: "MVP del público · Jornada 9, domingo 1 de noviembre",
+      descripcion: "Un candidato por equipo: el bateador más destacado de cada club en la Jornada 9. Vota por tu favorito.",
+      estado: "abierta",
+      cierra: "2026-11-06T22:00:00-03:00",
+      fecha: "2026-11-01",
+      opciones: [
+        { id: "uhx3qovn", texto: "Cristian Toro", equipo: "pumas", linea: "4-9, 2 HR, 4 CI, 3 CA (2 juegos)" },
+        { id: "33iov69h", texto: "Carlos Gabriel", equipo: "bravos", linea: "3-7, 1 3B, 2 HR, 3 CI (2 juegos)" },
+        { id: "lazh3cau", texto: "Julio Romero", equipo: "pandas", linea: "2-4, 1 3B, 1 HR, 4 CI, 3 CA (2 juegos)" },
+        { id: "ejnj4b7h", texto: "Jhonny Colmenares", equipo: "guaros", linea: "3-3, 1 HR, 2 CI" },
+        { id: "m8up7wpm", texto: "Kennedy Infante", equipo: "bombarderos", linea: "3-3, 2 CA, 1 CI" },
+        { id: "batskwus", texto: "Wilson Terán", equipo: "atleticos", linea: "3-3, 1 2B, 2 CI, 3 CA" }
+      ]
+    },
+    {
       id: "mvp-2026-10-18",
       tipo: "mvp",
       pregunta: "MVP del público · Fecha del 18 de octubre",
