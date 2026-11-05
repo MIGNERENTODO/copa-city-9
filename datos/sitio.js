@@ -357,6 +357,14 @@ window.SITIO = {
     jornada: "Jornada 9",
     fecha: "2026-11-01",
     slides: [
+      { tag: "Pronósticos · Jornada 10 · Domingo 8 de noviembre", img: "assets/noticias/pronosticos-j10-portada.jpg", pos: "center 45%", alt: "Bateador de Pandas de Quillota en el Estadio La Ligua Park",
+        titulo: "Jornada 10: el domingo que empieza a dibujar la semifinal",
+        bajada: "Nadie clasifica ni queda eliminado este domingo, pero Bravos y Blessed pueden dar un paso enorme, y Guaros y Pandas se juegan la vida. Lee nuestros pronósticos.",
+        corto: "Pronósticos de la Jornada 10", link: "#articulo-pronosticos-jornada-10" },
+      { tag: "Jornada 10 · Domingo 8 de noviembre", img: "assets/noticias/flyer-jornada-10.jpg", pos: "center 30%", alt: "Programación de la Jornada 10 de la Copa City 9",
+        titulo: "Cuatro juegos en La Ligua Park",
+        bajada: "10:00 Pandas vs Atléticos · 12:00 Los Andes vs Blessed Barber · 14:00 Litoral vs Los Andes · 16:00 Bravos vs Guaros. Transmisión en vivo por YouTube e Instagram.",
+        corto: "Programación de la Jornada 10", link: "#calendario" },
       { tag: "Jornada 9 · Domingo 1 de noviembre", img: "assets/jornadas/j9-pumas-celebra.jpg", pos: "center 40%", alt: "Pumas de Salamanca celebra en el Estadio La Ligua Park",
         titulo: "Pumas ruge dos veces y manda en la Copa City 9",
         bajada: "Doblete de Pumas de Salamanca, se acabó el invicto de Bravos y Guaros sigue con vida. Así se vivió una jornada de cinco juegos en el Estadio La Ligua Park.",
@@ -395,7 +403,8 @@ window.SITIO = {
      Esta es solo la programación inicial. En cada partido el primer equipo es visita y el segundo es local.
      Formato: { n: 9, fecha: "2026-11-01", partidos: [["visita","local","10:00"], ...] } */
   programacion: [
-    { n: 9, fecha: "2026-11-01", partidos: [["atleticos","pumas","10:00"], ["pumas","andes","12:00"], ["bombarderos","bravos","14:00"], ["pandas","guaros","16:00"], ["bravos","pandas","18:00"]] }
+    { n: 9, fecha: "2026-11-01", partidos: [["atleticos","pumas","10:00"], ["pumas","andes","12:00"], ["bombarderos","bravos","14:00"], ["pandas","guaros","16:00"], ["bravos","pandas","18:00"]] },
+    { n: 10, fecha: "2026-11-08", partidos: [["pandas","atleticos","10:00"], ["andes","blessed","12:00"], ["maitencillo","andes","14:00"], ["bravos","guaros","16:00"]] }
   ],
 
   /* Encuestas y votaciones del público. Cada persona vota una vez por encuesta.
@@ -532,6 +541,166 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "pronosticos-jornada-10",
+      "tipo": "opinion",
+      "titulo": "Jornada 10: el domingo que empieza a dibujar la semifinal",
+      "bajada": "Nadie puede sellar su boleto a semifinales este domingo en La Ligua Park, y nadie puede quedar fuera de esa pelea. Pero los cuatro juegos de la Jornada 10 pueden dejar a Bravos y Blessed Barber con un pie en la fase final y a Guaros y Pandas al borde del abismo.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-05",
+      "portada": "assets/noticias/pronosticos-j10-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Quedan 16 juegos de fase regular y la Copa City 9 entra en su tramo decisivo. Con 10 equipos que se enfrentan todos contra todos, cada club disputa 9 partidos: los cuatro primeros avanzan a la semifinal, del quinto al octavo pelean la Copa de Consolación y los dos últimos se despiden del torneo. Este domingo 8 de noviembre se juega la Jornada 10, con cuatro encuentros que mueven, y mucho, la parte media de la tabla."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/flyer-jornada-10.jpg",
+          "pie": "Programación de la Jornada 10 · Domingo 8 de noviembre · Estadio La Ligua Park"
+        },
+        {
+          "t": "h",
+          "x": "Así llega la tabla"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "1. Pumas de Salamanca · 15 pts (5-1)",
+            "2. Blessed Barber · 12 pts (4-1)",
+            "3. Bravos de La Calera · 12 pts (4-2)",
+            "4. Bombarderos de Illapel · 9 pts (3-3)",
+            "5. Guaros de San Felipe · 9 pts (3-4)",
+            "6. Pandas de Quillota · 7 pts (2-3-1)",
+            "7. Litoral Maitencillo · 7 pts (2-3-1)",
+            "8. Los Andes · 6 pts (2-3)",
+            "9. Atléticos del Caribe · 6 pts (2-3)",
+            "10. Máster Pumas · 3 pts (1-5)"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Pumas de Salamanca manda con 15 puntos y la mejor ofensiva del torneo después de Guaros. Detrás, Blessed Barber y Bravos de La Calera igualan en 12, aunque Blessed tiene un juego menos y la defensa más sólida de la Copa: apenas 41 carreras recibidas. El cuarto puesto, hoy de Bombarderos, es la frontera más disputada del campeonato."
+        },
+        {
+          "t": "h",
+          "x": "Lo que no puede pasar este domingo"
+        },
+        {
+          "t": "p",
+          "x": "Hicimos las cuentas con todas las combinaciones de resultados posibles y hay una conclusión clara: ningún equipo puede asegurar su lugar en semifinales este domingo, y ninguno puede quedar matemáticamente eliminado de esa carrera. La definición llegará a partir del 15 de noviembre."
+        },
+        {
+          "t": "p",
+          "x": "Lo que sí está escrito: Pumas de Salamanca ya no puede terminar fuera de los ocho primeros. Aunque descansa este domingo, tiene garantizada, como mínimo, la Copa de Consolación."
+        },
+        {
+          "t": "h",
+          "x": "Juego por juego: nuestros pronósticos"
+        },
+        {
+          "t": "cita",
+          "x": "10:00 AM · Pandas de Quillota vs Atléticos del Caribe"
+        },
+        {
+          "t": "p",
+          "x": "Pandas llega con 7 puntos y Atléticos con 6. Los de Quillota vienen de vencer 14-7 a Bravos y también de caer 16-3 ante Guaros, en una misma jornada. Atléticos es el equipo que más carreras ha permitido después de Máster Pumas (87), y ese dato inclina la balanza. Para Pandas es un juego de vida o muerte: si pierde, en cerca de ocho de cada diez escenarios queda sin opciones de semifinal tras la Jornada 11. Pronóstico: ligera ventaja para Pandas."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pronosticos-j10-pandas.jpg",
+          "pie": "Pandas de Quillota, obligado a ganar el domingo ante Atléticos del Caribe"
+        },
+        {
+          "t": "cita",
+          "x": "12:00 M · Los Andes vs Blessed Barber"
+        },
+        {
+          "t": "p",
+          "x": "Blessed Barber, con récord de 4-1, es el favorito más claro de la jornada. Los Andes, que juega dos partidos seguidos ese día, enfrenta a la defensa más tacaña del torneo en el primero de ellos. Si Blessed gana, asegura terminar entre los ocho primeros y da un paso enorme hacia la semifinal. Pronóstico: Blessed Barber, con claridad."
+        },
+        {
+          "t": "cita",
+          "x": "2:00 PM · Litoral Maitencillo vs Los Andes"
+        },
+        {
+          "t": "p",
+          "x": "El juego más parejo del domingo. Litoral suma 7 puntos y Los Andes 6, con números ofensivos y defensivos casi calcados. El cansancio puede pesar en Los Andes, que vendrá de jugar al mediodía. El que pierda este duelo quedará muy comprometido en la lucha por el cuarto lugar y pasará a mirar, sobre todo, hacia la Copa de Consolación. Pronóstico: juego de pronóstico reservado, con mínima ventaja para Litoral."
+        },
+        {
+          "t": "cita",
+          "x": "4:00 PM · Bravos de La Calera vs Guaros de San Felipe"
+        },
+        {
+          "t": "p",
+          "x": "El plato fuerte. Guaros, actual campeón, es el equipo que más carreras ha anotado en la Copa (97), pero ya jugó 7 de sus 9 partidos y solo le quedan este y el juego ante Pumas. Bravos tiene 12 puntos y viene de dos derrotas seguidas en la Jornada 9. Si Bravos gana, asegura los ocho primeros y queda muy cerca de la semifinal; si gana además a Pumas el 15 de noviembre, la clasificación estaría prácticamente sellada. Si Guaros pierde, su techo baja a 12 puntos y en tres de cada cuatro escenarios quedaría fuera de la carrera por semifinales tras la Jornada 11. Pronóstico: leve ventaja para Bravos, pero cuidado con el bate de Guaros."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pronosticos-j10-turno.jpg",
+          "pie": "Estadio La Ligua Park, escenario de la Jornada 10"
+        },
+        {
+          "t": "h",
+          "x": "Mirando al 15 de noviembre"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Pumas de Salamanca: enfrenta a Pandas y a Bravos en la Jornada 11. Si gana ambos, clasifica a semifinales sin depender de nadie; con una sola victoria, clasifica en casi todas las combinaciones posibles.",
+            "Máster Pumas: juega ante Pandas y Bombarderos. Una sola derrota lo deja sin semifinal; si pierde los dos, queda eliminado también de la Copa de Consolación.",
+            "Bombarderos de Illapel: con 9 puntos y un calendario accesible (Máster Pumas, Litoral y Los Andes), es el gran candidato a quedarse con el cuarto boleto."
+          ]
+        },
+        {
+          "t": "h",
+          "x": "La pelea por la Copa de Consolación"
+        },
+        {
+          "t": "p",
+          "x": "Del quinto al octavo puesto hay seis equipos peleando por cuatro lugares: Guaros, Pandas, Litoral, Los Andes, Atléticos y, según cómo le vaya, Bombarderos. Atléticos y Los Andes tienen a su favor que aún les quedan cuatro partidos; en contra, que tendrán que ganarlos casi todos. Máster Pumas, con 3 puntos, necesita un milagro para entrar en zona de consolación."
+        },
+        {
+          "t": "h",
+          "x": "El termómetro de la Copa"
+        },
+        {
+          "t": "p",
+          "x": "Probabilidad estimada de cada equipo según su rendimiento en carreras anotadas y recibidas, simulando los 16 juegos que restan (semifinal / consolación / eliminado):"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Pumas de Salamanca: más de 99% / menos de 1% / 0%",
+            "Blessed Barber: 99% / 1% / 0%",
+            "Bravos de La Calera: 89% / 11% / 0%",
+            "Bombarderos de Illapel: 48% / 50% / 2%",
+            "Litoral Maitencillo: 19% / 65% / 16%",
+            "Pandas de Quillota: 16% / 73% / 10%",
+            "Guaros de San Felipe: 12% / 84% / 5%",
+            "Los Andes: 11% / 65% / 24%",
+            "Atléticos del Caribe: 6% / 50% / 44%",
+            "Máster Pumas: menos de 1% / 2% / 98%"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "Estimación propia y no oficial. El sóftbol se juega en el terreno y cualquier pronóstico puede cambiar con un solo inning."
+        },
+        {
+          "t": "h",
+          "x": "Nuestra apuesta"
+        },
+        {
+          "t": "p",
+          "x": "Si los favoritos cumplen, el domingo por la noche Blessed Barber y Bravos de La Calera tendrán asegurado como mínimo el octavo puesto, Pandas respirará y Guaros quedará contra las cuerdas, obligado a vencer a Pumas en su último partido. Pero esta Copa ya demostró que no respeta favoritos: Máster Pumas le quitó el invicto a Pumas y Bombarderos remontó ante Atléticos. Nos vemos el domingo en La Ligua Park."
+        },
+        {
+          "t": "p",
+          "x": "Transmisión en vivo por YouTube e Instagram: @ligadesoftbol_laligua y @mignerentodo."
+        }
+      ]
+    },
     {
       "id": "perfil-jorge-arenas",
       "tipo": "perfil",
