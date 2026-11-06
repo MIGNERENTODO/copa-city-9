@@ -603,7 +603,7 @@ window.SITIO = {
         },
         {
           "t": "p",
-          "x": "Howard González, el pelotero más antiguo del equipo, destapó el elixir escocés para quienes quisieran probarlo. Julio \"La Bestia\" se decidió por la Coca-Cola, al igual que el matador Wilmer Borjas, mientras que Kelvin, Accemed, Daniel Romero y Ramjses Acosta se alistaban para degustar el asado con chimichurri."
+          "x": "Howard González, el pelotero más antiguo del equipo, destapó el elixir escocés para quienes quisieran probarlo. Julio \"La Bestia\" se decidió por la Coca-Cola, al igual que el matador Wilmer Borjas, mientras que Kelvin, Accemed, Daniel Romero y Ramjses Acosta se alistaban para degustar el asado con chimichurri. A la fiesta también se sumaron Keivel González y Ronaly Vera."
         },
         {
           "t": "img",
@@ -671,6 +671,24 @@ window.SITIO = {
           "t": "img",
           "id": "assets/noticias/pumas-convivencia-18.jpg",
           "pie": "Orgullo Puma en La Ligua Park"
+        },
+        {
+          "t": "h",
+          "x": "Rumbo a Los Molles"
+        },
+        {
+          "t": "p",
+          "x": "Terminado el asado, los peloteros y sus familias alistaron los autos y partieron hasta la famosa playa de Los Molles, donde la celebración continuó dentro y fuera del mar."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-19.jpg",
+          "pie": "La familia Puma en la playa de Los Molles"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-20.jpg",
+          "pie": "La celebración siguió a orillas del mar"
         }
       ]
     },
