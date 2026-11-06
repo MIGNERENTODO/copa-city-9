@@ -357,6 +357,10 @@ window.SITIO = {
     jornada: "Jornada 9",
     fecha: "2026-11-01",
     slides: [
+      { tag: "Equipos de la Copa · Bravos de La Calera", img: "assets/noticias/bravos-portada.jpg", pos: "center 45%", alt: "Roster oficial de Bravos de La Calera",
+        titulo: "Bravos: del mercado al diamante",
+        bajada: "Trabajadores del mercado de La Calera que juegan después de la jornada laboral. Alegría, velocidad y el poder de los hermanos Carlos. Conoce al equipo vinotinto.",
+        corto: "Conoce a Bravos de La Calera", link: "#articulo-equipos-bravos-de-la-calera" },
       { tag: "Vida de club · Pumas de Salamanca", img: "assets/noticias/pumas-convivencia-portada.jpg", pos: "center 40%", alt: "Jugadores y amigos de Pumas de Salamanca en su convivencia en La Ligua Park",
         titulo: "Pumas celebró en familia",
         bajada: "Asado, Halloween y dos victorias: jugadores, esposas, familiares y amigos de Pumas de Salamanca hicieron del costado izquierdo de La Ligua Park su casa.",
@@ -545,6 +549,108 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "equipos-bravos-de-la-calera",
+      "tipo": "noticia",
+      "titulo": "Bravos de La Calera: del mercado al diamante, con el corazón en cada base",
+      "bajada": "Trabajan desde temprano entre cajas, frutas y verduras en el mercado de La Calera. Cuando termina la jornada, cambian el delantal por el guante. Así son los Bravos, el equipo vinotinto que llegó a la Copa City 9 para recordarnos por qué amamos este deporte.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-06",
+      "equipo": "bravos",
+      "portada": "assets/noticias/bravos-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "En la Copa City 9 hay equipos con historia y equipos con estrellas. Los Bravos de La Calera tienen algo que no se compra ni se entrena: hambre de jugar. La mayoría de sus peloteros son trabajadores del mercado de su ciudad, hombres que madrugan, cargan, venden y atienden durante horas, y que aun así, cuando cae la tarde, todavía tienen energía para tomar un bate. Un día decidieron que el sóftbol no podía quedarse solo en conversaciones de pasillo, se juntaron, se inscribieron y hoy defienden el nombre de La Calera frente a las mejores novenas de la zona centro."
+        },
+        {
+          "t": "p",
+          "x": "Al frente está Víctor Román, el N° 20, que cumple doble función: dirige desde la línea y capitanea desde el terreno. Es la voz que ordena, el que da el ejemplo y el que mantiene unido a un grupo que trabaja junto toda la semana y que el fin de semana se convierte en familia."
+        },
+        {
+          "t": "h",
+          "x": "Un equipo joven que juega sonriendo"
+        },
+        {
+          "t": "p",
+          "x": "Si algo distingue a los Bravos es la alegría. Es un equipo mayoritariamente joven y se nota en el dugout: celebran cada hit como si fuera el último, se animan después de cada error y contagian a las gradas del Estadio La Ligua Park. Pero que nadie confunda la sonrisa con falta de seriedad, porque cuando la pelota está en juego, los Bravos corren."
+        },
+        {
+          "t": "h",
+          "x": "La velocidad, su mejor arma"
+        },
+        {
+          "t": "p",
+          "x": "Su gran fortaleza está en las piernas. Los Bravos corren las bases como pocos en el torneo: convierten sencillos en dobles, toman la base extra en cada descuido y obligan a la defensa rival a jugar apurada. Esa presión constante genera tiros desviados, errores y carreras que no aparecen en ningún pronóstico. No es casualidad que sean el segundo equipo con más triples de la Copa (6). Contra los Bravos, un rodado tranquilo nunca es una jugada segura."
+        },
+        {
+          "t": "h",
+          "x": "El poder viene en familia"
+        },
+        {
+          "t": "p",
+          "x": "Si la velocidad pone a los corredores en base, los encargados de traerlos a home son los hermanos Carlos Javier (N° 8) y Carlos Gabriel (N° 9), el corazón del lineup calerano. Van mano a mano en la carrera de jonrones: Carlos Gabriel encabeza la tabla de toda la Copa City 9 con 4 cuadrangulares y Carlos Javier le sigue los pasos con 3. Entre los dos suman 7 de los 11 jonrones del equipo."
+        },
+        {
+          "t": "p",
+          "x": "La pelea fraterna también se juega en las impulsadas, y ahí los hermanos ocupan los dos primeros lugares del torneo: Carlos Javier lidera con 14 carreras traídas al plato y Carlos Gabriel lo escolta con 12, mientras batea para .476. Una competencia de sangre que entusiasma a sus compañeros y preocupa a los lanzadores rivales."
+        },
+        {
+          "t": "h",
+          "x": "Una ofensiva que no da respiro"
+        },
+        {
+          "t": "p",
+          "x": "Los números del equipo hablan solos. En seis juegos, los Bravos han anotado 72 carreras, un promedio de 12 por compromiso, con 11 jonrones, 26 dobles y un promedio colectivo de .352. Tienen además la segunda mejor diferencia de carreras de la Copa (+26), solo detrás de Pumas de Salamanca. Con piernas que presionan y bates que castigan, la ofensiva calerana combina lo mejor de dos mundos."
+        },
+        {
+          "t": "h",
+          "x": "Un comienzo soñado y una pelea abierta"
+        },
+        {
+          "t": "p",
+          "x": "Los Bravos arrancaron la Copa City 9 con cuatro victorias seguidas que sorprendieron a todos: 21 a 7 ante Atléticos del Caribe, 24 a 4 ante Master Pumas, 10 a 9 ante Los Andes y 8 a 6 ante Litoral Maitencillo. Con esa marca perfecta se pusieron entre los equipos a vencer."
+        },
+        {
+          "t": "p",
+          "x": "Luego llegó el domingo 1 de noviembre, que recordó lo exigente de este torneo. Bombarderos de Illapel les quitó el invicto (6 a 2) y, ese mismo día, Pandas de Quillota les propinó la segunda derrota (14 a 7). Hoy, con 4 ganados, 2 perdidos y 12 puntos, los Bravos marchan terceros y están en plena lucha por la clasificación. Este domingo 8 de noviembre, a las 16:00, enfrentan a Guaros de San Felipe, el actual campeón, en un juego que puede valer media temporada. Si algo han demostrado estos muchachos es que saben levantarse."
+        },
+        {
+          "t": "p",
+          "x": "Porque los Bravos ya ganaron algo más importante. Demostraron que después de una jornada larga de trabajo todavía queda espacio para la pasión, para el compañerismo y para soñar en grande. En La Calera, el mercado cierra temprano, pero el corazón de los Bravos sigue latiendo en el diamante."
+        },
+        {
+          "t": "cita",
+          "x": "¡Arriba, Bravos!"
+        },
+        {
+          "t": "h",
+          "x": "Ficha del equipo"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Ciudad: La Calera",
+            "Colores: vinotinto",
+            "Mánager y capitán: Víctor Román (N° 20)",
+            "Récord: 4 ganados, 2 perdidos · 12 puntos · 3° en la tabla",
+            "Fortaleza: velocidad en las bases",
+            "Poder ofensivo: los hermanos Carlos Javier (N° 8) y Carlos Gabriel (N° 9)",
+            "Próximo juego: domingo 8 de noviembre, 16:00, ante Guaros de San Felipe"
+          ]
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/bravos-roster-1.jpg",
+          "pie": "Roster oficial de Bravos de La Calera (parte 1)"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/bravos-roster-2.jpg",
+          "pie": "Roster oficial de Bravos de La Calera (parte 2)"
+        }
+      ]
+    },
     {
       "id": "pumas-convivencia-halloween",
       "tipo": "noticia",
