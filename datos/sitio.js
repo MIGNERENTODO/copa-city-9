@@ -357,6 +357,10 @@ window.SITIO = {
     jornada: "Jornada 9",
     fecha: "2026-11-01",
     slides: [
+      { tag: "Vida de club · Pumas de Salamanca", img: "assets/noticias/pumas-convivencia-portada.jpg", pos: "center 40%", alt: "Jugadores y amigos de Pumas de Salamanca en su convivencia en La Ligua Park",
+        titulo: "Pumas celebró en familia",
+        bajada: "Asado, Halloween y dos victorias: jugadores, esposas, familiares y amigos de Pumas de Salamanca hicieron del costado izquierdo de La Ligua Park su casa.",
+        corto: "La convivencia de Pumas en La Ligua Park", link: "#articulo-pumas-convivencia-halloween" },
       { tag: "Pronósticos · Jornada 10 · Domingo 8 de noviembre", img: "assets/noticias/pronosticos-j10-portada.jpg", pos: "center 45%", alt: "Bateador de Pandas de Quillota en el Estadio La Ligua Park",
         titulo: "Jornada 10: el domingo que empieza a dibujar la semifinal",
         bajada: "Nadie clasifica ni queda eliminado este domingo, pero Bravos y Blessed pueden dar un paso enorme, y Guaros y Pandas se juegan la vida. Lee nuestros pronósticos.",
@@ -541,6 +545,135 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "pumas-convivencia-halloween",
+      "tipo": "noticia",
+      "titulo": "Pumas celebró en familia: asado, Halloween y dos victorias en La Ligua Park",
+      "bajada": "Jugadores, esposas, familiares y amigos de Pumas de Salamanca convirtieron el costado izquierdo del Estadio La Ligua Park en su casa para festejar Halloween y las dos victorias del día con un asado de club.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-05",
+      "equipo": "pumas",
+      "portada": "assets/noticias/pumas-convivencia-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Los Pumas y sus amigos celebraron una tarde distendida con asado y bebidas, aprovechando de festejar Halloween y las dos victorias del día. Entre risas, jugadores, esposas de jugadores, familiares y amigos, Pumas de Salamanca se apoderó de la parte izquierda del campo de La Ligua Park para hacer allí su espacio de convivencia de club."
+        },
+        {
+          "t": "p",
+          "x": "Las esposas de los jugadores y demás familiares ayudaron a preparar el asado, mientras los peloteros cumplían con su misión de jugar. Concluidas las obligaciones deportivas, llegó el momento de la distracción y el compartir."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-02.jpg",
+          "pie": "La familia Puma reunida en el costado izquierdo del Estadio La Ligua Park"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-03.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Se abrió el barril"
+        },
+        {
+          "t": "p",
+          "x": "Uno de los jonroneros del día, Juan Chirinos, abrió el barril y prendió la fiesta al compartir el asado. Antonio Olivares se despojó del uniforme y destapó las frías, mientras que el debutante Julio Piñeiro activó las provisiones que tenía en su camioneta."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-04.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-05.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-06.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-07.jpg",
+          "pie": ""
+        },
+        {
+          "t": "p",
+          "x": "Howard González, el pelotero más antiguo del equipo, destapó el elixir escocés para quienes quisieran probarlo. Julio \"La Bestia\" se decidió por la Coca-Cola, al igual que el matador Wilmer Borjas, mientras que Kelvin, Accemed, Daniel Romero y Ramjses Acosta se alistaban para degustar el asado con chimichurri."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-08.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-09.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-10.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-11.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-12.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Asignaturas pendientes"
+        },
+        {
+          "t": "p",
+          "x": "Quedó una asignatura pendiente con Alexis Colina y Cristian Toro, quienes compartieron solo un rato por compromisos en Santiago. De Néstor Alvizu conversaremos en el próximo capítulo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-13.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-14.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-15.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-16.jpg",
+          "pie": ""
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-17.jpg",
+          "pie": ""
+        },
+        {
+          "t": "cita",
+          "x": "Un Pumas reestructurado renueva no solo su roster, sino también el sentimiento familiar que siempre ha distinguido a este equipo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/pumas-convivencia-18.jpg",
+          "pie": "Orgullo Puma en La Ligua Park"
+        }
+      ]
+    },
     {
       "id": "pronosticos-jornada-10",
       "tipo": "opinion",
