@@ -357,6 +357,10 @@ window.SITIO = {
     jornada: "Jornada 9",
     fecha: "2026-11-01",
     slides: [
+      { tag: "Opinión · La directiva de la Copa City 9", img: "assets/noticias/directiva-portada.jpg", pos: "center 40%", alt: "Pedro Rojas, Wilson Terán y Yosguar García, de la directiva de la Copa City 9",
+        titulo: "Lo que no se ve antes del domingo",
+        bajada: "Wilson Terán, Pedro Rojas y Yosguar García sacan tiempo entre semana para limpiar, podar y mejorar La Ligua Park. Una columna de Migner Acosta sobre el trabajo de la directiva.",
+        corto: "El trabajo de la directiva", link: "#articulo-directiva-trabajo-que-no-se-ve" },
       { tag: "Equipos de la Copa · Bravos de La Calera", img: "assets/noticias/bravos-portada.jpg", pos: "center 45%", alt: "Roster oficial de Bravos de La Calera",
         titulo: "Bravos: del mercado al diamante",
         bajada: "Trabajadores del mercado de La Calera que juegan después de la jornada laboral. Alegría, velocidad y el poder de los hermanos Carlos. Conoce al equipo vinotinto.",
@@ -549,6 +553,108 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "directiva-trabajo-que-no-se-ve",
+      "tipo": "opinion",
+      "titulo": "Lo que no se ve antes del domingo: el trabajo de la directiva de la Copa City 9",
+      "bajada": "Cada domingo, La Ligua Park amanece listo para jugar. Detrás de ese campo hay una semana entera de trabajo silencioso, hecho por tres hombres que viven en La Ligua y que le regalan su tiempo al sóftbol.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-07",
+      "portada": "assets/noticias/directiva-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Quien llega un domingo al Estadio La Ligua Park ve un campo marcado, las mallas en su lugar, las gradas armadas, el sonido funcionando, un narrador al micrófono y un anotador siguiendo cada turno al bate. Ve a los árbitros listos, el agua fría para los jugadores y la transmisión en vivo. Lo que casi nadie ve es todo lo que pasa antes de que se lance la primera bola. Hoy quiero escribir sobre eso."
+        },
+        {
+          "t": "h",
+          "x": "Tres vecinos de La Ligua al servicio del campeonato"
+        },
+        {
+          "t": "p",
+          "x": "La directiva de la Copa City 9 somos cuatro personas, y tres de ellas viven en La Ligua: Wilson Terán, director de mantenimiento; Pedro Rojas, secretario, y Yosguar García, “el Árabe”, tesorero. Ellos tres son el corazón de la parte del trabajo que nadie ve."
+        },
+        {
+          "t": "p",
+          "x": "Todos tienen su trabajo, su familia y sus obligaciones, como cualquiera. Aun así, entre semana sacan tiempo de su vida diaria para volver al campo. Recogen la basura que queda después de cada domingo, le hacen mejoras al terreno y podan el monte, que en esta época del año crece sin descanso. Lo hacen sin cámaras ni aplausos, muchas veces al final de la tarde, cuando el sol ya se está escondiendo detrás de los cerros. Gracias a ellos, cuando los equipos llegan el domingo, el campo está listo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-wilson-poda.jpg",
+          "pie": "Wilson Terán, director de mantenimiento, poda el monte en los alrededores del campo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-pedro-poda.jpg",
+          "pie": "Pedro Rojas, secretario, desbrozadora en mano en La Ligua Park."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-pedro-atardecer.jpg",
+          "pie": "Pedro Rojas al caer la tarde, después de una jornada de poda."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-wilson-atardecer.jpg",
+          "pie": "Wilson Terán, al atardecer, listo para seguir con el trabajo en el campo."
+        },
+        {
+          "t": "h",
+          "x": "El domingo también se trabaja, y mucho"
+        },
+        {
+          "t": "p",
+          "x": "En cada jornada nos toca de todo: poner y quitar las mallas, pintar y marcar el terreno, armar las gradas, instalar la electricidad y el sonido, narrar los juegos y anotar cada partido. También recaudamos el aporte de los equipos, pagamos a los árbitros y compramos el agua para los jugadores. Cuando termina el último out y todos se van a casa, todavía queda desarmar y ordenar."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-yosguar-narracion.jpg",
+          "pie": "Yosguar García, “el Árabe”, tesorero, micrófono en mano en la caseta de narración y transmisión."
+        },
+        {
+          "t": "h",
+          "x": "Y el trabajo sigue durante la semana"
+        },
+        {
+          "t": "p",
+          "x": "Una vez cerrada la jornada empieza otra parte del trabajo. Hay que cargar las estadísticas de cada juego, actualizar la tabla de posiciones, armar la programación de la siguiente jornada y coordinarla con los equipos, que muchas veces tienen complicaciones. Además está la página web, donde publicamos resultados, noticias, perfiles y votaciones, y están las redes sociales, donde contamos lo que pasa en la Copa para que la conozcan más allá de La Ligua Park. Todo eso es visibilizar el torneo, y no se hace solo."
+        },
+        {
+          "t": "h",
+          "x": "Un trabajo mancomunado"
+        },
+        {
+          "t": "p",
+          "x": "Nadie en esta directiva hace todo, pero entre todos lo hacemos todo. Lo que hacemos no es un cargo, es un compromiso con un campeonato que reúne a diez equipos de nueve ciudades y que se ha convertido en punto de encuentro para cientos de jugadores, familias y aficionados."
+        },
+        {
+          "t": "p",
+          "x": "Por eso quise escribir estas líneas. Quiero darle las gracias públicamente a Wilson, a Pedro y a Yosguar por todo lo que hacen sin que nadie se los pida. Quiero también hacer una invitación a los equipos, jugadores y aficionados: cuidemos el campo. Cada bolsa de basura que se lleva de vuelta a casa y cada botella que no queda tirada en las gradas es una tarde menos de limpieza para quienes mantienen este espacio para todos."
+        },
+        {
+          "t": "p",
+          "x": "Aquí pueden ver parte de ese trabajo:"
+        },
+        {
+          "t": "video",
+          "url": "https://www.instagram.com/reel/Dfa6Mp5tWLP/",
+          "pie": "Limpieza y poda del campo de juego de La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "La próxima vez que lleguen a La Ligua Park y encuentren el campo listo, recuerden que alguien estuvo ahí entre semana, con una desbrozadora al hombro, para que el domingo pudiéramos jugar."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/directiva-migner-presidente.jpg",
+          "pie": "Migner Acosta Yánez, presidente de la directiva de la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "Migner Acosta Yánez\nPresidente de la directiva, Copa City 9 · Liga de Sóftbol de La Ligua"
+        }
+      ]
+    },
     {
       "id": "limpieza-poda-la-ligua-park",
       "tipo": "noticia",
