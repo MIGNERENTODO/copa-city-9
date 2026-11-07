@@ -550,6 +550,25 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "limpieza-poda-la-ligua-park",
+      "tipo": "noticia",
+      "titulo": "La Ligua Park se pone a punto: limpieza y poda del campo de juego",
+      "bajada": "Mira en este reel los trabajos de limpieza y poda en el Estadio La Ligua Park, la casa de la Copa City 9.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-06",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "El Estadio La Ligua Park, sede única de la Copa City 9, recibió trabajos de limpieza y poda del campo de juego para que los equipos encuentren el diamante en las mejores condiciones en las próximas jornadas."
+        },
+        {
+          "t": "video",
+          "url": "https://www.instagram.com/reel/Dfa6Mp5tWLP/",
+          "pie": "Limpieza y poda del campo de juego de La Ligua Park"
+        }
+      ]
+    },
+    {
       "id": "equipos-bravos-de-la-calera",
       "tipo": "noticia",
       "titulo": "Bravos de La Calera: del mercado al diamante, con el corazón en cada base",
