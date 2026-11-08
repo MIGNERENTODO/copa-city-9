@@ -354,58 +354,17 @@ window.SITIO = {
   patrocinadores: [],
 
   portada: {
-    jornada: "Jornada 9",
-    fecha: "2026-11-01",
+    jornada: "Jornada 10",
+    fecha: "2026-11-08",
     slides: [
-      { tag: "Opinión · La directiva de la Copa City 9", img: "assets/noticias/directiva-portada.jpg", pos: "center 40%", alt: "Pedro Rojas, Wilson Terán y Yosguar García, de la directiva de la Copa City 9",
-        titulo: "Lo que no se ve antes del domingo",
-        bajada: "Wilson Terán, Pedro Rojas y Yosguar García sacan tiempo entre semana para limpiar, podar y mejorar La Ligua Park. Una columna de Migner Acosta sobre el trabajo de la directiva.",
-        corto: "El trabajo de la directiva", link: "#articulo-directiva-trabajo-que-no-se-ve" },
-      { tag: "Equipos de la Copa · Bravos de La Calera", img: "assets/noticias/bravos-portada.jpg", pos: "center 45%", alt: "Roster oficial de Bravos de La Calera",
-        titulo: "Bravos: del mercado al diamante",
-        bajada: "Trabajadores del mercado de La Calera que juegan después de la jornada laboral. Alegría, velocidad y el poder de los hermanos Carlos. Conoce al equipo vinotinto.",
-        corto: "Conoce a Bravos de La Calera", link: "#articulo-equipos-bravos-de-la-calera" },
-      { tag: "Vida de club · Pumas de Salamanca", img: "assets/noticias/pumas-convivencia-portada.jpg", pos: "center 40%", alt: "Jugadores y amigos de Pumas de Salamanca en su convivencia en La Ligua Park",
-        titulo: "Pumas celebró en familia",
-        bajada: "Asado, Halloween y dos victorias: jugadores, esposas, familiares y amigos de Pumas de Salamanca hicieron del costado izquierdo de La Ligua Park su casa.",
-        corto: "La convivencia de Pumas en La Ligua Park", link: "#articulo-pumas-convivencia-halloween" },
-      { tag: "Pronósticos · Jornada 10 · Domingo 8 de noviembre", img: "assets/noticias/pronosticos-j10-portada.jpg", pos: "center 45%", alt: "Bateador de Pandas de Quillota en el Estadio La Ligua Park",
-        titulo: "Jornada 10: el domingo que empieza a dibujar la semifinal",
-        bajada: "Nadie clasifica ni queda eliminado este domingo, pero Bravos y Blessed pueden dar un paso enorme, y Guaros y Pandas se juegan la vida. Lee nuestros pronósticos.",
-        corto: "Pronósticos de la Jornada 10", link: "#articulo-pronosticos-jornada-10" },
-      { tag: "Jornada 10 · Domingo 8 de noviembre", img: "assets/noticias/flyer-jornada-10.jpg", pos: "center 30%", alt: "Programación de la Jornada 10 de la Copa City 9",
-        titulo: "Cuatro juegos en La Ligua Park",
-        bajada: "10:00 Pandas vs Atléticos · 12:00 Los Andes vs Blessed Barber · 14:00 Litoral vs Los Andes · 16:00 Bravos vs Guaros. Transmisión en vivo por YouTube e Instagram.",
-        corto: "Programación de la Jornada 10", link: "#calendario" },
-      { tag: "Jornada 9 · Domingo 1 de noviembre", img: "assets/jornadas/j9-pumas-celebra.jpg", pos: "center 40%", alt: "Pumas de Salamanca celebra en el Estadio La Ligua Park",
-        titulo: "Pumas ruge dos veces y manda en la Copa City 9",
-        bajada: "Doblete de Pumas de Salamanca, se acabó el invicto de Bravos y Guaros sigue con vida. Así se vivió una jornada de cinco juegos en el Estadio La Ligua Park.",
-        corto: "Resumen de la jornada", link: "#calendario" },
-      { tag: "Juego 1 · Jornada 9", visita: "atleticos", cv: 11, local: "pumas", cl: 21,
-        img: "assets/jornadas/j9-dugout-pumas.jpg", pos: "center 46%", alt: "Jugadores de Pumas de Salamanca en el dugout",
-        titulo: "¡Remontada felina!",
-        bajada: "Pumas de Salamanca vino de atrás, encendió los bates y terminó arrollando 21 carreras por 11 a Atléticos del Caribe en el juego que abrió la Jornada 9.",
-        corto: "Pumas vino de atrás y aplastó a Atléticos" },
-      { tag: "Juego 2 · Jornada 9", visita: "pumas", cv: 14, local: "andes", cl: 6,
-        img: "assets/jornadas/j9-pumas-ronda.jpg", pos: "center 60%", alt: "Pumas de Salamanca reunido en el campo antes del juego",
-        titulo: "Pumas va por la segunda y no perdona",
-        bajada: "Sin tiempo para respirar, Pumas de Salamanca firmó su segunda victoria del día: 14 carreras por 6 ante Los Andes, y se queda solo en la cima de la tabla.",
-        corto: "Segunda victoria del día para Pumas" },
-      { tag: "Juego 3 · Jornada 9", visita: "bombarderos", cv: 6, local: "bravos", cl: 2,
-        img: "assets/jornadas/j9-bombarderos.jpg", pos: "center 28%", alt: "Jugador de Bombarderos de Illapel lanza la bola a primera",
-        titulo: "¡Se acabó el invicto!",
-        bajada: "Bravos de La Calera llegaba con marca perfecta de 4-0, pero Bombarderos de Illapel lo frenó en seco y lo derrotó 6 carreras por 2 en el juego más cerrado de la jornada.",
-        corto: "Bombarderos le quitó el invicto a Bravos" },
-      { tag: "Juego 4 · Jornada 9", visita: "pandas", cv: 3, local: "guaros", cl: 16,
-        img: "assets/jornadas/j9-pandas-guaros.jpg", pos: "center 52%", alt: "Bateador de Pandas frente al receptor de Guaros",
-        titulo: "Guaros sigue con vida",
-        bajada: "Con la espalda contra la pared, Guaros de San Felipe respondió con 16 carreras, despachó 16 por 3 a Pandas de Quillota y se mantiene en la pelea por la clasificación.",
-        corto: "Guaros goleó a Pandas y sigue en carrera" },
-      { tag: "Juego 5 · Jornada 9", visita: "bravos", cv: 7, local: "pandas", cl: 14,
-        img: "assets/jornadas/j9-pandas.jpg", pos: "center 42%", alt: "Jugadores de Pandas de Quillota en el Estadio La Ligua Park",
-        titulo: "Pandas divide honores",
-        bajada: "Pandas de Quillota se levantó del golpe de la mañana, venció 14 carreras por 7 a Bravos de La Calera y le propinó su segunda derrota seguida en el mismo domingo.",
-        corto: "Pandas se levantó y hundió a Bravos" }
+      {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "Cayó el campeón", "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.", "corto": "Bravos derrotó al campeón", "link": "#articulo-j10-cayo-el-campeon"},
+      {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Bendecidos, con pie y medio en la semifinal", "bajada": "Blessed Barber ganó sus dos juegos, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo.", "corto": "Blessed es el nuevo líder", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
+      {"tag": "Juego 1 · Jornada 10", "visita": "andes", "cv": 8, "local": "blessed", "cl": 11, "img": "assets/jornadas/j10-flyer.jpg", "pos": "center 30%", "alt": "Programación de la Jornada 10 de la Copa City 9", "titulo": "Blessed abrió el día con triunfo", "bajada": "Blessed Barber venció 11 a 8 a Los Andes al mediodía, en el primero de sus dos juegos del domingo.", "corto": "Blessed superó a Los Andes", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
+      {"tag": "Juego 2 · Jornada 10", "visita": "blessed", "cv": 5, "local": "bravos", "cl": 3, "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Duelo de líderes para los morados", "bajada": "En el juego de menos carreras del día, Blessed Barber le ganó 5 a 3 a Bravos de La Calera y se quedó con el primer lugar.", "corto": "Blessed ganó el duelo directo", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
+      {"tag": "Juego 3 · Jornada 10", "visita": "bravos", "cv": 25, "local": "guaros", "cl": 15, "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "¡Récord de carreras!", "bajada": "Dos horas después de caer ante Blessed, Bravos anotó 25 carreras, la cifra más alta de un equipo en la Copa, y derrotó al campeón Guaros.", "corto": "Bravos anotó 25 ante Guaros", "link": "#articulo-j10-cayo-el-campeon"},
+      {"tag": "Opinión · La directiva de la Copa City 9", "img": "assets/noticias/directiva-portada.jpg", "pos": "center 40%", "alt": "Pedro Rojas, Wilson Terán y Yosguar García, de la directiva de la Copa City 9", "titulo": "Lo que no se ve antes del domingo", "bajada": "Wilson Terán, Pedro Rojas y Yosguar García sacan tiempo entre semana para limpiar, podar y mejorar La Ligua Park. Una columna de Migner Acosta sobre el trabajo de la directiva.", "corto": "El trabajo de la directiva", "link": "#articulo-directiva-trabajo-que-no-se-ve"},
+      {"tag": "Equipos de la Copa · Bravos de La Calera", "img": "assets/noticias/bravos-portada.jpg", "pos": "center 45%", "alt": "Roster oficial de Bravos de La Calera", "titulo": "Bravos: del mercado al diamante", "bajada": "Trabajadores del mercado de La Calera que juegan después de la jornada laboral. Alegría, velocidad y el poder de los hermanos Carlos. Conoce al equipo vinotinto.", "corto": "Conoce a Bravos de La Calera", "link": "#articulo-equipos-bravos-de-la-calera"},
+      {"tag": "Vida de club · Pumas de Salamanca", "img": "assets/noticias/pumas-convivencia-portada.jpg", "pos": "center 40%", "alt": "Jugadores y amigos de Pumas de Salamanca en su convivencia en La Ligua Park", "titulo": "Pumas celebró en familia", "bajada": "Asado, Halloween y dos victorias: jugadores, esposas, familiares y amigos de Pumas de Salamanca hicieron del costado izquierdo de La Ligua Park su casa.", "corto": "La convivencia de Pumas en La Ligua Park", "link": "#articulo-pumas-convivencia-halloween"}
     ]
   },
 
@@ -416,7 +375,7 @@ window.SITIO = {
      Formato: { n: 9, fecha: "2026-11-01", partidos: [["visita","local","10:00"], ...] } */
   programacion: [
     { n: 9, fecha: "2026-11-01", partidos: [["atleticos","pumas","10:00"], ["pumas","andes","12:00"], ["bombarderos","bravos","14:00"], ["pandas","guaros","16:00"], ["bravos","pandas","18:00"]] },
-    { n: 10, fecha: "2026-11-08", partidos: [["pandas","atleticos","10:00"], ["andes","blessed","12:00"], ["maitencillo","andes","14:00"], ["bravos","guaros","16:00"]] }
+    { n: 10, fecha: "2026-11-08", partidos: [["andes","blessed","12:00"], ["blessed","bravos","14:00"], ["bravos","guaros","16:00"]] }
   ],
 
   /* Encuestas y votaciones del público. Cada persona vota una vez por encuesta.
@@ -553,6 +512,118 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "j10-cayo-el-campeon",
+      "tipo": "juego",
+      "titulo": "Cayó el campeón",
+      "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe en el cierre de la Jornada 10 y dejó al actual campeón al borde de despedirse de la defensa del título.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-08",
+      "portada": "assets/noticias/j10-bravos-celebra.jpg",
+      "equipo": "bravos",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "El último juego del domingo en el Estadio La Ligua Park tenía cartel de final anticipada y no defraudó. Bravos de La Calera derrotó 25 a 15 a Guaros de San Felipe, el actual campeón, y lo dejó con un pie fuera de la carrera por las semifinales de la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "Bravos tuvo que sobreponerse a un día largo. Dos horas antes había caído 5 a 3 ante Blessed Barber en un juego de pocas carreras, y llegó al duelo de las 4 de la tarde obligado a reaccionar frente a la ofensiva más productiva del torneo. La respuesta fue una lluvia de carreras: sus 25 anotaciones son la cifra más alta de un equipo en un solo juego de la Copa City 9, una más que las 24 que el propio Bravos le hizo a Máster Pumas en septiembre."
+        },
+        {
+          "t": "p",
+          "x": "Guaros no se quedó atrás con el bate. Anotó 15 carreras, una cifra que en esta Copa alcanza para ganar casi cualquier partido, pero no esta vez. Las 40 carreras del juego lo convierten en el segundo partido con más anotaciones del torneo, detrás del 23 a 22 con que Atléticos del Caribe venció a Guaros en octubre. El campeón protagonizó los dos juegos más abiertos de la Copa y perdió ambos."
+        },
+        {
+          "t": "h",
+          "x": "Las cuentas del campeón"
+        },
+        {
+          "t": "p",
+          "x": "Con la derrota, Guaros queda con 9 puntos (3-5) y ya disputó 8 de sus 9 partidos. Le queda un solo juego, ante Pumas de Salamanca, y aunque lo gane, su techo es de 12 puntos. Tres equipos ya están fuera de su alcance: Blessed Barber (18), Pumas de Salamanca (15) y Bravos de La Calera (15)."
+        },
+        {
+          "t": "p",
+          "x": "¿Está eliminado? Matemáticamente, todavía no. Revisamos las más de un millón y medio de combinaciones posibles de los 13 juegos que faltan. Para llegar al cuarto lugar, Guaros tiene que vencer a Pumas y que ningún otro equipo lo supere, algo que solo ocurre por dos caminos: un empate múltiple en 12 puntos que se defina por relación de carreras, donde hoy Guaros tiene ventaja, por ejemplo si Máster Pumas, colista del torneo, gana sus tres juegos, incluido uno ante el líder Blessed; o que al menos dos de los juegos que faltan terminen empatados. Pasa en apenas 2 de cada 100 escenarios."
+        },
+        {
+          "t": "p",
+          "x": "Por eso decimos que cayó el campeón: salvo un milagro, la corona cambiará de dueño. Su objetivo realista pasa a ser la Copa de Consolación, que reúne a los equipos del quinto al octavo lugar."
+        },
+        {
+          "t": "h",
+          "x": "Bravos, a un paso"
+        },
+        {
+          "t": "p",
+          "x": "Para Bravos el triunfo vale doble. Llega a 15 puntos (5-3) y 100 carreras anotadas, iguala a Pumas de Salamanca detrás del líder Blessed Barber y corta una racha de tres derrotas seguidas: las dos de la Jornada 9 y la de este mismo domingo ante Blessed."
+        },
+        {
+          "t": "p",
+          "x": "Le queda un juego, ante Pumas de Salamanca, y según nuestros cálculos termina entre los cuatro primeros en más del 99% de las combinaciones posibles. El boleto a semifinales está casi en sus manos."
+        },
+        {
+          "t": "p",
+          "x": "El campeón cierra su fase regular ante Pumas de Salamanca. Ya no depende de sí mismo, pero en esta Copa nadie se ha ido sin pelear."
+        },
+        {
+          "t": "p",
+          "x": "Transmisión en vivo por YouTube e Instagram: @ligadesoftbol_laligua y @mignerentodo."
+        }
+      ]
+    },
+    {
+      "id": "j10-bendecidos-pie-y-medio-semifinal",
+      "tipo": "juego",
+      "titulo": "Bendecidos, con pie y medio en la semifinal",
+      "bajada": "Blessed Barber ganó sus dos juegos de la Jornada 10, 11 a 8 ante Los Andes y 5 a 3 ante Bravos de La Calera, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-08",
+      "portada": "assets/noticias/j10-blessed-bateador.jpg",
+      "equipo": "blessed",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Doble jornada y doble alegría para Blessed Barber. El equipo de La Ligua jugó dos veces este domingo en el Estadio La Ligua Park y ganó las dos: venció 11 a 8 a Los Andes al mediodía y 5 a 3 a Bravos de La Calera a las 2 de la tarde."
+        },
+        {
+          "t": "h",
+          "x": "Dos victorias, dos caras"
+        },
+        {
+          "t": "p",
+          "x": "Ante Los Andes cumplió el papel de favorito, aunque tuvo que trabajar. Los Andes le anotó 8 carreras, una cifra alta para la defensa menos castigada de la Copa, pero el bate de Blessed respondió con 11 y se llevó el primer triunfo del día."
+        },
+        {
+          "t": "p",
+          "x": "El segundo triunfo pesó más. Bravos de La Calera llegaba igualado con Blessed en 12 puntos, como su rival directo por los primeros lugares de la tabla, y el duelo fue un juego cerrado y de pocas carreras: 5 a 3 para los morados. El dato que lo dice todo: ese mismo Bravos anotó 25 carreras dos horas más tarde ante Guaros."
+        },
+        {
+          "t": "p",
+          "x": "Los resultados confirman lo que los números venían diciendo. Blessed Barber recibe 7,4 carreras por juego, el promedio más bajo del torneo, con 52 carreras en contra en siete partidos."
+        },
+        {
+          "t": "h",
+          "x": "Primero en la tabla"
+        },
+        {
+          "t": "p",
+          "x": "Con 18 puntos y récord de 6-1, Blessed Barber es el nuevo líder de la Copa City 9, tres puntos por encima de Pumas de Salamanca y Bravos de La Calera. Le quedan dos juegos: ante Máster Pumas y ante Atléticos del Caribe."
+        },
+        {
+          "t": "p",
+          "x": "Revisamos todas las combinaciones posibles de los 13 juegos que faltan y en ninguna Blessed termina con cuatro equipos por encima en puntos. Solo un escenario extremo lo pondría en riesgo: que pierda sus dos juegos y que Bravos, Bombarderos de Illapel y Atléticos del Caribe ganen todos los suyos para empatarlo en 18 puntos. Aun así, la definición pasaría por la relación de carreras. Ningún otro equipo de la Copa está tan cerca de la semifinal: tiene un pie adentro y el otro en el umbral."
+        },
+        {
+          "t": "p",
+          "x": "Con el boleto prácticamente asegurado, la meta ahora es terminar primero: en semifinales, el líder de la fase regular enfrenta al cuarto lugar."
+        },
+        {
+          "t": "p",
+          "x": "Transmisión en vivo por YouTube e Instagram: @ligadesoftbol_laligua y @mignerentodo."
+        }
+      ]
+    },
     {
       "id": "directiva-trabajo-que-no-se-ve",
       "tipo": "opinion",
