@@ -1,0 +1,23 @@
+/* Miniaturas livianas (1200x630) que usan los enlaces para compartir. Las genera Claude en assets/compartir/. */
+module.exports = [
+ "antonio-olivares-portada.jpg",
+ "bravos-portada.jpg",
+ "copa-city-9.jpg",
+ "directiva-portada.jpg",
+ "equipo-andes.jpg",
+ "equipo-atleticos.jpg",
+ "equipo-blessed.jpg",
+ "equipo-bombarderos.jpg",
+ "equipo-bravos.jpg",
+ "equipo-guaros.jpg",
+ "equipo-maitencillo.jpg",
+ "equipo-masterpumas.jpg",
+ "equipo-pandas.jpg",
+ "equipo-pumas.jpg",
+ "fanaticos.jpg",
+ "jorge-arenas-portada.jpg",
+ "pedro-rojas-portada.jpg",
+ "pronosticos-j10-portada.jpg",
+ "pumas-convivencia-portada.jpg",
+ "yonny-torres-portada.jpg"
+];

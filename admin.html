@@ -69,6 +69,12 @@ textarea{min-height:110px;resize:vertical;line-height:1.5}
 .draft{background:#FFF4D6;color:#6B4A00;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;margin-left:6px}
 @media (max-width:560px){.pi{grid-template-columns:72px 1fr}.pi img{width:72px}.pi .acts{grid-column:1/-1}}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-weight:600;z-index:20;max-width:calc(100% - 32px)}
+.tbl{overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tbl a{color:var(--red)}
+.tbl button{white-space:nowrap}
 .hint{background:var(--s2);border-radius:8px;padding:10px 12px;font-size:13.5px;color:var(--muted)}
 </style>
 </head>
@@ -91,6 +97,9 @@ textarea{min-height:110px;resize:vertical;line-height:1.5}
 <input type="file" id="fileImg" accept="image/*" multiple hidden>
 <script src="datos/sitio.js"></script>
 <script src="datos/cierre.js"></script>
+<script src="datos/fanaticos.js"></script>
+<script src="assets/js/qrcode.js"></script>
+<script src="assets/js/carnet.js"></script>
 <script>
 (function(){
 "use strict";
@@ -124,10 +133,10 @@ function cargar(){
 }
 
 /* ---------------- Tabs ---------------- */
-var TABS=[["resumen","Resumen"],["programacion","Programación"],["estadisticas","Estadísticas"],["publicar","Publicar"],["publicaciones","Publicaciones"],["galeria","Galería"],["votaciones","Votaciones"],["buzon","Buzón"]];
+var TABS=[["resumen","Resumen"],["programacion","Programación"],["estadisticas","Estadísticas"],["publicar","Publicar"],["publicaciones","Publicaciones"],["galeria","Galería"],["votaciones","Votaciones"],["fanaticos","Fanáticos"],["buzon","Buzón"]];
 function pintar(){
   document.getElementById("tabs").innerHTML=TABS.map(function(t){ return '<button data-tab="'+t[0]+'" class="'+(TAB===t[0]?"on":"")+'">'+t[1]+(t[0]==="buzon"&&D.sugerencias.length?' ('+D.sugerencias.length+')':'')+'</button>'; }).join("");
-  var f={resumen:vResumen,programacion:vProgramacion,galeria:vGaleria,publicar:vPublicar,publicaciones:vPublicaciones,votaciones:vVotaciones,estadisticas:vEstadisticas,buzon:vBuzon}[TAB];
+  var f={resumen:vResumen,programacion:vProgramacion,galeria:vGaleria,publicar:vPublicar,publicaciones:vPublicaciones,votaciones:vVotaciones,estadisticas:vEstadisticas,buzon:vBuzon,fanaticos:vFanaticos}[TAB];
   document.getElementById("app").innerHTML=f();
 }
 
@@ -358,6 +367,78 @@ function guardarGaleria(msg){
   return api("POST",{accion:"galeria",lista:GAL}).then(function(r){ GAL=r.lista; D.galeria=r.lista; toast(msg||"Galería guardada."); pintar(); }).catch(function(e){ toast(e.message); pintar(); });
 }
 
+/* ---------------- Fanáticos ---------------- */
+var FD=null, FDcargando=false, FBUSCA="";
+function nomEq(id){ return NOMBRES[id]||id||""; }
+function eqDe(id){ var r={id:id,nombre:id,color:"#0B4FD8",logo:""}; (S.equipos||[]).forEach(function(t){ if(t.id===id) r=t; }); return r; }
+function apiFan(metodo,cuerpo){
+  return fetch("api/fanaticos-admin",{method:metodo,headers:{"x-clave":CLAVE,"Content-Type":"application/json"},body:cuerpo?JSON.stringify(cuerpo):undefined,cache:"no-store"})
+    .then(function(r){ return r.json().catch(function(){return {};}).then(function(j){ if(!r.ok) throw new Error(j.error||("Error "+r.status)); return j; }); });
+}
+function cargarFanaticos(){
+  if(FDcargando) return; FDcargando=true;
+  apiFan("GET").then(function(j){ FD=j; FDcargando=false; if(TAB==="fanaticos") pintar(); }).catch(function(e){ FDcargando=false; FD={error:e.message}; if(TAB==="fanaticos") pintar(); });
+}
+function waLink(wa){ return wa?'<a href="https://wa.me/'+esc(wa)+'" target="_blank" rel="noopener">+'+esc(wa)+'</a>':''; }
+function igLink(ig){ return ig?'<a href="https://instagram.com/'+esc(ig)+'" target="_blank" rel="noopener">@'+esc(ig)+'</a>':''; }
+/* Ganador sugerido de un juego según las estadísticas publicadas */
+function ganadorStats(p){
+  if(!STATS||!STATS.juegos) return "";
+  var m={}; (STATS.equipos||[]).forEach(function(e){ m[e.id]=equipoSitio(e); });
+  var r=""; STATS.juegos.forEach(function(g){ if(r||g.fecha!==p.fecha) return; var L=m[g.localId], V=m[g.visitaId];
+    if(!((L===p.local&&V===p.visita)||(L===p.visita&&V===p.local))) return;
+    var cl=+g.cl||0, cv=+g.cv||0; r=cl===cv?"empate":(cl>cv?L:V); });
+  return r;
+}
+function vFanaticos(){
+  if(!FD){ cargarFanaticos(); return '<section class="card"><p class="muted" style="margin:0">Cargando fanáticos…</p></section>'; }
+  if(FD.error) return '<section class="card"><p class="err">'+esc(FD.error)+'</p><button data-act="fanRecargar">Reintentar</button></section>';
+  var F=window.FANATICOS, P=FD.periodo, C=FD.carnets||[], act=C.filter(function(c){ return c.mes>0&&!c.anulado; }).length;
+  var byCod={}; C.forEach(function(c){ byCod[c.cod]=c; });
+  var h='<section class="tiles"><div class="card tile"><span>Carnets</span><b>'+C.length+'</b></div><div class="card tile"><span>Activos en '+esc(P.nombre)+'</span><b>'+act+'</b></div>'+
+    '<div class="card tile"><span>Cierre del ranking</span><b style="font-size:26px">'+esc(F?F.textoFecha(new Date(P.cierra),true):P.cierra)+'</b></div></section>';
+  h+='<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Ganadores por mes</h2><button class="sm" data-act="fanRecargar">Actualizar</button></div><p class="muted" style="margin:4px 0 12px">El premio ('+esc(F?F.PREMIO.toLowerCase():"six pack")+') se entrega en la primera jornada de cada mes. Antes de entregarlo, confirma por WhatsApp. Si quien gana es menor de 18 años, el six pack debe ser sin alcohol.</p>';
+  if(!FD.periodos.length) h+='<p class="muted" style="margin:0">Todavía no hay puntos en ningún mes.</p>';
+  FD.periodos.forEach(function(pr){ var cur=pr.id===P.id;
+    h+='<div class="blk" style="margin-bottom:10px"><div class="bh"><b>'+esc(pr.nombre)+(cur?' · en curso':' · cerrado')+'</b></div>'+(pr.top.length?'<div class="tbl"><table><thead><tr><th>#</th><th>Fanático</th><th>Equipo</th><th>Puntos</th><th>WhatsApp</th><th>Instagram</th></tr></thead><tbody>'+
+      pr.top.map(function(t,i){ var c=byCod[t.cod]||{}; return '<tr'+(i===0&&!cur?' style="font-weight:700"':'')+'><td>'+(i+1)+(i===0&&!cur?' 🏆':'')+'</td><td>'+esc(c.nombre||t.cod)+' <span class="muted">N° '+String(c.n||0).padStart(4,"0")+'</span></td><td>'+esc(nomEq(c.equipo))+'</td><td>'+t.pts+'</td><td>'+waLink(c.wa)+'</td><td>'+igLink(c.ig)+'</td></tr>'; }).join("")+'</tbody></table></div>':'<p class="muted" style="margin:0">Sin puntos.</p>')+'</div>'; });
+  h+='</section>';
+  /* Pronósticos */
+  var ahora=new Date(), PR=(FD.pronosticos||[]).map(function(p){ var g=null; (F?F.juegosProgramados(PROG):[]).forEach(function(x){ if(x.key===p.key) g=x; }); p.inicio=g?g.inicio:(F?F.inicioJuego(p.fecha,""):null); return p; });
+  h+='<section class="card"><h2>Pronósticos de los fanáticos</h2><p class="muted" style="margin:0 0 12px">Cuando termine cada juego, toca el ganador para dar '+(F?F.PUNTOS.acierto:5)+' puntos a quienes acertaron. Si el resultado ya está en las estadísticas, el ganador aparece marcado.</p>';
+  if(!PR.length) h+='<p class="muted" style="margin:0">Todavía nadie pronostica. Los juegos aparecen aquí cuando reciben su primer pronóstico.</p>';
+  PR.forEach(function(p){ var tot=0; Object.keys(p.conteo).forEach(function(k){ tot+=p.conteo[k]; });
+    var empezo=p.inicio&&ahora>=p.inicio, sug=ganadorStats(p);
+    h+='<div class="blk" style="margin-bottom:10px"><div class="bh"><b>'+esc(nomEq(p.visita))+' vs '+esc(nomEq(p.local))+'</b><span class="muted">'+esc(p.fecha)+' · '+tot+' pronósticos ('+esc(abv(p.visita))+' '+(p.conteo[p.visita]||0)+' · '+esc(abv(p.local))+' '+(p.conteo[p.local]||0)+')</span></div>';
+    if(p.liquidado) h+='<p style="margin:0;color:var(--win);font-weight:600">Puntos entregados · '+(p.liquidado==="empate"?"Empate":"Ganó "+esc(nomEq(p.liquidado)))+'</p>';
+    else if(!empezo) h+='<p class="muted" style="margin:0">El juego no ha empezado.</p>';
+    else h+='<div class="row">'+[p.visita,p.local,"empate"].map(function(w){ return '<button class="sm'+(sug===w?' red':'')+'" data-act="liquidar" data-key="'+esc(p.key)+'" data-w="'+esc(w)+'">'+(w==="empate"?"Empate":"Ganó "+esc(nomEq(w)))+(sug===w?' (según estadísticas)':'')+'</button>'; }).join("")+'</div>';
+    h+='</div>'; });
+  h+='</section>';
+  /* Respaldo de carnets */
+  var q=nrm(FBUSCA), L=C.slice().sort(function(a,b){ return b.n-a.n; }).filter(function(c){ return !q||nrm(c.nombre+" "+c.ig+" "+c.wa+" "+c.cod+" "+nomEq(c.equipo)).indexOf(q)>=0; });
+  h+='<section class="card"><div class="row" style="justify-content:space-between"><h2 style="margin:0">Respaldo de carnets ('+C.length+')</h2><button class="red" data-act="fanCSV">Descargar lista (Excel)</button></div>'+
+    '<label style="margin:10px 0">Buscar<input id="fanBusca" value="'+esc(FBUSCA)+'" placeholder="Nombre, Instagram, WhatsApp o código"></label>'+
+    (L.length?'<div class="tbl"><table><thead><tr><th>N°</th><th>Fanático</th><th>Equipo</th><th>WhatsApp</th><th>Instagram</th><th>Desde</th><th>Mes</th><th>Temp.</th><th></th></tr></thead><tbody>'+
+      L.map(function(c){ var inv=c.ref&&byCod[c.ref]?byCod[c.ref].nombre:"";
+        return '<tr'+(c.anulado?' style="opacity:.55"':'')+'><td>'+String(c.n).padStart(4,"0")+'</td><td><b>'+esc(c.nombre)+'</b><br><span class="muted">'+esc(c.cod)+(inv?' · invitado por '+esc(inv):'')+(c.anulado?' · ANULADO':'')+'</span></td><td>'+esc(nomEq(c.equipo))+'</td><td>'+waLink(c.wa)+'</td><td>'+igLink(c.ig)+'</td><td>'+esc(fecha(c.fecha))+'</td><td>'+c.mes+'</td><td>'+c.temporada+'</td>'+
+          '<td><div class="row" style="flex-wrap:nowrap"><button class="sm" data-act="fanCarnet" data-cod="'+esc(c.cod)+'">Carnet JPG</button><button class="sm" data-act="'+(c.anulado?"fanReactivar":"fanAnular")+'" data-cod="'+esc(c.cod)+'">'+(c.anulado?"Reactivar":"Anular")+'</button></div></td></tr>'; }).join("")+'</tbody></table></div>'
+    :'<p class="muted" style="margin:0">'+(C.length?'Ninguno coincide con la búsqueda.':'Todavía nadie saca su carnet.')+'</p>')+'</section>';
+  return h;
+}
+function fanCSV(){
+  var C=(FD&&FD.carnets)||[], filas=[["N°","Nombre","Equipo","WhatsApp","Instagram","Código","Fecha de inscripción","Puntos del mes","Puntos temporada","Invitado por","Estado"]];
+  var by={}; C.forEach(function(c){ by[c.cod]=c; });
+  C.slice().sort(function(a,b){return a.n-b.n;}).forEach(function(c){ filas.push([c.n,c.nombre,nomEq(c.equipo),"+"+c.wa,"@"+c.ig,c.cod,fecha(c.fecha),c.mes,c.temporada,c.ref&&by[c.ref]?by[c.ref].nombre:"",c.anulado?"Anulado":"Activo"]); });
+  var csv="﻿"+filas.map(function(f){ return f.map(function(x){ x=String(x==null?"":x); return /[;"\n]/.test(x)?'"'+x.replace(/"/g,'""')+'"':x; }).join(";"); }).join("\r\n");
+  var a=document.createElement("a"); a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv;charset=utf-8"})); a.download="fanaticos-copa-city-9.csv"; document.body.appendChild(a); a.click(); a.remove();
+}
+function fanCarnet(cod){
+  var c=null; ((FD&&FD.carnets)||[]).forEach(function(x){ if(x.cod===cod) c=x; }); if(!c||!window.CARNET) return;
+  var base=location.origin&&location.origin!=="null"?location.origin:"https://copa-city-9.vercel.app";
+  CARNET.dibujar({nombre:c.nombre,n:c.n,ig:c.ig,fecha:c.fecha,cod:c.cod,url:base+"/f/"+c.cod,equipo:eqDe(c.equipo)}).then(function(cv){ return CARNET.descargar(cv,{n:c.n}); }).then(function(){ toast("Carnet N° "+String(c.n).padStart(4,"0")+" descargado."); });
+}
+
 /* ---------------- Buzón ---------------- */
 function fecha(iso){ try{ return new Date(iso).toLocaleString("es-CL",{timeZone:"America/Santiago",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}); }catch(e){ return iso; } }
 function vBuzon(){
@@ -368,7 +449,7 @@ function vBuzon(){
 
 /* ---------------- Eventos ---------------- */
 document.addEventListener("submit",function(e){ if(e.target.id!=="fLogin") return; e.preventDefault(); CLAVE=document.getElementById("clave").value; Promise.all([cargarStats()]).then(cargar); });
-document.addEventListener("input",function(e){ if(e.target.closest("[data-f],[data-b]")) leerCampos(); if(e.target.hasAttribute("data-pj")) leerProg(e.target); if(e.target.hasAttribute("data-gal")) GAL[+e.target.getAttribute("data-gal")].pie=e.target.value; });
+document.addEventListener("input",function(e){ if(e.target.id==="fanBusca"){ FBUSCA=e.target.value; var pos=e.target.selectionStart; pintar(); var nb=document.getElementById("fanBusca"); if(nb){ nb.focus(); try{ nb.setSelectionRange(pos,pos); }catch(x){} } return; } if(e.target.closest("[data-f],[data-b]")) leerCampos(); if(e.target.hasAttribute("data-pj")) leerProg(e.target); if(e.target.hasAttribute("data-gal")) GAL[+e.target.getAttribute("data-gal")].pie=e.target.value; });
 document.addEventListener("change",function(e){ if(e.target.hasAttribute("data-pj")) leerProg(e.target); if(e.target.getAttribute("data-k")==="url"){ leerCampos(); pintar(); } });
 document.addEventListener("change",function(e){
   if(e.target.getAttribute("data-f")==="tipo"){ leerCampos(); pintar(); }
@@ -414,6 +495,13 @@ document.addEventListener("click",function(e){
   else if(a==="subirGal"){ DESTINO="galeria"; document.getElementById("fileImg").multiple=true; document.getElementById("fileImg").click(); }
   else if(a==="quitarGal"){ GAL.splice(i,1); guardarGaleria("Foto quitada."); }
   else if(a==="guardarGal") guardarGaleria();
+  else if(a==="fanRecargar"){ FD=null; pintar(); }
+  else if(a==="fanCSV") fanCSV();
+  else if(a==="fanCarnet") fanCarnet(b.dataset.cod);
+  else if(a==="fanAnular"||a==="fanReactivar"){ if(a==="fanAnular"&&b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="¿Anular? Toca otra vez"; return; }
+    apiFan("POST",{accion:a==="fanAnular"?"anular":"reactivar",cod:b.dataset.cod}).then(function(){ toast(a==="fanAnular"?"Carnet anulado: sale del ranking.":"Carnet reactivado."); FD=null; pintar(); }).catch(function(e){ toast(e.message); }); }
+  else if(a==="liquidar"){ if(b.dataset.ok!=="1"){ b.dataset.ok="1"; b.textContent="Confirmar: "+b.textContent; return; } b.disabled=true;
+    apiFan("POST",{accion:"liquidar",key:b.dataset.key,ganador:b.dataset.w}).then(function(r){ toast(b.dataset.w==="empate"?"Juego cerrado sin puntos (empate).":(r.premiados===1?"Listo: 1 fanático ganó puntos.":"Listo: "+r.premiados+" fanáticos ganaron puntos.")); FD=null; pintar(); }).catch(function(e){ b.disabled=false; toast(e.message); }); }
   else if(a==="salir"){ try{ sessionStorage.removeItem("cc9-clave"); }catch(x){} location.reload(); }
 });
 if(CLAVE) cargarStats().then(cargar);

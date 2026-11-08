@@ -33,3 +33,20 @@ DESDE EL PANEL PUEDES:
 - Ver visitas por día y leer el buzón de sugerencias.
 
 Nadie más puede cambiar nada: todo lo que se guarda pide tu clave.
+
+FANÁTICOS DE LA COPA CITY 9 (carnet, puntos y premio del mes)
+- En la página, la sección "Fanáticos" deja sacar un carnet gratis (nombre o apodo,
+  equipo, WhatsApp e Instagram). El carnet se descarga en JPG con el logo de la Copa,
+  el del equipo y un código QR con el enlace personal del fanático.
+- Puntos: entrar cada día, rachas de 7 días, votar, pronosticar y acertar,
+  y traer amigos nuevos con su enlace. La tabla está en datos/fanaticos.js.
+- El ranking es mensual y cierra el viernes antes del primer domingo del mes, 22:00.
+- En el panel, pestaña "Fanáticos": ganadores por mes con WhatsApp e Instagram,
+  dar los puntos de los pronósticos, descargar cualquier carnet en JPG,
+  descargar la lista completa (Excel) y anular carnets con trampa.
+- No hay que configurar nada nuevo en Vercel: usa la misma base de datos.
+
+COMPARTIR CON MINIATURA
+- El botón rojo "Compartir" arma enlaces que muestran foto, título y descripción
+  en WhatsApp y Facebook:  /n/<publicación>   /e/<equipo>   /f/<código de fanático>
+- Las miniaturas livianas están en assets/compartir/ (las genera Claude).

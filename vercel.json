@@ -1,4 +1,9 @@
 {
+  "rewrites": [
+    { "source": "/n/:id", "destination": "/api/c?t=n&id=:id" },
+    { "source": "/e/:id", "destination": "/api/c?t=e&id=:id" },
+    { "source": "/f/:id", "destination": "/api/c?t=f&id=:id" }
+  ],
   "headers": [
     { "source": "/admin.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] },
     { "source": "/datos/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }] }

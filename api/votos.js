@@ -3,6 +3,7 @@
 // POST /api/votos { encuesta, opcion }
 const { pipe, hoy, huella, cuerpo, idOk, hash2obj, enviar, fallo, P } = require("./_db");
 const CIERRE = require("../datos/cierre.js");
+const X = require("./_fan");
 global.window = global.window || {};
 require("../datos/sitio.js");
 const INICIALES = (global.window.SITIO && global.window.SITIO.encuestas) || [];
@@ -51,6 +52,15 @@ module.exports = async (req, res) => {
       ["HINCRBY", P + "votosdia:" + b.encuesta, hoy(), 1],
       ["SADD", P + "encuestas", b.encuesta]
     ]);
-    return enviar(res, 200, Object.assign({ ok: true }, await leer([b.encuesta])));
+    // Fanático con carnet: gana puntos una vez por votación
+    let pts = 0;
+    try {
+      const f = b.cod ? await X.verificar(b.cod, b.tk) : null;
+      if (f) {
+        const [prim] = await pipe([["SET", X.K("pv:" + f.cod + ":" + b.encuesta), 1, "NX", "EX", 60 * 60 * 24 * 400]]);
+        if (prim === "OK") pts = await X.sumar(f, X.F.PUNTOS.voto, "Votaste: " + String(e.pregunta || b.encuesta).slice(0, 60));
+      }
+    } catch (err) { console.error(err); }
+    return enviar(res, 200, Object.assign({ ok: true, pts }, await leer([b.encuesta])));
   } catch (e) { return fallo(res, e); }
 };
