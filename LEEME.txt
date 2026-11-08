@@ -50,3 +50,7 @@ COMPARTIR CON MINIATURA
 - El botón rojo "Compartir" arma enlaces que muestran foto, título y descripción
   en WhatsApp y Facebook:  /n/<publicación>   /e/<equipo>   /f/<código de fanático>
 - Las miniaturas livianas están en assets/compartir/ (las genera Claude).
+
+HISTÓRICO DE LA PORTADA
+- Cuando la portada pasa a una jornada nueva, la anterior se guarda como
+  "Resumen de la Jornada N" en Noticias (lo hace Claude con herramientas/archivar-portada.js).

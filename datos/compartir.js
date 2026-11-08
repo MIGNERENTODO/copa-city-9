@@ -17,6 +17,7 @@ module.exports = [
  "fanaticos.jpg",
  "j10-blessed-bateador.jpg",
  "j10-bravos-celebra.jpg",
+ "j9-pumas-celebra.jpg",
  "jorge-arenas-portada.jpg",
  "pedro-rojas-portada.jpg",
  "pronosticos-j10-portada.jpg",

@@ -513,6 +513,90 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "resumen-jornada-9",
+      "tipo": "juego",
+      "titulo": "Resumen de la Jornada 9: Pumas ruge dos veces y manda en la Copa City 9",
+      "bajada": "Doblete de Pumas de Salamanca, se acabó el invicto de Bravos y Guaros sigue con vida. Así se vivió una jornada de cinco juegos en el Estadio La Ligua Park.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-01",
+      "portada": "assets/jornadas/j9-pumas-celebra.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Así se vivió la Jornada 9 de la Copa City 9, jugada el domingo 1 de noviembre en el Estadio La Ligua Park. Este resumen reúne los titulares y resultados que acompañaron la portada de la página durante esa semana."
+        },
+        {
+          "t": "h",
+          "x": "Juego por juego"
+        },
+        {
+          "t": "cita",
+          "x": "Juego 1 · Atléticos del Caribe 11, Pumas de Salamanca 21 · ¡Remontada felina!"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j9-dugout-pumas.jpg",
+          "pie": "Jugadores de Pumas de Salamanca en el dugout"
+        },
+        {
+          "t": "p",
+          "x": "Pumas de Salamanca vino de atrás, encendió los bates y terminó arrollando 21 carreras por 11 a Atléticos del Caribe en el juego que abrió la Jornada 9."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 2 · Pumas de Salamanca 14, Los Andes 6 · Pumas va por la segunda y no perdona"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j9-pumas-ronda.jpg",
+          "pie": "Pumas de Salamanca reunido en el campo antes del juego"
+        },
+        {
+          "t": "p",
+          "x": "Sin tiempo para respirar, Pumas de Salamanca firmó su segunda victoria del día: 14 carreras por 6 ante Los Andes, y se queda solo en la cima de la tabla."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 3 · Bombarderos de Illapel 6, Bravos de La Calera 2 · ¡Se acabó el invicto!"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j9-bombarderos.jpg",
+          "pie": "Jugador de Bombarderos de Illapel lanza la bola a primera"
+        },
+        {
+          "t": "p",
+          "x": "Bravos de La Calera llegaba con marca perfecta de 4-0, pero Bombarderos de Illapel lo frenó en seco y lo derrotó 6 carreras por 2 en el juego más cerrado de la jornada."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 4 · Pandas de Quillota 3, Guaros de San Felipe 16 · Guaros sigue con vida"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j9-pandas-guaros.jpg",
+          "pie": "Bateador de Pandas frente al receptor de Guaros"
+        },
+        {
+          "t": "p",
+          "x": "Con la espalda contra la pared, Guaros de San Felipe respondió con 16 carreras, despachó 16 por 3 a Pandas de Quillota y se mantiene en la pelea por la clasificación."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 5 · Bravos de La Calera 7, Pandas de Quillota 14 · Pandas divide honores"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j9-pandas.jpg",
+          "pie": "Jugadores de Pandas de Quillota en el Estadio La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "Pandas de Quillota se levantó del golpe de la mañana, venció 14 carreras por 7 a Bravos de La Calera y le propinó su segunda derrota seguida en el mismo domingo."
+        }
+      ]
+    },
+    {
       "id": "j10-cayo-el-campeon",
       "tipo": "juego",
       "titulo": "Cayó el campeón",
