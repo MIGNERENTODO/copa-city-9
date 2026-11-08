@@ -62,8 +62,8 @@ module.exports = async (req, res) => {
       if (r && r[0] && r[2] !== "1") {
         const eq = (X.SITIO.equipos || []).find(x => x.id === r[1]);
         titulo = r[0] + " te invita a la Copa City 9";
-        desc = "Saca gratis tu carnet de Fanático de la Copa City 9" + (eq ? ", apoya a " + eq.nombre : "") + " y compite por el premio del mes.";
-      } else { titulo = "Fanáticos de la Copa City 9"; desc = "Saca gratis tu carnet de Fanático y compite por el premio del mes."; }
+        desc = "Saca gratis tu carnet de Fanático de la Copa City 9" + (eq ? ", apoya a " + eq.nombre : "") + " y compite por un six pack y premios sorpresa cada mes y en cada jornada.";
+      } else { titulo = "Fanáticos de la Copa City 9"; desc = "Saca gratis tu carnet de Fanático y compite por un six pack y premios sorpresa cada mes y en cada jornada."; }
       img = { url: base + "/assets/compartir/fanaticos.jpg", w: 1200, h: 630 };
       destino = "/?h=" + cod + "#fanaticos";
     }

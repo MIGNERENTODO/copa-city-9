@@ -1492,7 +1492,8 @@ function puntosHTML(){
 function premioHTML(){
   var t=periodoTxt(); if(!t) return '';
   return '<div class="premio"><span class="eyebrow">Premio del mes</span><b class="big">'+esc(FZ.PREMIO)+'</b>'+
-    '<span>Para el fanático con más puntos. El ranking de '+esc(t.nombre)+' cierra el '+esc(t.cierra)+' h y el premio se entrega el '+esc(t.premio.toLowerCase())+', en la primera jornada del mes en La Ligua Park.</span></div>';
+    '<span>Para el fanático con más puntos. El ranking de '+esc(t.nombre)+' cierra el '+esc(t.cierra)+' h y el premio se entrega el '+esc(t.premio.toLowerCase())+', en la primera jornada del mes en La Ligua Park.</span>'+
+    '<span style="color:#F2B705;font-weight:600">Además, premios sorpresa cada mes y en cada jornada para los fanáticos con carnet.</span></div>';
 }
 function rankHTML(){
   if(API===false) return '<p class="nota" style="margin:0">El ranking se activa en la versión publicada de la página.</p>';
@@ -1523,6 +1524,7 @@ function basesHTML(){
     '<li>Los amigos que entran por tu enlace cuentan solo si nunca habían entrado a la página, con un máximo de '+(FZ?FZ.AMIGOS_POR_DIA:5)+' al día.</li>'+
     '<li>El ranking es mensual y cierra el viernes anterior al primer domingo de cada mes, a las 22:00 (hora de Chile). El de '+esc(t.nombre)+' cierra el '+esc(t.cierra)+' h.</li>'+
     '<li>Premio: '+esc((FZ?FZ.PREMIO:"").toLowerCase())+' para el primer lugar, entregado en la primera jornada del mes en el Estadio La Ligua Park. Si quien gana es menor de 18 años, el premio será de bebidas sin alcohol.</li>'+
+    '<li>Además, la liga entrega premios sorpresa cada mes y en cada jornada a fanáticos con carnet. Los premios y la forma de ganarlos se anuncian en la página y en las redes de la liga.</li>'+
     '<li>La liga puede anular los carnets o los puntos obtenidos con trampas y confirma al ganador antes de entregar el premio.</li>'+
     '<li>Tu nombre o apodo y tu equipo aparecen en el ranking. Tu WhatsApp e Instagram no se publican: la liga los usa solo para validar el carnet y contactar a quien gane.</li>'+
   '</ol></details>';
@@ -1532,7 +1534,7 @@ function fanHeroHTML(){
   var top=RANK&&RANK.fanaticos&&RANK.fanaticos.length?RANK.fanaticos.slice(0,3):[];
   var mini=top.length?'<div class="mini">'+top.map(function(x){ return '<span>'+x.pos+'° <b>'+esc(x.nombre)+'</b> · '+esc(teamOf(x.equipo).abrev)+' · '+x.pts+' pts</span>'; }).join("")+'</div>':'';
   if(PERFIL) return '<section class="fan-hero" data-fanhero><div><span class="eyebrow" style="color:#FFE08A">Fanático N° '+String(PERFIL.n).padStart(4,"0")+'</span><h2>'+esc(PERFIL.nombre)+': '+PERFIL.mes+' puntos</h2><p>'+(PERFIL.puesto?'Vas '+PERFIL.puesto+'° en el ranking de '+esc(periodoTxt().nombre)+'. ':'')+'Comparte tu enlace, vota y pronostica para subir.</p><div class="acts"><a class="btn btn-w" href="#fanaticos">Ver mi carnet</a><button class="btn btn-ghost" data-act="compartir" data-u="fan">Compartir mi enlace</button></div>'+mini+'</div><img src="assets/logos/copacity9.png" alt=""></section>';
-  return '<section class="fan-hero" data-fanhero><div><span class="eyebrow" style="color:#FFE08A">Nuevo · Fanáticos de la Copa City 9</span><h2>Saca tu carnet y gana '+esc(FZ.PREMIO.toLowerCase())+'</h2><p>Gratis. Suma puntos entrando, votando, pronosticando y trayendo amigos a la página. Cada mes premiamos al fanático con más puntos.</p><div class="acts"><a class="btn btn-w" href="#fanaticos">Sacar mi carnet</a><a class="btn btn-ghost" href="#fanaticos">Ver ranking</a></div>'+mini+'</div><img src="assets/logos/copacity9.png" alt=""></section>';
+  return '<section class="fan-hero" data-fanhero><div><span class="eyebrow" style="color:#FFE08A">Nuevo · Fanáticos de la Copa City 9</span><h2>Saca tu carnet y gana '+esc(FZ.PREMIO.toLowerCase())+'</h2><p>Gratis. Suma puntos entrando, votando, pronosticando y trayendo amigos a la página. Cada mes premiamos al fanático con más puntos, y hay premios sorpresa en cada jornada.</p><div class="acts"><a class="btn btn-w" href="#fanaticos">Sacar mi carnet</a><a class="btn btn-ghost" href="#fanaticos">Ver ranking</a></div>'+mini+'</div><img src="assets/logos/copacity9.png" alt=""></section>';
 }
 V.fanaticos=function(){
   if(!FZ) return empty("No disponible","Recarga la página.");
@@ -1553,7 +1555,7 @@ V.fanaticos=function(){
     h+='<p class="small" style="text-align:center;margin:0"><button class="sh-mini" data-act="fan-salir">'+(SALIR?'Toca de nuevo para cerrar sesión en este teléfono':'Cerrar sesión en este teléfono')+'</button></p>';
     return h;
   }
-  h=head("Nuevo · Temporada "+(LIGA.temporada||""),"Fanáticos","Saca gratis tu carnet de Fanático de la Copa City 9, suma puntos y compite por "+esc(FZ.PREMIO.toLowerCase())+" cada mes.");
+  h=head("Nuevo · Temporada "+(LIGA.temporada||""),"Fanáticos","Saca gratis tu carnet de Fanático de la Copa City 9, suma puntos y compite por "+esc(FZ.PREMIO.toLowerCase())+" y premios sorpresa cada mes y en cada jornada.");
   if(FAN&&API===true) return h+'<div class="card empty"><p style="margin:0">Cargando tu carnet…</p></div>';
   if(API===false) h+='<p class="nota" style="margin:0">El carnet se activa en la versión publicada de la página.</p>';
   var ops=S.equipos.filter(function(x){ return x.id.indexOf("x-")!==0; }).map(function(x){ return '<option value="'+esc(x.id)+'">'+esc(x.nombre)+'</option>'; }).join("");
