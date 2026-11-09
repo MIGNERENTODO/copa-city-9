@@ -19,7 +19,7 @@ window.SITIO = {
     temporada: "2026",
     sede: "Estadio La Ligua Park",   /* sede única de todos los juegos */
     resumen: "10 equipos, 9 ciudades y 3,5 meses de competencia en el Estadio La Ligua Park. Juegos a 7 innings, transmitidos en vivo por YouTube e Instagram.",
-    minimos: { vb: 5, il: "3.0" }   /* mínimos para líderes de AVG/OPS y EFE/WHIP */
+    minimos: { vb: 10, il: "3.0" }   /* mínimos para líderes de AVG/OPS y EFE/WHIP */
   },
 
   redes: {

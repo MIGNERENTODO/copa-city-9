@@ -838,7 +838,7 @@ var CAT_BAT=[
 var CAT_PIT=[
   {k:"efe",t:"Efectividad",f:fmt2,min:"il",asc:true},{k:"g",t:"Juegos ganados",f:String},{k:"kp",t:"Ponches",f:String},
   {k:"whip",t:"WHIP",f:fmt2,min:"il",asc:true},{k:"outs",t:"Innings lanzados",f:function(v){return outsTxt(v);}},{k:"k7",t:"Ponches por 7 IL",f:fmt2,min:"il"}];
-function minVB(){ return n((LIGA.minimos||{}).vb)||5; }
+function minVB(){ return n((LIGA.minimos||{}).vb)||10; }
 function minOuts(){ return txtOuts((LIGA.minimos||{}).il||"3.0"); }
 function top(src,c,cnt){
   var a=src.filter(function(x){ if(c.min==="vb") return x.vb>=minVB(); if(c.min==="il") return x.outs>=minOuts(); return true; });
@@ -1783,8 +1783,8 @@ function musica(){
 /* Une las publicaciones del panel con las de datos/sitio.js (las que publica Claude). Las del panel mandan. */
 function fusionarPubs(){ var ids={}, out=[]; (M.pubs||[]).forEach(function(p){ if(p&&p.id){ ids[p.id]=1; out.push(p); } }); ((window.SITIO||{}).publicaciones||[]).forEach(function(p){ if(p&&p.id&&!ids[p.id]&&!p.borrador){ ids[p.id]=1; out.push(p); } }); M.pubs=out; }
 function iniciar(raw){ fusionarPubs(); try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
-/* Usa las estadísticas con más juegos cargados: las del panel o las del archivo datos/estadisticas.json */
-function masCompleto(a,b){ var na=a&&a.juegos?a.juegos.length:0, nb=b&&b.juegos?b.juegos.length:0; return nb>na?b:(a||b); }
+/* Usa las estadísticas con más juegos cargados; si empatan, manda el archivo datos/estadisticas.json (trae las correcciones) */
+function masCompleto(a,b){ var na=a&&a.juegos?a.juegos.length:0, nb=b&&b.juegos?b.juegos.length:0; return (b && nb>=na)?b:(a||b); }
 function estatico(){ return fetch("datos/estadisticas.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return window.ESTADISTICAS||null; }); }
 fetch("api/contenido",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
   .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; var kv=c.estadisticas||null; return estatico().then(function(f){ return masCompleto(kv,f); }); })
