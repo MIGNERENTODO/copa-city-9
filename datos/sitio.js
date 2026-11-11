@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 10",
     fecha: "2026-11-08",
     slides: [
+      {"tag": "Orgullo Puma · Campeón bate", "img": "assets/noticias/wilmer-borjas-portada.jpg", "pos": "80% 40%", "alt": "Wilmer Borjas, de Pumas de Salamanca, batea en un juego. Foto: @agvisuals.cl", "titulo": "Wilmer Borjas, campeón bate en Cerro Navia", "bajada": "El lanzador y utility zuliano de los Pumas de Salamanca recibió el galardón de campeón bate de la Liga de Cerro Navia. ¡Felicitaciones, Wilmer!", "corto": "Wilmer Borjas, campeón bate", "link": "#articulo-wilmer-borjas-campeon-bate-cerro-navia"},
       {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "Cayó el campeón", "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.", "corto": "Bravos derrotó al campeón", "link": "#articulo-j10-cayo-el-campeon"},
       {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Bendecidos, con pie y medio en la semifinal", "bajada": "Blessed Barber ganó sus dos juegos, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo.", "corto": "Blessed es el nuevo líder", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
       {"tag": "Juego 1 · Jornada 10", "visita": "andes", "cv": 8, "local": "blessed", "cl": 11, "img": "assets/jornadas/j10-flyer.jpg", "pos": "center 30%", "alt": "Programación de la Jornada 10 de la Copa City 9", "titulo": "Blessed abrió el día con triunfo", "bajada": "Blessed Barber venció 11 a 8 a Los Andes al mediodía, en el primero de sus dos juegos del domingo.", "corto": "Blessed superó a Los Andes", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
@@ -512,6 +513,85 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "wilmer-borjas-campeon-bate-cerro-navia",
+      "tipo": "noticia",
+      "titulo": "Wilmer Borjas, campeón bate en Cerro Navia: el zurdo que llena de alegría cada tarde de softbol",
+      "bajada": "El lanzador y utility zuliano, jugador insignia de los Pumas de Salamanca, recibió el galardón de campeón bate de la Liga de Cerro Navia, en un torneo donde los Pumas terminaron en el tercer lugar de la categoría Caliche Chata.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-11",
+      "equipo": "pumas",
+      "portada": "assets/noticias/wilmer-borjas-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Hay jugadores que llenan una planilla y hay jugadores que llenan una tarde. Wilmer Borjas pertenece a los segundos. Cada vez que toma el bate o sube a la lomita, la fanaticada de los Pumas sabe que algo puede pasar, y los amantes del softbol, sin importar la camiseta, se acomodan para mirar. Hoy, mientras defiende el azul y amarillo en la Copa City 9, llega una noticia que confirma lo que en la cancha ya se sabía: Wilmer Borjas es el campeón bate de la Liga de Cerro Navia."
+        },
+        {
+          "t": "h",
+          "x": "Un premio con sabor a historia"
+        },
+        {
+          "t": "p",
+          "x": "El reconocimiento llegó con la participación de los Pumas de Salamanca en el torneo de la Liga de Cerro Navia, en Santiago, donde el club se quedó con el tercer lugar en la categoría Caliche Chata. Terminar como el mejor bateador de toda una liga capitalina no es casualidad: es fruto de constancia, disciplina y de un ojo que pocos tienen en la caja de bateo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/wilmer-borjas-premiacion.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Un pelotero para todas las posiciones"
+        },
+        {
+          "t": "p",
+          "x": "Lanzador reconocido y utility de verdad, Wilmer puede cubrir todas las bases y cualquier posición del campo. Con el madero es un zurdo de poder capaz de abrir el line-up o de asumir la responsabilidad del tercer bate. Esa versatilidad lo convierte en el tipo de pelotero que todo mánager quisiera tener. ¡Jugador acostumbrado a echarse al equipo a sus hombros!"
+        },
+        {
+          "t": "h",
+          "x": "De Illapel a Santiago, siempre con jerarquía"
+        },
+        {
+          "t": "p",
+          "x": "En la provincia del Choapa ha vestido dos camisetas: debutó con los Cerveceros de Illapel y luego se convirtió en pieza fundamental de los Pumas de Salamanca durante varias temporadas. Ha jugado torneos en Salamanca, Illapel, La Serena, La Ligua y Ovalle, y en Santiago ha tenido un recorrido importante con equipos como Santiago Bistró, Los Theckes y Aligators, entre otros. En cada uno de esos campeonatos ha dejado claro su nivel."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/wilmer-borjas-pumas.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Raíces zulianas y un sueño de béisbol profesional"
+        },
+        {
+          "t": "p",
+          "x": "Wilmer es venezolano, zuliano, y de joven estuvo muy ligado al béisbol, al punto de firmar con la organización de los Cachorros de Chicago. Un accidente le impidió continuar su carrera profesional, pero no apagó su pasión: como beisbolista ya había dado grandes pasos y muchas satisfacciones a su familia, y esa misma entrega la sigue mostrando hoy en cada diamante de softbol."
+        },
+        {
+          "t": "h",
+          "x": "Una familia de deportistas"
+        },
+        {
+          "t": "p",
+          "x": "Wilmer es profesor de profesión en Venezuela y hoy, en Chile, trabaja en una fábrica, sin dejar de lado su pasión por el diamante. Su esposa, Marvin MacGregor, también es deportista: fue seleccionada del Zulia en atletismo. Y su hija menor, Sofía Borjas, despunta como futbolista en la categoría sub 15 de la U de Chile. El talento, sin duda, viene de familia."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/wilmer-borjas-campo.jpg",
+          "pie": ""
+        },
+        {
+          "t": "p",
+          "x": "Desde la Copa City 9 celebramos este logro de un jugador que honra el softbol con su juego y con su ejemplo. ¡Felicitaciones, Wilmer Borjas!"
+        },
+        {
+          "t": "p",
+          "x": "Foto de portada: @agvisuals.cl"
+        }
+      ]
+    },
     {
       "id": "resumen-jornada-9",
       "tipo": "juego",

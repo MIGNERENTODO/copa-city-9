@@ -22,5 +22,6 @@ module.exports = [
  "pedro-rojas-portada.jpg",
  "pronosticos-j10-portada.jpg",
  "pumas-convivencia-portada.jpg",
+ "wilmer-borjas-portada.jpg",
  "yonny-torres-portada.jpg"
 ];
