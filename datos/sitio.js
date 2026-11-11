@@ -357,6 +357,10 @@ window.SITIO = {
     jornada: "Jornada 10",
     fecha: "2026-11-08",
     slides: [
+      { tag: "Jornada 11 · Domingo 15 de noviembre", img: "assets/noticias/jornada-11-flyer.jpg", pos: "center 28%", alt: "Programación de la Jornada 11 de la Copa City 9",
+        titulo: "Jornada 11: cinco juegos este domingo",
+        bajada: "10:00 Atléticos vs Litoral · 12:00 Bombarderos vs Los Andes · 14:00 Blessed vs Máster Pumas · 16:00 Pandas vs Atléticos · 18:00 Máster Pumas vs Pandas.",
+        corto: "Programación de la Jornada 11", link: "#articulo-jornada-11-programacion" },
       {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/alexis-colina-portada.jpg", "pos": "82% 30%", "alt": "Alexis Colina, segunda base y campocorto de Pumas de Salamanca", "titulo": "20 preguntas con Alexis Colina", "bajada": "De Los Guayos, Carabobo, a los Pumas de Salamanca: el comerciante y fundador de Los Guayos en Santiago habla de su familia, su fe y su pasión por el softbol.", "corto": "Perfil City 9: Alexis Colina", "link": "#articulo-perfil-alexis-colina"},
       {"tag": "Orgullo Puma · Campeón bate", "img": "assets/noticias/wilmer-borjas-portada.jpg", "pos": "80% 40%", "alt": "Wilmer Borjas, de Pumas de Salamanca, batea en un juego. Foto: @agvisuals.cl", "titulo": "Wilmer Borjas, campeón bate en Cerro Navia", "bajada": "El lanzador y utility zuliano de los Pumas de Salamanca recibió el galardón de campeón bate de la Liga de Cerro Navia. ¡Felicitaciones, Wilmer!", "corto": "Wilmer Borjas, campeón bate", "link": "#articulo-wilmer-borjas-campeon-bate-cerro-navia"},
       {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "Cayó el campeón", "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.", "corto": "Bravos derrotó al campeón", "link": "#articulo-j10-cayo-el-campeon"},
@@ -377,7 +381,8 @@ window.SITIO = {
      Formato: { n: 9, fecha: "2026-11-01", partidos: [["visita","local","10:00"], ...] } */
   programacion: [
     { n: 9, fecha: "2026-11-01", partidos: [["atleticos","pumas","10:00"], ["pumas","andes","12:00"], ["bombarderos","bravos","14:00"], ["pandas","guaros","16:00"], ["bravos","pandas","18:00"]] },
-    { n: 10, fecha: "2026-11-08", partidos: [["andes","blessed","12:00"], ["blessed","bravos","14:00"], ["bravos","guaros","16:00"]] }
+    { n: 10, fecha: "2026-11-08", partidos: [["andes","blessed","12:00"], ["blessed","bravos","14:00"], ["bravos","guaros","16:00"]] },
+    { n: 11, fecha: "2026-11-15", partidos: [["atleticos","maitencillo","10:00"], ["bombarderos","andes","12:00"], ["blessed","masterpumas","14:00"], ["pandas","atleticos","16:00"], ["masterpumas","pandas","18:00"]] }
   ],
 
   /* Encuestas y votaciones del público. Cada persona vota una vez por encuesta.
@@ -529,6 +534,69 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "jornada-11-programacion",
+      "tipo": "noticia",
+      "titulo": "Jornada 11: cinco juegos este domingo en La Ligua Park",
+      "bajada": "Atléticos, Pandas y Máster Pumas juegan dos veces en una jornada maratónica que arranca a las 10:00 y cierra a las 18:00. Transmisión en vivo por YouTube e Instagram.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-11",
+      "portada": "assets/noticias/jornada-11-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "La Copa City 9 vuelve este domingo 15 de noviembre al Estadio La Ligua Park con la Jornada 11: cinco juegos desde las 10:00 hasta el último lanzamiento de la tarde. Atléticos del Caribe, Pandas de Quillota y Máster Pumas tendrán doble jornada."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-flyer.jpg",
+          "pie": "Programación de la Jornada 11 · Domingo 15 de noviembre · Estadio La Ligua Park"
+        },
+        {
+          "t": "h",
+          "x": "Juego por juego"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "10:00 · Atléticos del Caribe vs Litoral Maitencillo",
+            "12:00 · Bombarderos de Illapel vs Los Andes",
+            "14:00 · Blessed Barber vs Máster Pumas",
+            "16:00 · Pandas de Quillota vs Atléticos del Caribe",
+            "18:00 · Máster Pumas vs Pandas de Quillota"
+          ]
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-juego1.jpg",
+          "pie": "Juego 1 · 10:00 · Atléticos del Caribe vs Litoral Maitencillo"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-juego2.jpg",
+          "pie": "Juego 2 · 12:00 · Bombarderos de Illapel vs Los Andes"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-juego3.jpg",
+          "pie": "Juego 3 · 14:00 · Blessed Barber vs Máster Pumas"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-juego4.jpg",
+          "pie": "Juego 4 · 16:00 · Pandas de Quillota vs Atléticos del Caribe"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jornada-11-juego5.jpg",
+          "pie": "Juego 5 · 18:00 · Máster Pumas vs Pandas de Quillota"
+        },
+        {
+          "t": "p",
+          "x": "Todos los juegos se transmiten en vivo por YouTube e Instagram en @ligadesoftbol_laligua y @mignerentodo. ¡Los esperamos en La Ligua Park!"
+        }
+      ]
+    },
     {
       "id": "perfil-alexis-colina",
       "tipo": "perfil",
