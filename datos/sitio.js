@@ -389,6 +389,21 @@ window.SITIO = {
      votos: votos contados fuera de la página (por ejemplo, en Instagram); se suman a los de la página. */
   encuestas: [
     {
+      id: "mvp-2026-11-08",
+      tipo: "mvp",
+      pregunta: "MVP del público · Jornada 10, domingo 8 de noviembre",
+      descripcion: "Un candidato por equipo: el bateador más destacado de cada club en la Jornada 10. Vota por tu favorito.",
+      estado: "abierta",
+      cierra: "2026-11-13T22:00:00-03:00",
+      fecha: "2026-11-08",
+      opciones: [
+        { id: "j10mathe", texto: "Maikol Matheus", equipo: "blessed", linea: "4-6, 1 2B, 3 HR, 4 CI, 3 CA (2 juegos)" },
+        { id: "j10cjavi", texto: "Carlos Javier", equipo: "bravos", linea: "2-7, 2 HR, 3 CI, 4 CA (2 juegos)" },
+        { id: "j10vrami", texto: "Víctor Ramírez", equipo: "guaros", linea: "2-3, 1 HR, 3 CI, 1 CA" },
+        { id: "j10lrive", texto: "Luis Rivero", equipo: "andes", linea: "1-3, 1 HR, 1 CI, 1 BB" }
+      ]
+    },
+    {
       id: "mvp-2026-11-01",
       tipo: "mvp",
       pregunta: "MVP del público · Jornada 9, domingo 1 de noviembre",
