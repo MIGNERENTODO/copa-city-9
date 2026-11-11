@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 10",
     fecha: "2026-11-08",
     slides: [
+      {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/alexis-colina-portada.jpg", "pos": "82% 30%", "alt": "Alexis Colina, segunda base y campocorto de Pumas de Salamanca", "titulo": "20 preguntas con Alexis Colina", "bajada": "De Los Guayos, Carabobo, a los Pumas de Salamanca: el comerciante y fundador de Los Guayos en Santiago habla de su familia, su fe y su pasión por el softbol.", "corto": "Perfil City 9: Alexis Colina", "link": "#articulo-perfil-alexis-colina"},
       {"tag": "Orgullo Puma · Campeón bate", "img": "assets/noticias/wilmer-borjas-portada.jpg", "pos": "80% 40%", "alt": "Wilmer Borjas, de Pumas de Salamanca, batea en un juego. Foto: @agvisuals.cl", "titulo": "Wilmer Borjas, campeón bate en Cerro Navia", "bajada": "El lanzador y utility zuliano de los Pumas de Salamanca recibió el galardón de campeón bate de la Liga de Cerro Navia. ¡Felicitaciones, Wilmer!", "corto": "Wilmer Borjas, campeón bate", "link": "#articulo-wilmer-borjas-campeon-bate-cerro-navia"},
       {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "Cayó el campeón", "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.", "corto": "Bravos derrotó al campeón", "link": "#articulo-j10-cayo-el-campeon"},
       {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Bendecidos, con pie y medio en la semifinal", "bajada": "Blessed Barber ganó sus dos juegos, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo.", "corto": "Blessed es el nuevo líder", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
@@ -513,6 +514,262 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "perfil-alexis-colina",
+      "tipo": "perfil",
+      "titulo": "Perfil City 9: 20 preguntas con Alexis Colina",
+      "bajada": "El segunda base y campocorto de Pumas de Salamanca llegó de Los Guayos, Carabobo, en 2021. Comerciante, fundador del equipo Los Guayos en Santiago y alguna vez al frente de la liga, habla de los hijos que extraña, de su fe y de por qué los sueños no tienen fronteras.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-11",
+      "equipo": "pumas",
+      "portada": "assets/noticias/alexis-colina-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Alexis Alexander Colina Vásquez, \"Colina\" para el mundo del softbol, es carabobeño de Los Guayos y trabajador desde los 12 años. Llegó a Chile en 2021, levantó su propio negocio y fundó un equipo de softbol en Santiago. Hoy juega con Pumas de Salamanca en la Copa City 9. Estas son sus 20 respuestas."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 1: La persona, la familia y el día a día"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "1. ¿Cómo te llamas y de qué ciudad y país vienes?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Mi nombre es Alexis Alexander Colina Vásquez, aunque deportivamente me conocen como Colina. Soy orgullosamente venezolano, del estado Carabobo, específicamente de un pueblo llamado Los Guayos. Actualmente vivo en Santiago, Chile, una ciudad que me ha brindado muchas oportunidades y donde he podido crecer tanto personal como profesionalmente."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "2. ¿Con quién vives en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Actualmente vivo con una amiga, quien ha sido una parte fundamental de mi vida. Hemos construido muchas cosas juntos y siempre tratamos de apoyarnos en cada proyecto y cada desafío. Para mí, tener a alguien que te acompañe en los buenos y malos momentos es una bendición."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "3. ¿Cuál era tu sueño cuando eras niño?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Desde pequeño siempre soñé con salir adelante, tener mis propias cosas y poder ayudar a mi familia. Con los años entendí que los sueños no se cumplen solos, sino con sacrificio, disciplina y mucha fe en Dios."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "4. ¿A qué te dedicabas en tu país y qué haces hoy en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "En Venezuela me dedicaba a hacer cualquier trabajo honrado, porque desde los 12 años siempre he sido un muchacho trabajador independiente. Al llegar a Chile continué trabajando fuertemente hasta lograr tener mi propio negocio, una tienda de ropa virtual en Instagram. Poco a poco fui teniendo otras entradas de dinero, como comprar y vender autos. A eso me dedico actualmente: soy comerciante."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "5. ¿En qué año llegaste a Chile y qué fue lo más duro al principio?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Llegué a Chile en el año 2021. Creo que una de las cosas más difíciles de emigrar es dejar atrás a tu familia, tus costumbres y comenzar prácticamente desde cero en otro país. Pero también aprendí que las dificultades te hacen más fuerte y que cada sacrificio tiene su recompensa. Hoy agradezco las oportunidades que he tenido en este país. Tengo muchos años sin ver a mis hijos, los extraño muchísimo y anhelo con locura poder algún día volver a abrazarlos y decirles lo mucho que los amo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/alexis-colina-turno.jpg",
+          "pie": ""
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "6. ¿Cuál es tu comida favorita de tu tierra y tu plato chileno preferido?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "De Venezuela, sin duda alguna, me quedo con la arepa. Es una de esas comidas que nunca pueden faltar y que siempre te recuerdan tus raíces. En cuanto a la comida chilena, no tengo un plato favorito como tal, pero disfruto muchísimo un buen asado o un completo italiano."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "7. ¿Qué música o artista no puede faltar en tu auto o en tus audífonos?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Me gusta mucho la salsa porque representa mis raíces venezolanas y nuestras tradiciones. Pero también disfruto bastante el dembow, así que tengo gustos musicales variados. Todo depende del momento y del ánimo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "8. Si pudieras tener el auto de tus sueños, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Me gustan mucho las camionetas grandes, especialmente las Toyota o las Honda. Me encanta su presencia, comodidad y estilo. Son de esos gustos que espero algún día poder cumplir."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "9. ¿Qué consejo les das a los niños y jóvenes que te ven jugar o trabajar?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Que nunca permitan que las circunstancias limiten sus sueños. Que sean disciplinados, respetuosos y constantes. No importa de dónde vengas ni cuántas veces te equivoques, lo importante es levantarte y seguir trabajando por lo que quieres. Y, sobre todo, que nunca pierdan la fe en Dios."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "10. En una sola palabra, ¿qué significa tu familia para ti?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Todo. Porque mi familia es mi motivación, y que sepan que yo voy a ser ese tipo de la familia que Dios usa para cambiar toda la historia de su familia. Los amo."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 2: La pasión por el sóftbol"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/alexis-colina-swing.jpg",
+          "pie": ""
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "11. ¿A qué edad empezaste a jugar o a meterte en el sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Comencé a jugar béisbol a los 12 años en Venezuela. Desde entonces nació mi pasión por este deporte. Con el tiempo también me involucré en el sóftbol, una disciplina que disfruto muchísimo y que hoy forma parte importante de mi vida."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "12. ¿Por qué juegas o te gusta el sóftbol y no otro deporte?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Porque es un deporte que me apasiona. Me gusta competir, exigirme y compartir con mis compañeros. Para mí no se trata solamente de ganar o perder, sino de disfrutar cada juego, aprender y seguir mejorando."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "13. ¿Cuál es tu posición en el campo o tu rol en el equipo?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Me desempeño principalmente como segunda base y campocorto. Son posiciones que me gustan porque requieren concentración, rapidez y responsabilidad. Siempre trato de aportar tanto ofensiva como defensivamente y dar lo mejor de mí por el equipo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "14. ¿Cuál ha sido tu momento o logro más grande en el sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Creo que uno de mis mayores logros ha sido poder crear mi propio equipo de sóftbol en Santiago de Chile, Los Guayos, junto con mi hermano Daniel Carballo y Cristian Toro, que son fundadores conmigo del equipo. Una experiencia que me dejó muchos aprendizajes, grandes amistades y la satisfacción de haber contribuido con nuestro deporte. Más allá de los títulos individuales, eso tiene un valor muy especial para mí."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/alexis-colina-los-guayos.jpg",
+          "pie": "Los Guayos, el equipo que Alexis fundó en Santiago"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "15. ¿Qué es lo que más te gusta del ambiente de los domingos de sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "El ambiente familiar, la rivalidad sana y la pasión que demuestra cada equipo. Me gusta ver a las familias apoyando, a los jugadores compartiendo y a las personas disfrutando de un domingo diferente. Eso es lo bonito del deporte: que une a las personas."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "16. Si tuvieras que definir el sóftbol en una palabra, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Pasión. Porque cuando realmente amas este deporte, lo vives dentro y fuera del terreno."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 3: La Copa City 9"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "17. ¿En qué equipo juegas o qué función cumples en la Copa City 9?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Actualmente juego con Pumas de Salamanca, un equipo que me dio la oportunidad de jugar con ellos: un grupo unido, competitivo y comprometido."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/alexis-colina-pumas.jpg",
+          "pie": "Con la familia de Pumas de Salamanca"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "18. ¿Cuál es tu meta principal con tu equipo para este torneo?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Nuestra meta es competir al máximo nivel y luchar por el campeonato. Pero más allá de los resultados, quiero que seamos un equipo unido, disciplinado y que se respete dentro y fuera del terreno. Porque los campeonatos son importantes, pero el compañerismo, la responsabilidad y la unión también lo son."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "19. ¿Cómo ves el trabajo y la gestión de la actual directiva de la Liga de La Ligua?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Personalmente, veo muy bien el trabajo que está realizando la directiva actual. Yo tuve la oportunidad de estar al frente de la liga y sé que no es una responsabilidad fácil. Hay que dedicar tiempo, tener paciencia y tomar decisiones que muchas veces no son sencillas. Hoy puedo decir con mucha humildad que siento que están haciendo las cosas incluso mejor de lo que las hice yo, y eso me alegra muchísimo. Porque esto nunca se ha tratado de quién lo hace mejor, sino de que nuestro deporte siga creciendo. Cuentan con mi respeto, mi reconocimiento y mi apoyo cuando lo necesiten. Al final, todos queremos lo mismo: una liga cada día mejor."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "20. ¿Qué les dices a los fanáticos y a las familias que nos acompañan cada fin de semana?"
+        },
+        {
+          "t": "r",
+          "quien": "Alexis Colina",
+          "x": "Primero que nada, agradecerles de corazón por su apoyo. Ustedes son una parte fundamental de nuestra liga. Los invito a que sigan acompañándonos, que disfruten cada encuentro y que apoyen siempre con respeto. Queremos que el sóftbol de La Ligua siga creciendo y que cada domingo sea una verdadera fiesta deportiva para toda la familia."
+        },
+        {
+          "t": "h",
+          "x": "Para cerrar"
+        },
+        {
+          "t": "cita",
+          "x": "“Soy Alexis Colina, venezolano de nacimiento, orgulloso de mis raíces y agradecido con Chile por las oportunidades. Creo firmemente que con Dios, disciplina, humildad y perseverancia podemos lograr grandes cosas. Porque los sueños no tienen fronteras.”"
+        }
+      ]
+    },
     {
       "id": "wilmer-borjas-campeon-bate-cerro-navia",
       "tipo": "noticia",
