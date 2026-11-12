@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 10",
     fecha: "2026-11-08",
     slides: [
+      {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/roberto-cubillan-portada.jpg", "pos": "74% 35%", "alt": "Roberto Cubillán, cátcher de Bombarderos de Illapel, en el turno al bate", "titulo": "20 preguntas con Roberto Cubillán", "bajada": "El cátcher maracucho de Bombarderos de Illapel, doble campeón jonronero, habla de su paso por el béisbol, sus inicios en Chile y su familia.", "corto": "Perfil City 9: Roberto Cubillán", "link": "#articulo-perfil-roberto-cubillan"},
       { tag: "Jornada 11 · Domingo 15 de noviembre", img: "assets/noticias/jornada-11-flyer.jpg", pos: "center 28%", alt: "Programación de la Jornada 11 de la Copa City 9",
         titulo: "Jornada 11: cinco juegos este domingo",
         bajada: "10:00 Atléticos vs Litoral · 12:00 Bombarderos vs Los Andes · 14:00 Blessed vs Máster Pumas · 16:00 Pandas vs Atléticos · 18:00 Máster Pumas vs Pandas.",
@@ -534,6 +535,249 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "perfil-roberto-cubillan",
+      "tipo": "perfil",
+      "titulo": "Perfil City 9: 20 preguntas con Roberto Cubillán",
+      "bajada": "Formado en el béisbol de Venezuela y República Dominicana y observado por organizaciones de Grandes Ligas, el cátcher maracucho es hoy el poder de Bombarderos de Illapel. Maestro mueblista, doble campeón jonronero y hombre de familia, cuenta lo duro que fue empezar en Chile y por qué el domingo es para disfrutar.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-12",
+      "equipo": "bombarderos",
+      "portada": "assets/noticias/roberto-cubillan-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Roberto Cubillán es maracucho y creció con un guante y un bate en la mano. Hizo carrera en el béisbol desde las categorías infantiles hasta la juvenil en Venezuela y en República Dominicana, y fue observado por organizaciones de equipos de las Grandes Ligas, hasta que una lesión le cerró ese camino. En Chile ha vestido las camisetas de Marabinos, Guanareños y Pumas de Salamanca, y en cada equipo dejó la misma carta de presentación: el poder de su bate. Esas credenciales lo llevaron a ser contratado por su equipo actual, Bombarderos de Illapel. Estas son sus 20 respuestas."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/roberto-cubillan-pumas-rojo.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Bloque 1: La persona, la familia y el día a día"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "1. ¿Cómo te llamas y de qué ciudad y país vienes?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Roberto Cubillán, y vengo de Maracaibo, estado Zulia."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "2. ¿Con quién vives en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Vivo con mi esposa, y tengo casi toda mi familia más cercana acá en Chile."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "3. ¿Cuál era tu sueño cuando eras niño?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Ser jugador profesional y llegar a Grandes Ligas."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "4. ¿A qué te dedicabas en tu país y qué haces hoy en Chile?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Yo me dedicaba al béisbol en República Dominicana hasta que me lesioné y no pude seguir. Acá en Chile soy maestro mueblista."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "5. ¿En qué año llegaste a Chile y qué fue lo más duro al principio?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Llegué en el 2020, y lo más duro fue poder establecernos acá en Chile, ya que nos tocó, como a la mayoría, vivir arrimados y dormir en la sala de un departamento de una pieza."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "6. ¿Cuál es tu comida favorita de tu tierra y tu plato chileno preferido?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Mi comida favorita de Venezuela es el arroz con pollo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "7. ¿Qué música o artista no puede faltar en tu auto o en tus audífonos?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Gilberto Santa Rosa. Ese es el hombre."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "8. Si pudieras tener el auto de tus sueños, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Un Camaro."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "9. ¿Qué consejo les das a los niños y jóvenes que te ven jugar o trabajar?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Que sean disciplinados en el camino que desean emprender."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "10. En una sola palabra, ¿qué significa tu familia para ti?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Amor."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 2: La pasión por el sóftbol"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/roberto-cubillan-pumas-salamanca.jpg",
+          "pie": "Junto a un compañero de Pumas de Salamanca, otra de las camisetas que ha defendido en Chile"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "11. ¿A qué edad empezaste a jugar o a meterte en el sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Empecé a los 19 años."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "12. ¿Por qué juegas o te gusta el sóftbol y no otro deporte?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Por el hecho de haber jugado béisbol toda mi vida, y porque no soy bueno para otro deporte."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "13. ¿Cuál es tu posición en el campo o tu rol en el equipo?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Soy el cátcher del equipo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "14. ¿Cuál ha sido tu momento o logro más grande en el sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Haber quedado campeón jonronero en dos ligas distintas al mismo tiempo."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "15. ¿Qué es lo que más te gusta del ambiente de los domingos de sóftbol?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "El hecho de compartir con mis compañeros."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "16. Si tuvieras que definir el sóftbol en una palabra, ¿cuál sería?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Hobby."
+        },
+        {
+          "t": "h",
+          "x": "Bloque 3: La Copa City 9"
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "17. ¿En qué equipo juegas o qué función cumples en la Copa City 9?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Soy del equipo Bombarderos, y bueno, soy un jugador más."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "18. ¿Cuál es tu meta principal con tu equipo para este torneo?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Bueno, que lleguemos a la final y quedemos campeones."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "19. ¿Cómo ves el trabajo y la gestión de la actual directiva de la Liga de La Ligua?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Creo que le han puesto empeño y han levantado una liga desde cero. Eso va a atraer a buenos equipos."
+        },
+        {
+          "t": "q",
+          "quien": "Copa City 9",
+          "x": "20. ¿Qué les dices a los fanáticos y a las familias que nos acompañan cada fin de semana?"
+        },
+        {
+          "t": "r",
+          "quien": "Roberto Cubillán",
+          "x": "Que disfrutemos del domingo, ya que todos vamos a distraernos. No nos lo tomemos muy a pecho, que es solo un juego. Evitemos problemas y apoyen fuertemente a su equipo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/roberto-cubillan-terno.jpg",
+          "pie": ""
+        }
+      ]
+    },
     {
       "id": "jornada-11-programacion",
       "tipo": "noticia",
