@@ -398,7 +398,8 @@ th.sorted{color:var(--red)}
 .cruces{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:0;padding:6px}
 .cruce{display:flex;align-items:center;gap:7px;padding:9px 10px;font-weight:700;font-family:var(--display);font-size:16px;letter-spacing:.03em;border-bottom:1px solid var(--line)}
 .cruce .muted{font-size:13px;font-weight:600}
-.cruce .pill{margin-left:auto}
+.cruce .pill{margin-left:4px}
+.cruce{border-right:1px solid var(--line)}
 .salon{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
 .mvpw{display:flex;gap:14px;align-items:center;padding:16px}
 .mvpw.last{border-top:4px solid var(--red)}
@@ -1155,7 +1156,7 @@ function pendientes(eq){
   var prg={}; M.cal.forEach(function(c){ if(!c.juego&&c.jornada) prg[[c.local,c.visita].sort().join("|")]=c; });
   for(var i=0;i<ids.length;i++) for(var k=i+1;k<ids.length;k++){ var key=[ids[i],ids[k]].sort().join("|");
     if(jug[key]) continue; if(eq&&ids[i]!==eq&&ids[k]!==eq) continue; out.push({a:ids[i],b:ids[k],prog:prg[key]||null}); }
-  return out;
+  return out.filter(function(x){ return x.prog; }).concat(out.filter(function(x){ return !x.prog; }));
 }
 function cruceHTML(x){ var A=teamOf(x.a), B=teamOf(x.b);
   return '<div class="cruce">'+logo(A.id)+'<span>'+esc(A.abrev)+'</span><span class="muted">vs</span><span>'+esc(B.abrev)+'</span>'+logo(B.id)+(x.prog?'<span class="pill next" title="Programado">J'+esc(x.prog.jornada)+'</span>':'')+'</div>'; }
