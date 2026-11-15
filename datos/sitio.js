@@ -354,9 +354,10 @@ window.SITIO = {
   patrocinadores: [],
 
   portada: {
-    jornada: "Jornada 10",
-    fecha: "2026-11-08",
+    jornada: "Jornada 11",
+    fecha: "2026-11-15",
     slides: [
+      {"tag": "Jornada 11 · Crónica", "img": "assets/noticias/pandas-doble-j11-portada.jpg", "pos": "92% 45%", "alt": "Pandas de Quillota celebra con su gente en el Estadio La Ligua Park", "titulo": "¡Pandas gana doble!", "bajada": "Venció a Máster Pumas y a Atléticos del Caribe y se mete en la pelea por la semifinal. Pandas, Bombarderos y Litoral: dos jornadas para decidirlo.", "corto": "Pandas gana doble y pelea la semifinal", "link": "#articulo-pandas-gana-doble-jornada-11"},
       {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/roberto-cubillan-portada.jpg", "pos": "74% 35%", "alt": "Roberto Cubillán, cátcher de Bombarderos de Illapel, en el turno al bate", "titulo": "20 preguntas con Roberto Cubillán", "bajada": "El cátcher maracucho de Bombarderos de Illapel, doble campeón jonronero, habla de su paso por el béisbol, sus inicios en Chile y su familia.", "corto": "Perfil City 9: Roberto Cubillán", "link": "#articulo-perfil-roberto-cubillan"},
       { tag: "Jornada 11 · Domingo 15 de noviembre", img: "assets/noticias/jornada-11-flyer.jpg", pos: "center 28%", alt: "Programación de la Jornada 11 de la Copa City 9",
         titulo: "Jornada 11: cinco juegos este domingo",
@@ -364,11 +365,6 @@ window.SITIO = {
         corto: "Programación de la Jornada 11", link: "#articulo-jornada-11-programacion" },
       {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/alexis-colina-portada.jpg", "pos": "82% 30%", "alt": "Alexis Colina, segunda base y campocorto de Pumas de Salamanca", "titulo": "20 preguntas con Alexis Colina", "bajada": "De Los Guayos, Carabobo, a los Pumas de Salamanca: el comerciante y fundador de Los Guayos en Santiago habla de su familia, su fe y su pasión por el softbol.", "corto": "Perfil City 9: Alexis Colina", "link": "#articulo-perfil-alexis-colina"},
       {"tag": "Orgullo Puma · Campeón bate", "img": "assets/noticias/wilmer-borjas-portada.jpg", "pos": "80% 40%", "alt": "Wilmer Borjas, de Pumas de Salamanca, batea en un juego. Foto: @agvisuals.cl", "titulo": "Wilmer Borjas, campeón bate en Cerro Navia", "bajada": "El lanzador y utility zuliano de los Pumas de Salamanca recibió el galardón de campeón bate de la Liga de Cerro Navia. ¡Felicitaciones, Wilmer!", "corto": "Wilmer Borjas, campeón bate", "link": "#articulo-wilmer-borjas-campeon-bate-cerro-navia"},
-      {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "Cayó el campeón", "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.", "corto": "Bravos derrotó al campeón", "link": "#articulo-j10-cayo-el-campeon"},
-      {"tag": "Jornada 10 · Domingo 8 de noviembre", "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Bendecidos, con pie y medio en la semifinal", "bajada": "Blessed Barber ganó sus dos juegos, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo.", "corto": "Blessed es el nuevo líder", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
-      {"tag": "Juego 1 · Jornada 10", "visita": "andes", "cv": 8, "local": "blessed", "cl": 11, "img": "assets/jornadas/j10-flyer.jpg", "pos": "center 30%", "alt": "Programación de la Jornada 10 de la Copa City 9", "titulo": "Blessed abrió el día con triunfo", "bajada": "Blessed Barber venció 11 a 8 a Los Andes al mediodía, en el primero de sus dos juegos del domingo.", "corto": "Blessed superó a Los Andes", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
-      {"tag": "Juego 2 · Jornada 10", "visita": "blessed", "cv": 5, "local": "bravos", "cl": 3, "img": "assets/noticias/j10-blessed-bateador.jpg", "pos": "center 40%", "alt": "Bateador de Blessed Barber en el Estadio La Ligua Park", "titulo": "Duelo de líderes para los morados", "bajada": "En el juego de menos carreras del día, Blessed Barber le ganó 5 a 3 a Bravos de La Calera y se quedó con el primer lugar.", "corto": "Blessed ganó el duelo directo", "link": "#articulo-j10-bendecidos-pie-y-medio-semifinal"},
-      {"tag": "Juego 3 · Jornada 10", "visita": "bravos", "cv": 25, "local": "guaros", "cl": 15, "img": "assets/noticias/j10-bravos-celebra.jpg", "pos": "center 45%", "alt": "Bravos de La Calera celebra su triunfo ante Guaros de San Felipe", "titulo": "¡Récord de carreras!", "bajada": "Dos horas después de caer ante Blessed, Bravos anotó 25 carreras, la cifra más alta de un equipo en la Copa, y derrotó al campeón Guaros.", "corto": "Bravos anotó 25 ante Guaros", "link": "#articulo-j10-cayo-el-campeon"},
       {"tag": "Opinión · La directiva de la Copa City 9", "img": "assets/noticias/directiva-portada.jpg", "pos": "center 40%", "alt": "Pedro Rojas, Wilson Terán y Yosguar García, de la directiva de la Copa City 9", "titulo": "Lo que no se ve antes del domingo", "bajada": "Wilson Terán, Pedro Rojas y Yosguar García sacan tiempo entre semana para limpiar, podar y mejorar La Ligua Park. Una columna de Migner Acosta sobre el trabajo de la directiva.", "corto": "El trabajo de la directiva", "link": "#articulo-directiva-trabajo-que-no-se-ve"},
       {"tag": "Equipos de la Copa · Bravos de La Calera", "img": "assets/noticias/bravos-portada.jpg", "pos": "center 45%", "alt": "Roster oficial de Bravos de La Calera", "titulo": "Bravos: del mercado al diamante", "bajada": "Trabajadores del mercado de La Calera que juegan después de la jornada laboral. Alegría, velocidad y el poder de los hermanos Carlos. Conoce al equipo vinotinto.", "corto": "Conoce a Bravos de La Calera", "link": "#articulo-equipos-bravos-de-la-calera"},
       {"tag": "Vida de club · Pumas de Salamanca", "img": "assets/noticias/pumas-convivencia-portada.jpg", "pos": "center 40%", "alt": "Jugadores y amigos de Pumas de Salamanca en su convivencia en La Ligua Park", "titulo": "Pumas celebró en familia", "bajada": "Asado, Halloween y dos victorias: jugadores, esposas, familiares y amigos de Pumas de Salamanca hicieron del costado izquierdo de La Ligua Park su casa.", "corto": "La convivencia de Pumas en La Ligua Park", "link": "#articulo-pumas-convivencia-halloween"}
@@ -535,6 +531,168 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "pandas-gana-doble-jornada-11",
+      "tipo": "noticia",
+      "titulo": "Pandas gana por partida doble y se mete en la pelea por la semifinal",
+      "bajada": "Los de Quillota vencieron a Máster Pumas y a Atléticos del Caribe en la Jornada 11 y llegan con 13 puntos a las dos últimas fechas. Bombarderos de Illapel y Litoral Maitencillo también ganaron: tres equipos van por el último boleto a la semifinal.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-15",
+      "equipo": "pandas",
+      "portada": "assets/noticias/pandas-doble-j11-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Domingo de doble jornada y de doble alegría para Quillota. Los Pandas salieron dos veces al diamante del Estadio La Ligua Park y las dos veces se fueron con la victoria. Primero doblegaron 13 a 11 a Atléticos del Caribe en un duelo de ida y vuelta, y en el cierre de la tarde vencieron a Máster Pumas. Con esos seis puntos, el equipo rosa y negro sube a 13 unidades y se mete de lleno en la pelea por la semifinal a falta de dos jornadas."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j11-pandas-atleticos-saludo.jpg",
+          "pie": "Pandas y Atléticos se saludan tras el 13 a 11 de la tarde"
+        },
+        {
+          "t": "h",
+          "x": "Yonny Torres, misión cumplida"
+        },
+        {
+          "t": "p",
+          "x": "El gran protagonista del domingo fue su mánager y lanzador, Yonny Torres, que se llevó la victoria en los dos juegos. Fue su último trabajo antes de una pausa merecida: desde mañana disfruta de sus vacaciones familiares, y se va con la satisfacción del deber cumplido. Deja a su equipo en zona de clasificación y peleando por la semifinal."
+        },
+        {
+          "t": "h",
+          "x": "Una tarde para la historia panda"
+        },
+        {
+          "t": "p",
+          "x": "La celebración lo dijo todo: jugadores, familias y fanáticas en la cancha, con cornetas y baile incluido. Pandas, que hasta hace pocas semanas miraba la tabla desde la mitad, hoy pelea de tú a tú por un lugar entre los cuatro mejores de la Copa City 9."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j11-pandas-reconocimiento.jpg",
+          "pie": "Reconocimiento de la Copa City 9 y Tolteros Norte para un jugador de Pandas"
+        },
+        {
+          "t": "h",
+          "x": "Atléticos y Máster Pumas, contra las cuerdas"
+        },
+        {
+          "t": "p",
+          "x": "La doble victoria panda tuvo un costo alto para sus rivales. Atléticos del Caribe ya había caído a primera hora ante Litoral Maitencillo, y con la derrota de la tarde se quedó sin opciones de semifinal. Máster Pumas sufrió la misma suerte. A ambos solo les queda luchar por la Copa de Consolación."
+        },
+        {
+          "t": "h",
+          "x": "Bombarderos y Litoral no sueltan"
+        },
+        {
+          "t": "p",
+          "x": "Pandas no corre solo. Al mediodía, Bombarderos de Illapel le ganó a Los Andes y llegó a 12 puntos. Litoral Maitencillo, que abrió la jornada con su triunfo ante Atléticos, suma 10. Los tres irán por el último boleto a la semifinal, junto a Blessed Barber, Pumas de Salamanca y Bravos de La Calera, que hoy ocupan los tres primeros lugares de la tabla."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j11-pandas-premio.jpg",
+          "pie": "Premiación en La Ligua Park durante la Jornada 11"
+        },
+        {
+          "t": "h",
+          "x": "Así llegan a la recta final"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Pandas de Quillota: 13 puntos. Le queda un juego, ante Pumas de Salamanca.",
+            "Bombarderos de Illapel: 12 puntos. Le quedan dos juegos, ante Máster Pumas y Litoral Maitencillo.",
+            "Litoral Maitencillo: 10 puntos. Le quedan dos juegos, ante Los Andes y Bombarderos."
+          ]
+        },
+        {
+          "t": "h",
+          "x": "Las cuentas"
+        },
+        {
+          "t": "p",
+          "x": "Bombarderos depende de sí mismo: si gana sus dos partidos llega a 18 puntos y ninguno de los otros dos lo alcanza. Pandas necesita vencer a Pumas y que Bombarderos tropiece al menos una vez. Litoral está obligado a ganar sus dos juegos, incluido el duelo directo ante Bombarderos, y esperar que Pandas pierda ante Pumas. Si Pandas gana, Litoral lo igualaría en 16 puntos y el boleto se definiría por desempate."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j11-reconocimiento-tolteros.jpg",
+          "pie": "El reconocimiento de la jornada, junto al diamante de La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "Quedan dos jornadas explosivas en la Copa City 9. Pandas, Bombarderos o Litoral: uno de ellos estará en la semifinal."
+        }
+      ]
+    },
+    {
+      "id": "resumen-jornada-10",
+      "tipo": "juego",
+      "titulo": "Resumen de la Jornada 10: Cayó el campeón",
+      "bajada": "Bravos de La Calera venció 25 a 15 a Guaros de San Felipe, que queda al borde de despedirse de la defensa del título.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-08",
+      "portada": "assets/noticias/j10-bravos-celebra.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Así se vivió la Jornada 10 de la Copa City 9, jugada el domingo 8 de noviembre en el Estadio La Ligua Park. Este resumen reúne los titulares y resultados que acompañaron la portada de la página durante esa semana."
+        },
+        {
+          "t": "h",
+          "x": "Bendecidos, con pie y medio en la semifinal"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j10-blessed-bateador.jpg",
+          "pie": "Bateador de Blessed Barber en el Estadio La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "Blessed Barber ganó sus dos juegos, tomó el primer lugar de la Copa City 9 y dejó la semifinal prácticamente en el bolsillo."
+        },
+        {
+          "t": "p",
+          "x": "Lee el artículo completo en Noticias: «Bendecidos, con pie y medio en la semifinal»."
+        },
+        {
+          "t": "h",
+          "x": "Juego por juego"
+        },
+        {
+          "t": "cita",
+          "x": "Juego 1 · Los Andes 8, Blessed Barber's 11 · Blessed abrió el día con triunfo"
+        },
+        {
+          "t": "img",
+          "id": "assets/jornadas/j10-flyer.jpg",
+          "pie": "Programación de la Jornada 10 de la Copa City 9"
+        },
+        {
+          "t": "p",
+          "x": "Blessed Barber venció 11 a 8 a Los Andes al mediodía, en el primero de sus dos juegos del domingo."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 2 · Blessed Barber's 5, Bravos de La Calera 3 · Duelo de líderes para los morados"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j10-blessed-bateador.jpg",
+          "pie": "Bateador de Blessed Barber en el Estadio La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "En el juego de menos carreras del día, Blessed Barber le ganó 5 a 3 a Bravos de La Calera y se quedó con el primer lugar."
+        },
+        {
+          "t": "cita",
+          "x": "Juego 3 · Bravos de La Calera 25, Guaros de San Felipe 15 · ¡Récord de carreras!"
+        },
+        {
+          "t": "p",
+          "x": "Dos horas después de caer ante Blessed, Bravos anotó 25 carreras, la cifra más alta de un equipo en la Copa, y derrotó al campeón Guaros."
+        }
+      ]
+    },
     {
       "id": "perfil-roberto-cubillan",
       "tipo": "perfil",
