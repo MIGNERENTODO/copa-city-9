@@ -543,7 +543,7 @@ window.SITIO = {
       "bloques": [
         {
           "t": "p",
-          "x": "Domingo de doble jornada y de doble alegría para Quillota. Los Pandas salieron dos veces al diamante del Estadio La Ligua Park y las dos veces se fueron con la victoria. Primero doblegaron 13 a 11 a Atléticos del Caribe en un duelo de ida y vuelta, y en el cierre de la tarde vencieron a Máster Pumas. Con esos seis puntos, el equipo rosa y negro sube a 13 unidades y se mete de lleno en la pelea por la semifinal a falta de dos jornadas."
+          "x": "Domingo de doble jornada y de doble alegría para Quillota. Los Pandas salieron dos veces al diamante del Estadio La Ligua Park y las dos veces se fueron con la victoria. Primero aplastaron 22 a 4 a Máster Pumas, y en el cierre de la tarde doblegaron 13 a 11 a Atléticos del Caribe en un duelo de ida y vuelta. Con esos seis puntos, el equipo rosa y negro sube a 13 unidades y se mete de lleno en la pelea por la semifinal a falta de dos jornadas."
         },
         {
           "t": "img",
@@ -560,6 +560,19 @@ window.SITIO = {
         },
         {
           "t": "h",
+          "x": "Alfonso Burgos, el MVP"
+        },
+        {
+          "t": "p",
+          "x": "El jugador más valioso de la jornada fue Alfonso Burgos, de Pandas, que recibió el reconocimiento de la Copa City 9 y Tolteros Norte como premio a su aporte en el doble triunfo de Quillota."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/j11-pandas-reconocimiento.jpg",
+          "pie": "Alfonso Burgos, de Pandas, con su reconocimiento como MVP de la jornada"
+        },
+        {
+          "t": "h",
           "x": "Una tarde para la historia panda"
         },
         {
@@ -567,17 +580,12 @@ window.SITIO = {
           "x": "La celebración lo dijo todo: jugadores, familias y fanáticas en la cancha, con cornetas y baile incluido. Pandas, que hasta hace pocas semanas miraba la tabla desde la mitad, hoy pelea de tú a tú por un lugar entre los cuatro mejores de la Copa City 9."
         },
         {
-          "t": "img",
-          "id": "assets/noticias/j11-pandas-reconocimiento.jpg",
-          "pie": "Reconocimiento de la Copa City 9 y Tolteros Norte para un jugador de Pandas"
-        },
-        {
           "t": "h",
           "x": "Atléticos y Máster Pumas, contra las cuerdas"
         },
         {
           "t": "p",
-          "x": "La doble victoria panda tuvo un costo alto para sus rivales. Atléticos del Caribe ya había caído a primera hora ante Litoral Maitencillo, y con la derrota de la tarde se quedó sin opciones de semifinal. Máster Pumas sufrió la misma suerte. A ambos solo les queda luchar por la Copa de Consolación."
+          "x": "La doble victoria panda tuvo un costo alto para sus rivales. Atléticos del Caribe ya había caído a primera hora ante Litoral Maitencillo, y con la derrota de la tarde se quedó sin opciones de semifinal. Máster Pumas, que cayó 22 a 4, sufrió la misma suerte. A ambos solo les queda luchar por la Copa de Consolación."
         },
         {
           "t": "h",
