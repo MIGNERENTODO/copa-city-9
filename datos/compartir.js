@@ -1,5 +1,6 @@
 /* Miniaturas livianas (1200x630) que usan los enlaces para compartir. Las genera Claude en assets/compartir/. */
 module.exports = [
+ "julio-nunez-portada.jpg",
  "reencuentro-raymundo-simon-portada.jpg",
  "pandas-doble-j11-portada.jpg",
  "roberto-cubillan-portada.jpg",

@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Historias de la Copa City 9", "img": "assets/noticias/julio-nunez-portada.jpg", "pos": "100% 30%", "alt": "Julio Núñez, de Bombarderos de Illapel, sostiene el ejemplar de 60,2 kilos en un muelle de la región de Coquimbo", "titulo": "Julio Núñez: del diamante al mar", "bajada": "El jugador de Bombarderos de Illapel fue parte de la tripulación que logró el récord regional de pesca deportiva con un ejemplar de 60,2 kilos.", "corto": "Julio Núñez, récord de pesca", "link": "#articulo-julio-nunez-record-pesca"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/reencuentro-raymundo-simon-portada.jpg", "pos": "53% 30%", "alt": "Simón Velázquez y Raymundo Lezama se abrazan en el Estadio La Ligua Park", "titulo": "Seis años después, el softbol los volvió a juntar", "bajada": "Raymundo Lezama y Simón Velázquez, amigos de Puerto Ordaz, se reencontraron en plena jornada de la Copa City 9.", "corto": "El reencuentro de Raymundo y Simón", "link": "#articulo-reencuentro-raymundo-simon"},
       {"tag": "Jornada 11 · Crónica", "img": "assets/noticias/pandas-doble-j11-portada.jpg", "pos": "92% 45%", "alt": "Pandas de Quillota celebra con su gente en el Estadio La Ligua Park", "titulo": "¡Pandas gana doble!", "bajada": "Venció a Máster Pumas y a Atléticos del Caribe y se mete en la pelea por la semifinal. Pandas, Bombarderos y Litoral: dos jornadas para decidirlo.", "corto": "Pandas gana doble y pelea la semifinal", "link": "#articulo-pandas-gana-doble-jornada-11"},
       {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/roberto-cubillan-portada.jpg", "pos": "74% 35%", "alt": "Roberto Cubillán, cátcher de Bombarderos de Illapel, en el turno al bate", "titulo": "20 preguntas con Roberto Cubillán", "bajada": "El cátcher maracucho de Bombarderos de Illapel, doble campeón jonronero, habla de su paso por el béisbol, sus inicios en Chile y su familia.", "corto": "Perfil City 9: Roberto Cubillán", "link": "#articulo-perfil-roberto-cubillan"},
@@ -532,6 +533,92 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "julio-nunez-record-pesca",
+      "tipo": "noticia",
+      "titulo": "Julio Núñez: del diamante al mar, un récord que lleva sello venezolano",
+      "bajada": "El jugador de Bombarderos de Illapel formó parte de la tripulación que capturó un ejemplar de 60,2 kilos en la región de Coquimbo, nuevo récord regional de pesca deportiva. Bejumero, dirigente sindical y líder en cada camarín, es uno de esos personajes que hacen grande al softbol de la zona.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-17",
+      "equipo": "bombarderos",
+      "portada": "assets/noticias/julio-nunez-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Hay personas que no caben en una sola descripción, y Julio Núñez es una de ellas. Pelotero, trabajador, dirigente sindical y, desde hace pocos días, protagonista de un récord regional de pesca deportiva. El jugador de Bombarderos de Illapel nunca imaginó que su nombre aparecería en los registros de una disciplina que hoy lo apasiona tanto como el softbol."
+        },
+        {
+          "t": "h",
+          "x": "Un domingo de doble pique"
+        },
+        {
+          "t": "p",
+          "x": "Fue el domingo 1 de noviembre. Una tripulación de cinco personas salió a bordo de una embarcación tipo zodiac para una jornada de pesca deportiva frente a las costas de la región de Coquimbo. A bordo iban un chileno, un uruguayo y tres venezolanos: Julio Núñez y Carlos Cira, ambos de Bejuma, en el estado Carabobo, y Víctor Tovar, de La Victoria, en el estado Aragua."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-cana.jpg",
+          "pie": "Julio Núñez en plena faena, caña en mano, frente a las costas de la región de Coquimbo"
+        },
+        {
+          "t": "p",
+          "x": "En plena faena llegó el momento que todo pescador sueña: un doble pique. Hicieron falta más de 20 minutos de trabajo para subir los dos ejemplares al bote. El mayor marcó 60,2 kilos en la balanza y el segundo, 28,9. Según los propios pescadores, el récord regional estaba en 55 kilos y había sido conseguido en Punta de Choros. La noticia cruzó fronteras y llegó a medios venezolanos, orgullosos de la hazaña de sus paisanos."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-ejemplar.jpg",
+          "pie": "El ejemplar de 60,2 kilos, ya a bordo"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-tripulacion.jpg",
+          "pie": "Parte de la tripulación con los dos ejemplares del doble pique; Julio, a la derecha"
+        },
+        {
+          "t": "h",
+          "x": "Bejumero de pura cepa"
+        },
+        {
+          "t": "p",
+          "x": "Julio es venezolano, carabobeño de Bejuma, un pueblo de montaña de los que forman carácter. En Chile se ganó un lugar a punta de trabajo. Se desempeña en una empresa multinacional, donde fue precursor de los derechos laborales de sus compañeros, y hoy es dirigente sindical. Quienes lo conocen coinciden en lo mismo: es trabajador, frontal y querido por todos."
+        },
+        {
+          "t": "h",
+          "x": "Un líder con guante y bate"
+        },
+        {
+          "t": "p",
+          "x": "En el softbol, Julio es un líder nato. Es un rostro conocido en la región de Coquimbo: jugó en la liga de softbol de La Serena y en la desaparecida Liga de Ovalle, y también visitó Salamanca e Illapel para los cuadrangulares de la Liga del Choapa. A lo largo del camino vistió las camisetas de Orientales, Pandilleros y Pumas de Salamanca. Hoy disputa su segunda temporada con Bombarderos de Illapel en la Copa City 9 de la Liga de La Ligua, donde su equipo pelea uno de los boletos a la semifinal."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-pandilleros.jpg",
+          "pie": "Julio Núñez en la lomita con la camiseta de Pandilleros"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-choapa.jpg",
+          "pie": "En un cuadrangular de la Liga del Choapa, junto a la mascota de Pumas de Salamanca"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/julio-nunez-softbol.jpg",
+          "pie": "Julio, siempre querido en cada diamante que pisa"
+        },
+        {
+          "t": "h",
+          "x": "Orgullo de la Copa City 9"
+        },
+        {
+          "t": "p",
+          "x": "Historias como la de Julio son las que le dan sentido a este torneo. Detrás de cada uniforme hay una persona que dejó su tierra, que se levanta temprano para trabajar, que defiende a sus compañeros y que, cuando puede, sale a perseguir un sueño, ya sea en el diamante o en alta mar."
+        },
+        {
+          "t": "p",
+          "x": "Desde la Copa City 9 felicitamos a Julio Núñez por este logro y por ser un personaje que representa muy bien el gentilicio del buen venezolano. ¡Enhorabuena, Julio!"
+        }
+      ]
+    },
     {
       "id": "reencuentro-raymundo-simon",
       "tipo": "noticia",
