@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Historias de la Copa City 9", "img": "assets/noticias/reencuentro-raymundo-simon-portada.jpg", "pos": "53% 30%", "alt": "Simón Velázquez y Raymundo Lezama se abrazan en el Estadio La Ligua Park", "titulo": "Seis años después, el softbol los volvió a juntar", "bajada": "Raymundo Lezama y Simón Velázquez, amigos de Puerto Ordaz, se reencontraron en plena jornada de la Copa City 9.", "corto": "El reencuentro de Raymundo y Simón", "link": "#articulo-reencuentro-raymundo-simon"},
       {"tag": "Jornada 11 · Crónica", "img": "assets/noticias/pandas-doble-j11-portada.jpg", "pos": "92% 45%", "alt": "Pandas de Quillota celebra con su gente en el Estadio La Ligua Park", "titulo": "¡Pandas gana doble!", "bajada": "Venció a Máster Pumas y a Atléticos del Caribe y se mete en la pelea por la semifinal. Pandas, Bombarderos y Litoral: dos jornadas para decidirlo.", "corto": "Pandas gana doble y pelea la semifinal", "link": "#articulo-pandas-gana-doble-jornada-11"},
       {"tag": "Perfil City 9 · 20 preguntas", "img": "assets/noticias/roberto-cubillan-portada.jpg", "pos": "74% 35%", "alt": "Roberto Cubillán, cátcher de Bombarderos de Illapel, en el turno al bate", "titulo": "20 preguntas con Roberto Cubillán", "bajada": "El cátcher maracucho de Bombarderos de Illapel, doble campeón jonronero, habla de su paso por el béisbol, sus inicios en Chile y su familia.", "corto": "Perfil City 9: Roberto Cubillán", "link": "#articulo-perfil-roberto-cubillan"},
       { tag: "Jornada 11 · Domingo 15 de noviembre", img: "assets/noticias/jornada-11-flyer.jpg", pos: "center 28%", alt: "Programación de la Jornada 11 de la Copa City 9",
@@ -531,6 +532,74 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "reencuentro-raymundo-simon",
+      "tipo": "noticia",
+      "titulo": "Seis años después, el softbol los volvió a juntar",
+      "bajada": "Raymundo Lezama y Simón Velázquez, amigos de Puerto Ordaz, se reencontraron en plena jornada de la Copa City 9 tras seis años sin verse.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-17",
+      "portada": "assets/noticias/reencuentro-raymundo-simon-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Hay abrazos que valen más que un triunfo. El domingo 15 de noviembre, mientras Máster Pumas y Pandas de Quillota disputaban su encuentro, la Copa City 9 fue testigo de uno: el de Raymundo Lezama y Simón Velázquez, dos amigos venezolanos que llevaban unos seis años sin verse."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/reencuentro-raymundo-simon.jpg",
+          "pie": "Simón Velázquez (izquierda) y Raymundo Lezama (derecha), durante la jornada del domingo 15 de noviembre en la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "Ambos son de Puerto Ordaz, en Ciudad Guayana, estado Bolívar. Allí se hicieron amigos con un bate y un guante en la mano: durante más de diez años compartieron vestuario, pasaron juntos por tres equipos y recorrieron buena parte de la región en busca de campeonatos."
+        },
+        {
+          "t": "h",
+          "x": "Los Gobernados Menos Yo"
+        },
+        {
+          "t": "p",
+          "x": "El primero de esos equipos, con el que pasaron años jugando, llevaba un nombre inconfundible: Los Gobernados Menos Yo. Un nombre atípico para un equipo de softbol, es cierto, pero muy propio de la picardía venezolana, de esa jerga de todos los días con la que los amigos se bautizan entre risas. Bajo esa camiseta fueron campeones en Ciudad Bolívar, en Caripito y en San Félix, y hoy Raymundo lo recuerda con nostalgia y con alegría, como quien repasa uno de los mejores capítulos de su vida: las risas en el dugout, los viajes de un pueblo a otro, los títulos y, sobre todo, los compañeros con los que compartió cada uno de ellos."
+        },
+        {
+          "t": "p",
+          "x": "«Éramos para arriba y para abajo, muy buenos amigos», recuerda Raymundo. Aquel grupo, dice, todavía guarda la esperanza de volver a juntarse algún día."
+        },
+        {
+          "t": "h",
+          "x": "Lo que se llevó el tiempo"
+        },
+        {
+          "t": "p",
+          "x": "Pero la situación de Venezuela los obligó a emigrar y cada uno siguió su camino. Con el tiempo llegaron también las pérdidas: la pandemia de covid se llevó a tres compañeros del equipo y la delincuencia a otros dos. En Puerto Ordaz quedaron pocos jugadores y, sin ellos, el equipo dejó de jugar."
+        },
+        {
+          "t": "p",
+          "x": "«A uno le afecta más, porque toda la vida fuimos un equipo que jugaba junto por donde fuera», cuenta Raymundo, sin esconder la nostalgia."
+        },
+        {
+          "t": "h",
+          "x": "El abrazo"
+        },
+        {
+          "t": "p",
+          "x": "Por eso el reencuentro de este domingo tuvo un sabor especial. Simón, que hoy defiende los colores de Pandas de Quillota y a quien Raymundo describe como un hombre «muy pana y familiar», se cruzó de nuevo con su amigo sobre el diamante de la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "«No te imaginas la alegría que me dio verlo. Teníamos como seis años sin vernos. Es bonito que el softbol y esta Copa City 9, la de las nueve ciudades, nos junte nuevamente», dice Raymundo."
+        },
+        {
+          "t": "p",
+          "x": "Para él, la historia confirma lo que el deporte deja más allá del marcador: «Esto es una familia. Eso es lo que nos deja el juego: la amistad, la gente que uno conoce»."
+        },
+        {
+          "t": "p",
+          "x": "Eso es, precisamente, lo que busca la Copa City 9, la Copa de las 9 Ciudades: historias como esta, que permitan el reencuentro de jugadores lejos de sus tierras. Porque al final, el mejor récord de un torneo son las amistades que logra reunir."
+        }
+      ]
+    },
     {
       "id": "pandas-gana-doble-jornada-11",
       "tipo": "noticia",
