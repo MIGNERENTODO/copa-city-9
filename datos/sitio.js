@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Jornada 11 · Resultados", "img": "assets/noticias/resultados-jornada-11.jpg", "pos": "30% 50%", "alt": "Resultados de la Jornada 11 de la Copa City 9", "titulo": "Resultados de la Jornada 11", "bajada": "Blessed Barber se afianza en la cima con 21 puntos y Pandas sube al cuarto lugar. Revisa los cinco marcadores y la tabla actualizada.", "corto": "Resultados de la Jornada 11", "link": "#articulo-resultados-jornada-11"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/julio-nunez-portada.jpg", "pos": "100% 30%", "alt": "Julio Núñez, de Bombarderos de Illapel, sostiene el ejemplar de 60,2 kilos en un muelle de la región de Coquimbo", "titulo": "Julio Núñez: del diamante al mar", "bajada": "El jugador de Bombarderos de Illapel fue parte de la tripulación que logró el récord regional de pesca deportiva con un ejemplar de 60,2 kilos.", "corto": "Julio Núñez, récord de pesca", "link": "#articulo-julio-nunez-record-pesca"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/reencuentro-raymundo-simon-portada.jpg", "pos": "53% 30%", "alt": "Simón Velázquez y Raymundo Lezama se abrazan en el Estadio La Ligua Park", "titulo": "Seis años después, el softbol los volvió a juntar", "bajada": "Raymundo Lezama y Simón Velázquez, amigos de Puerto Ordaz, se reencontraron en plena jornada de la Copa City 9.", "corto": "El reencuentro de Raymundo y Simón", "link": "#articulo-reencuentro-raymundo-simon"},
       {"tag": "Jornada 11 · Crónica", "img": "assets/noticias/pandas-doble-j11-portada.jpg", "pos": "92% 45%", "alt": "Pandas de Quillota celebra con su gente en el Estadio La Ligua Park", "titulo": "¡Pandas gana doble!", "bajada": "Venció a Máster Pumas y a Atléticos del Caribe y se mete en la pelea por la semifinal. Pandas, Bombarderos y Litoral: dos jornadas para decidirlo.", "corto": "Pandas gana doble y pelea la semifinal", "link": "#articulo-pandas-gana-doble-jornada-11"},
@@ -534,6 +535,67 @@ window.SITIO = {
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
     {
+      "id": "resultados-jornada-11",
+      "tipo": "noticia",
+      "titulo": "Resultados de la Jornada 11: Blessed se afianza y Pandas sube al cuarto lugar",
+      "bajada": "Cinco juegos en La Ligua Park: Pandas ganó dos veces, Blessed Barber sumó su séptimo triunfo y Bombarderos y Litoral Maitencillo siguen en carrera por la semifinal.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-15",
+      "portada": "assets/noticias/resultados-jornada-11.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "La Jornada 11 de la Copa City 9 se jugó el domingo 15 de noviembre en el Estadio La Ligua Park, con cinco encuentros que movieron la parte media de la tabla y encendieron la pelea por la semifinal."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/resultados-jornada-11.jpg",
+          "pie": ""
+        },
+        {
+          "t": "h",
+          "x": "Resultados"
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Litoral Maitencillo 15, Atléticos del Caribe 5",
+            "Bombarderos de Illapel 13, Los Andes 8",
+            "Blessed Barber 13, Máster Pumas 7",
+            "Pandas de Quillota 22, Máster Pumas 3",
+            "Pandas de Quillota 13, Atléticos del Caribe 11"
+          ]
+        },
+        {
+          "t": "h",
+          "x": "Así queda la tabla"
+        },
+        {
+          "t": "p",
+          "x": "Blessed Barber afianza el liderato con 21 puntos tras su séptima victoria. Más atrás, Pumas de Salamanca y Bravos de La Calera suman 15 unidades, aunque los de Salamanca tienen dos juegos menos. Con su doble triunfo, Pandas de Quillota trepa al cuarto lugar con 13 puntos, seguido de cerca por Bombarderos de Illapel (12) y Litoral Maitencillo (10). Los tres van por el último boleto a la semifinal en las dos jornadas que quedan."
+        },
+        {
+          "t": "lista",
+          "items": [
+            "1. Blessed Barber: 21 pts (7-1)",
+            "2. Pumas de Salamanca: 15 pts (5-1)",
+            "3. Bravos de La Calera: 15 pts (5-3)",
+            "4. Pandas de Quillota: 13 pts (4-3-1)",
+            "5. Bombarderos de Illapel: 12 pts (4-3)",
+            "6. Litoral Maitencillo: 10 pts (3-3-1)",
+            "7. Guaros de San Felipe: 9 pts (3-5)",
+            "8. Los Andes: 6 pts (2-5)",
+            "9. Atléticos del Caribe: 6 pts (2-5)",
+            "10. Máster Pumas: 3 pts (1-7)"
+          ]
+        },
+        {
+          "t": "p",
+          "x": "La tabla completa, con promedios y diferencia de carreras, está en la sección Posiciones."
+        }
+      ]
+    },
+    {
       "id": "julio-nunez-record-pesca",
       "tipo": "noticia",
       "titulo": "Julio Núñez: del diamante al mar, un récord que lleva sello venezolano",
@@ -699,7 +761,7 @@ window.SITIO = {
       "bloques": [
         {
           "t": "p",
-          "x": "Domingo de doble jornada y de doble alegría para Quillota. Los Pandas salieron dos veces al diamante del Estadio La Ligua Park y las dos veces se fueron con la victoria. Primero aplastaron 22 a 4 a Máster Pumas, y en el cierre de la tarde doblegaron 13 a 11 a Atléticos del Caribe en un duelo de ida y vuelta. Con esos seis puntos, el equipo rosa y negro sube a 13 unidades y se mete de lleno en la pelea por la semifinal a falta de dos jornadas."
+          "x": "Domingo de doble jornada y de doble alegría para Quillota. Los Pandas salieron dos veces al diamante del Estadio La Ligua Park y las dos veces se fueron con la victoria. Primero aplastaron 22 a 3 a Máster Pumas, y en el cierre de la tarde doblegaron 13 a 11 a Atléticos del Caribe en un duelo de ida y vuelta. Con esos seis puntos, el equipo rosa y negro sube a 13 unidades y se mete de lleno en la pelea por la semifinal a falta de dos jornadas."
         },
         {
           "t": "img",
@@ -741,7 +803,7 @@ window.SITIO = {
         },
         {
           "t": "p",
-          "x": "La doble victoria panda tuvo un costo alto para sus rivales. Atléticos del Caribe ya había caído a primera hora ante Litoral Maitencillo, y con la derrota de la tarde se quedó sin opciones de semifinal. Máster Pumas, que cayó 22 a 4, sufrió la misma suerte. A ambos solo les queda luchar por la Copa de Consolación."
+          "x": "La doble victoria panda tuvo un costo alto para sus rivales. Atléticos del Caribe ya había caído a primera hora ante Litoral Maitencillo, y con la derrota de la tarde se quedó sin opciones de semifinal. Máster Pumas, que cayó 22 a 3, sufrió la misma suerte. A ambos solo les queda luchar por la Copa de Consolación."
         },
         {
           "t": "h",
