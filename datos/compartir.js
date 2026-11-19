@@ -1,5 +1,6 @@
 /* Miniaturas livianas (1200x630) que usan los enlaces para compartir. Las genera Claude en assets/compartir/. */
 module.exports = [
+ "piratas-v-region-portada.jpg",
  "segunda-edicion-portada.jpg",
  "resultados-jornada-11.jpg",
  "julio-nunez-portada.jpg",

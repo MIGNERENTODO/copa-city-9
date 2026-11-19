@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Segunda edición · Bienvenidos", "img": "assets/noticias/piratas-v-region-portada.jpg", "pos": "75% 45%", "alt": "Bandera de Los Piratas de la V Región, nuevo equipo de la Copa City 9", "titulo": "¡Al abordaje! Llegan los Piratas", "bajada": "Los Piratas de la V Región se suman oficialmente a la segunda edición de la Copa City 9. Los cupos se están llenando.", "corto": "Llegan los Piratas de la V Región", "link": "#articulo-piratas-v-region-segunda-edicion"},
       {"tag": "Copa City 9 · Segunda edición", "img": "assets/noticias/segunda-edicion-portada.jpg", "pos": "78% 50%", "alt": "Hit de La Calera, Vikingos, Marabinos y Caribe Power, candidatos a la segunda edición de la Copa City 9", "titulo": "Nuevos equipos tocan la puerta", "bajada": "Hit de La Calera ya confirmó para la segunda edición. Vikingos, Marabinos y Caribe Power también quieren estar en la Copa de las 9 ciudades.", "corto": "Segunda edición: nuevos equipos", "link": "#articulo-segunda-edicion-nuevos-equipos"},
       {"tag": "Jornada 11 · Resultados", "img": "assets/noticias/resultados-jornada-11.jpg", "pos": "30% 50%", "alt": "Resultados de la Jornada 11 de la Copa City 9", "titulo": "Resultados de la Jornada 11", "bajada": "Blessed Barber se afianza en la cima con 21 puntos y Pandas sube al cuarto lugar. Revisa los cinco marcadores y la tabla actualizada.", "corto": "Resultados de la Jornada 11", "link": "#articulo-resultados-jornada-11"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/julio-nunez-portada.jpg", "pos": "100% 30%", "alt": "Julio Núñez, de Bombarderos de Illapel, sostiene el ejemplar de 60,2 kilos en un muelle de la región de Coquimbo", "titulo": "Julio Núñez: del diamante al mar", "bajada": "El jugador de Bombarderos de Illapel fue parte de la tripulación que logró el récord regional de pesca deportiva con un ejemplar de 60,2 kilos.", "corto": "Julio Núñez, récord de pesca", "link": "#articulo-julio-nunez-record-pesca"},
@@ -535,6 +536,66 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "piratas-v-region-segunda-edicion",
+      "tipo": "noticia",
+      "titulo": "¡Al abordaje! Los Piratas de la V Región se suman a la segunda edición de la Copa City 9",
+      "bajada": "La directiva de la Liga de La Ligua da la bienvenida oficial a un nuevo equipo para la \"Copa de las 9 ciudades\". Llegan con jugadores de toda la Quinta Región que vieron en este torneo el lugar perfecto para reencontrarse con el deporte que más los apasiona.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-19",
+      "portada": "assets/noticias/piratas-v-region-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Se iza una nueva bandera en el Estadio La Ligua Park. Los Piratas de la V Región ya son parte oficial de la segunda edición de la Copa City 9, y la directiva de la Liga de La Ligua les da la más cordial bienvenida a la familia de la \"Copa de las 9 ciudades\"."
+        },
+        {
+          "t": "h",
+          "x": "Una tripulación de toda la región"
+        },
+        {
+          "t": "p",
+          "x": "Los Piratas reúnen a jugadores de distintas ciudades de la Quinta Región. Cada uno defendía otros colores o jugaba por su cuenta, y todos vieron en la Copa City 9 la oportunidad de volver a encontrarse en un mismo diamante. Más que un equipo nuevo, es un grupo de amigos y conocidos que se juntan para hacer lo que más les gusta: jugar softbol."
+        },
+        {
+          "t": "h",
+          "x": "Por qué eligieron la Copa City 9"
+        },
+        {
+          "t": "p",
+          "x": "La decisión habla bien del camino que ha recorrido el torneo. En su primera edición, la Copa City 9 se convirtió en una vitrina del softbol en el centro del país, con equipos de la Cuarta, la Quinta y la Región Metropolitana compitiendo cada domingo en un ambiente familiar. Ese espíritu es justamente el que buscaban los Piratas: competencia de verdad, sin perder la alegría de compartir."
+        },
+        {
+          "t": "h",
+          "x": "Bandera negra, corazón de softbol"
+        },
+        {
+          "t": "p",
+          "x": "Con su calavera, sus huesos cruzados y un estandarte rojo y negro, los Piratas llegan con una de las identidades más llamativas de la próxima temporada. Prometen dar que hablar dentro y fuera del terreno, y sumar a sus fanáticos a las gradas de La Ligua Park."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/piratas-v-region-bandera.jpg",
+          "pie": "La bandera de Los Piratas de la V Región"
+        },
+        {
+          "t": "h",
+          "x": "Los cupos se están llenando"
+        },
+        {
+          "t": "p",
+          "x": "Con la llegada de los Piratas, la segunda edición sigue tomando forma. Vikingos de La Ligua, Marabinos de Santiago, Caribe Power y otros equipos de Viña del Mar siguen en conversaciones con la directiva, pero el espacio es limitado: con un solo estadio, el torneo podrá recibir alrededor de 12 equipos. Los cupos se asignarán en los próximos días, así que los clubes que quieran estar en la \"Copa de las 9 ciudades\" deben confirmar cuanto antes."
+        },
+        {
+          "t": "h",
+          "x": "Bienvenidos a bordo"
+        },
+        {
+          "t": "p",
+          "x": "Desde la directiva de la Copa City 9, el mensaje es claro: ¡bienvenidos, Piratas! Que en cada domingo de softbol se iza una bandera más."
+        }
+      ]
+    },
     {
       "id": "segunda-edicion-nuevos-equipos",
       "tipo": "noticia",
