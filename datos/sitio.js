@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Copa City 9 · Segunda edición", "img": "assets/noticias/segunda-edicion-portada.jpg", "pos": "78% 50%", "alt": "Hit de La Calera, Vikingos, Marabinos y Caribe Power, candidatos a la segunda edición de la Copa City 9", "titulo": "Nuevos equipos tocan la puerta", "bajada": "Hit de La Calera ya confirmó para la segunda edición. Vikingos, Marabinos y Caribe Power también quieren estar en la Copa de las 9 ciudades.", "corto": "Segunda edición: nuevos equipos", "link": "#articulo-segunda-edicion-nuevos-equipos"},
       {"tag": "Jornada 11 · Resultados", "img": "assets/noticias/resultados-jornada-11.jpg", "pos": "30% 50%", "alt": "Resultados de la Jornada 11 de la Copa City 9", "titulo": "Resultados de la Jornada 11", "bajada": "Blessed Barber se afianza en la cima con 21 puntos y Pandas sube al cuarto lugar. Revisa los cinco marcadores y la tabla actualizada.", "corto": "Resultados de la Jornada 11", "link": "#articulo-resultados-jornada-11"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/julio-nunez-portada.jpg", "pos": "100% 30%", "alt": "Julio Núñez, de Bombarderos de Illapel, sostiene el ejemplar de 60,2 kilos en un muelle de la región de Coquimbo", "titulo": "Julio Núñez: del diamante al mar", "bajada": "El jugador de Bombarderos de Illapel fue parte de la tripulación que logró el récord regional de pesca deportiva con un ejemplar de 60,2 kilos.", "corto": "Julio Núñez, récord de pesca", "link": "#articulo-julio-nunez-record-pesca"},
       {"tag": "Historias de la Copa City 9", "img": "assets/noticias/reencuentro-raymundo-simon-portada.jpg", "pos": "53% 30%", "alt": "Simón Velázquez y Raymundo Lezama se abrazan en el Estadio La Ligua Park", "titulo": "Seis años después, el softbol los volvió a juntar", "bajada": "Raymundo Lezama y Simón Velázquez, amigos de Puerto Ordaz, se reencontraron en plena jornada de la Copa City 9.", "corto": "El reencuentro de Raymundo y Simón", "link": "#articulo-reencuentro-raymundo-simon"},
@@ -534,6 +535,89 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "segunda-edicion-nuevos-equipos",
+      "tipo": "noticia",
+      "titulo": "Nuevos equipos tocan la puerta: así se perfila la segunda edición de la Copa City 9",
+      "bajada": "Los Hijos de Hit, de La Calera, ya confirmaron su participación. Vikingos de La Ligua, Marabinos de Santiago y Caribe Power también quieren estar en la próxima \"Copa de las 9 ciudades\", que por ahora tiene espacio para unos 12 equipos.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-19",
+      "portada": "assets/noticias/segunda-edicion-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "La primera edición de la Copa City 9 todavía se está jugando y la segunda ya despierta interés. En las últimas semanas, varios equipos de la zona central se acercaron a la directiva de la Liga de La Ligua para pedir un lugar en la próxima \"Copa de las 9 ciudades\". Es la mejor señal de que el torneo dejó de ser una apuesta y se convirtió en una vitrina del softbol en el centro del país."
+        },
+        {
+          "t": "h",
+          "x": "Hit de La Calera, el primer confirmado"
+        },
+        {
+          "t": "p",
+          "x": "El primer cupo ya tiene dueño. Los Hijos de Hit, equipo de la ciudad de La Calera, se comunicaron con la directiva y confirmaron su participación en la segunda edición. Llegan con un escudo de lobo y las ganas de medirse con los mejores de la zona."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/ed2-hit-la-calera.jpg",
+          "pie": "El escudo de Hit, Los Hijos de La Calera, primer equipo confirmado para la segunda edición"
+        },
+        {
+          "t": "h",
+          "x": "Vikingos de La Ligua: los históricos no lo descartan"
+        },
+        {
+          "t": "p",
+          "x": "Desde la casa también hay novedades. Los históricos Vikingos de La Ligua mostraron interés por sumarse y no descartan participar. Su llegada le daría a La Ligua un segundo representante en el torneo que se juega en su propio estadio."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/ed2-vikingos-la-ligua.jpg",
+          "pie": "Los históricos Vikingos de La Ligua"
+        },
+        {
+          "t": "h",
+          "x": "Marabinos llegaría desde Santiago"
+        },
+        {
+          "t": "p",
+          "x": "Marabinos, de Santiago, también manifestó su intención de competir. Su propuesta es armar un plantel que mezcle a jugadores que hoy disputan la Copa City 9 con peloteros que viajarían desde la capital, lo que le sumaría un nuevo rival de peso al torneo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/ed2-marabinos.jpg",
+          "pie": "Marabinos, de Santiago, otro de los interesados"
+        },
+        {
+          "t": "h",
+          "x": "Caribe Power y equipos de Viña del Mar"
+        },
+        {
+          "t": "p",
+          "x": "A la lista se suma Caribe Power, que también mostró interés, junto a otros equipos de Viña del Mar que preguntaron por un cupo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/ed2-caribe-power.jpg",
+          "pie": "El logo de Caribe Power"
+        },
+        {
+          "t": "h",
+          "x": "Una vitrina con un solo estadio"
+        },
+        {
+          "t": "p",
+          "x": "Tanto interés confirma que la Copa City 9 se ganó un espacio entre quienes quieren competir en el softbol de la zona central. Pero la directiva también es clara con su principal limitación: hay un solo estadio. Aunque quisiéramos recibir a todos los que tocan la puerta, nuestros cálculos indican que la segunda edición podría acoger a unos 12 equipos, organizados en dos grupos."
+        },
+        {
+          "t": "h",
+          "x": "Los cupos se confirman en los próximos días"
+        },
+        {
+          "t": "p",
+          "x": "En los próximos días la directiva irá confirmando a los equipos participantes. Los clubes interesados deben ponerse en contacto con la directiva de la Liga de La Ligua para asegurar su cupo en la segunda edición de la Copa City 9."
+        }
+      ]
+    },
     {
       "id": "resultados-jornada-11",
       "tipo": "noticia",
