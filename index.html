@@ -835,7 +835,9 @@ function statsDe(nombre,eq){
 /* ================= Líderes ================= */
 var CAT_BAT=[
   {k:"avg",t:"Average",f:fmt3,min:"vb"},{k:"hr",t:"Jonrones",f:String},{k:"ci",t:"Carreras impulsadas",f:String},
-  {k:"h",t:"Hits",f:String},{k:"ca",t:"Carreras anotadas",f:String},{k:"ops",t:"OPS",f:fmt3,min:"vb"}];
+  {k:"h",t:"Hits",f:String},{k:"ca",t:"Carreras anotadas",f:String},{k:"ops",t:"OPS",f:fmt3,min:"vb"},
+  {k:"d",t:"Dobles",f:String},{k:"t",t:"Triples",f:String},{k:"tb",t:"Total de bases",f:String},
+  {k:"bb",t:"Bases por bolas",f:String},{k:"obp",t:"Promedio de embasado",f:fmt3,min:"vb"},{k:"slg",t:"Slugging",f:fmt3,min:"vb"}];
 var CAT_PIT=[
   {k:"efe",t:"Efectividad",f:fmt2,min:"il",asc:true},{k:"g",t:"Juegos ganados",f:String},{k:"kp",t:"Ponches",f:String},
   {k:"whip",t:"WHIP",f:fmt2,min:"il",asc:true},{k:"outs",t:"Innings lanzados",f:function(v){return outsTxt(v);}},{k:"k7",t:"Ponches por 7 IL",f:fmt2,min:"il"}];
@@ -872,7 +874,7 @@ function proximos(){
 }
 
 /* ================= Vistas ================= */
-var UI={stat:"bat",eq:"todos",sort:{bat:"avg",pit:"efe"},calif:true,leadModo:"bat"};
+var UI={stat:"bat",eq:"todos",sort:{bat:"h",pit:"efe"},calif:true,leadModo:"bat"};
 var NAV=[["inicio","Inicio"],["noticias","Noticias"],["calendario","Calendario"],["posiciones","Posiciones"],["estadisticas","Estadísticas"],["equipos","Equipos"],
   ["fanaticos","Fanáticos"],["pronosticos","Pronósticos"],["jugador-semana","Jugador de la semana"],["encuestas","Votaciones"],["buzon","Buzón"],["galeria","Galería"],["directiva","Directiva"],["reglamento","Reglamento"]];
 
@@ -1784,8 +1786,29 @@ function musica(){
 /* Une las publicaciones del panel con las de datos/sitio.js (las que publica Claude). Las del panel mandan. */
 function fusionarPubs(){ var ids={}, out=[]; (M.pubs||[]).forEach(function(p){ if(p&&p.id){ ids[p.id]=1; out.push(p); } }); ((window.SITIO||{}).publicaciones||[]).forEach(function(p){ if(p&&p.id&&!ids[p.id]&&!p.borrador){ ids[p.id]=1; out.push(p); } }); M.pubs=out; }
 function iniciar(raw){ fusionarPubs(); try{ construir(raw); }catch(err){ construir(null); } piezasFijas(); render(false); contarVisita(); musica(); }
-/* Usa las estadísticas con más juegos cargados; si empatan, manda el archivo datos/estadisticas.json (trae las correcciones) */
-function masCompleto(a,b){ var na=a&&a.juegos?a.juegos.length:0, nb=b&&b.juegos?b.juegos.length:0; return (b && nb>=na)?b:(a||b); }
+/* Une las estadísticas del Anotador (a) con el archivo datos/estadisticas.json (b), juego por juego.
+   - Un juego que está en los dos: manda el archivo (trae las correcciones), salvo que el archivo lo tenga
+     solo con el marcador (sin box score) y el Anotador sí lo tenga completo: ahí manda el Anotador.
+   - Un juego que está en uno solo se agrega igual, así no se pierde ni un marcador ni una línea de bateo.
+   - Jugadores y equipos: se suman los de ambos (el archivo manda si se repite el id). */
+function masCompleto(a,b){
+  if(!a||!a.juegos) return b||a; if(!b||!b.juegos) return a;
+  function lleno(g){ return g && ((g.lineas&&g.lineas.length)||(g.lineasP&&g.lineasP.length)); }
+  function par(g){ return [g.localId,g.visitaId].sort().join("|"); }
+  var usados={}, juegos=[];
+  function buscar(g){ var i,x;
+    for(i=0;i<a.juegos.length;i++){ x=a.juegos[i]; if(!usados[i] && x.id===g.id){ usados[i]=1; return x; } }
+    for(i=0;i<a.juegos.length;i++){ x=a.juegos[i]; if(!usados[i] && x.fecha===g.fecha && par(x)===par(g)){ usados[i]=1; return x; } }
+    return null; }
+  b.juegos.forEach(function(g){ var o=buscar(g); juegos.push(o && !lleno(g) && lleno(o) ? o : g); });
+  a.juegos.forEach(function(g,i){ if(!usados[i]) juegos.push(g); });
+  juegos.sort(function(x,y){ return String(x.fecha||"").localeCompare(String(y.fecha||"")); });
+  function unir(k){ var m={}, out=[]; (b[k]||[]).forEach(function(x){ if(x&&x.id&&!m[x.id]){ m[x.id]=1; out.push(x); } });
+    (a[k]||[]).forEach(function(x){ if(x&&x.id&&!m[x.id]){ m[x.id]=1; out.push(x); } }); return out; }
+  var r={}; Object.keys(a).forEach(function(k){ r[k]=a[k]; }); Object.keys(b).forEach(function(k){ r[k]=b[k]; });
+  r.juegos=juegos; r.jugadores=unir("jugadores"); r.equipos=unir("equipos");
+  return r;
+}
 function estatico(){ return fetch("datos/estadisticas.json",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); }).catch(function(){ return window.ESTADISTICAS||null; }); }
 fetch("api/contenido",{cache:"no-store"}).then(function(r){ if(!r.ok) throw 0; return r.json(); })
   .then(function(c){ M.pubs=Array.isArray(c.publicaciones)?c.publicaciones:[]; M.encuestas=Array.isArray(c.encuestas)?c.encuestas:null; M.ocultas=Array.isArray(c.ocultas)?c.ocultas:[]; M.prog=Array.isArray(c.programacion)?c.programacion:null; M.galeria=Array.isArray(c.galeria)?c.galeria:[]; var kv=c.estadisticas||null; return estatico().then(function(f){ return masCompleto(kv,f); }); })
