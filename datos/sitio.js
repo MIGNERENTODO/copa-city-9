@@ -357,6 +357,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Opinión · Editorial del presidente", "img": "assets/noticias/editorial-tres-meses-portada.jpg", "pos": "center 30%", "alt": "Jugadores de Pumas de Salamanca y Blessed Barber's abrazados en el Estadio La Ligua Park", "titulo": "Tres meses sumando voluntades", "bajada": "De cinco a diez equipos en tres meses. Migner Acosta Yánez hace un balance del trabajo compartido de la directiva de la Copa City 9.", "corto": "Editorial: tres meses sumando voluntades", "link": "#articulo-editorial-tres-meses-sumando-voluntades"},
       {"tag": "Segunda edición · Bienvenidos", "img": "assets/noticias/piratas-v-region-portada.jpg", "pos": "75% 45%", "alt": "Bandera de Los Piratas de la V Región, nuevo equipo de la Copa City 9", "titulo": "¡Al abordaje! Llegan los Piratas", "bajada": "Los Piratas de la V Región se suman oficialmente a la segunda edición de la Copa City 9. Los cupos se están llenando.", "corto": "Llegan los Piratas de la V Región", "link": "#articulo-piratas-v-region-segunda-edicion"},
       {"tag": "Copa City 9 · Segunda edición", "img": "assets/noticias/segunda-edicion-portada.jpg", "pos": "78% 50%", "alt": "Hit de La Calera, Vikingos, Marabinos y Caribe Power, candidatos a la segunda edición de la Copa City 9", "titulo": "Nuevos equipos tocan la puerta", "bajada": "Hit de La Calera ya confirmó para la segunda edición. Vikingos, Marabinos y Caribe Power también quieren estar en la Copa de las 9 ciudades.", "corto": "Segunda edición: nuevos equipos", "link": "#articulo-segunda-edicion-nuevos-equipos"},
       {"tag": "Jornada 11 · Resultados", "img": "assets/noticias/resultados-jornada-11.jpg", "pos": "30% 50%", "alt": "Resultados de la Jornada 11 de la Copa City 9", "titulo": "Resultados de la Jornada 11", "bajada": "Blessed Barber se afianza en la cima con 21 puntos y Pandas sube al cuarto lugar. Revisa los cinco marcadores y la tabla actualizada.", "corto": "Resultados de la Jornada 11", "link": "#articulo-resultados-jornada-11"},
@@ -536,6 +537,105 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "editorial-tres-meses-sumando-voluntades",
+      "tipo": "opinion",
+      "titulo": "Tres meses sumando voluntades: la Copa de las Nueve Ciudades",
+      "bajada": "Recibimos un torneo de cinco equipos y hoy son diez. Un balance de los primeros tres meses al frente de la Liga de La Ligua y de la Copa City 9, escrito por su presidente, Migner Acosta Yánez.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-20",
+      "portada": "assets/noticias/editorial-tres-meses-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Hace apenas tres meses asumimos la conducción de la Liga de Sóftbol de La Ligua y de la Copa City 9. Recibimos un campeonato de cinco equipos y hoy son diez las novenas que cada domingo se dan cita en el Estadio La Ligua Park. Queda espacio para más clubes, más voluntades y más personas. Ese crecimiento no es mérito de una sola persona. Responde a una comunidad que confía en lo que estamos construyendo y, sobre todo, al trabajo de un equipo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-saludo-rivales.jpg",
+          "pie": "El saludo entre equipos al final de cada juego, una tradición que se repite todos los domingos en La Ligua Park."
+        },
+        {
+          "t": "h",
+          "x": "Un trabajo mancomunado"
+        },
+        {
+          "t": "p",
+          "x": "Por eso quiero comenzar por ellos. Pedro Rojas, nuestro secretario, Wilson Terán, director, y Yosguar García, “El Árabe”, tesorero, han puesto su tiempo, su paciencia y su empeño al servicio de la Copa. Han sorteado obstáculos de toda clase, desde reprogramar jornadas semana a semana hasta resolver los imprevistos que aparecen cada domingo en el diamante. Lo han hecho con dedicación y resiliencia, dando lo mejor de sí. Nada de lo logrado habría sido posible sin este trabajo mancomunado, de apoyo mutuo, en el que nos sostenemos unos a otros cuando el camino se pone cuesta arriba."
+        },
+        {
+          "t": "p",
+          "x": "Merece una mención especial nuestro amigo Robert Peraza, el primer organizador de torneos en La Ligua. Aunque hoy no forma parte de la directiva, sigue colaborando para que el espectáculo llegue a más gente a través de las transmisiones. Su compromiso demuestra que el sóftbol se construye con el aporte de muchos."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-transmision.jpg",
+          "pie": "La caseta de narración y transmisión: cada domingo, la Copa City 9 llega en vivo a quienes no pueden estar en el estadio."
+        },
+        {
+          "t": "h",
+          "x": "Más allá de una camiseta"
+        },
+        {
+          "t": "p",
+          "x": "En lo personal, me toca hablar desde un lugar que pocas veces se ve. Muchos me conocen solo como el dirigente de Pumas de Salamanca, institución deportiva que ya cumple ocho años en Chile, y de Master Pumas, su hijo menor. Lo llevo con orgullo. Pero detrás de esa camiseta hay años de gestión social, deportiva y política como extranjero, lejos de nuestro país de origen y al servicio de la comunidad migrante. Es una labor agotadora, no lo niego, pero profundamente satisfactoria."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-pumas-familia.jpg",
+          "pie": "Con la familia de Pumas de Salamanca, el club que ya cumple ocho años en Chile."
+        },
+        {
+          "t": "p",
+          "x": "Además de dedicarme al derecho migratorio y de acompañar a muchas familias en sus trámites de regularización, he procurado mostrar lo mejor de nuestra comunidad a través del deporte y la cultura. La Copa City 9 es el paso más reciente de ese camino. Por eso, más allá de un cargo en un club, me reconozco como un dirigente comprometido con la integración intercultural y deportiva de los extranjeros en Chile, con el sóftbol como pasión que nos une."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-encuentro-cancha.jpg",
+          "pie": "Amistades que nacen en el diamante."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-amigos-diamante.jpg",
+          "pie": "Compañeros y rivales, unidos por el sóftbol."
+        },
+        {
+          "t": "h",
+          "x": "Un punto de encuentro que mueve la economía"
+        },
+        {
+          "t": "p",
+          "x": "En poco tiempo, la Copa de las Nueve Ciudades se ha convertido en un punto de encuentro para jugadores, familias y amigos de la Cuarta Región, la Quinta Región y la Región Metropolitana. Su impacto, además, va más allá del terreno de juego. Cada jornada abre oportunidades a emprendedores locales que ofrecen lo mejor de su gastronomía, y genera empleo indirecto para quienes trabajan alrededor del espectáculo: arriendo de baños, entradas, estacionamiento, venta de implementos deportivos y mucho más. El sóftbol también mueve la economía de la zona."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-emprendedores.jpg",
+          "pie": "Los domingos de sóftbol también son días de trabajo para los emprendedores de la zona."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-asado.jpg",
+          "pie": "El asado entre amigos, parte de la vida de cada jornada."
+        },
+        {
+          "t": "h",
+          "x": "Seguiremos sumando"
+        },
+        {
+          "t": "p",
+          "x": "Hacemos todo esto por pasión al deporte y no como negocio. Tres meses después, el balance es claro: cuando se trabaja en equipo, los resultados llegan. Agradezco a cada jugador, delegado, umpire, fanático y emprendedor que ha hecho suya esta Copa, que hoy late en el corazón del centro de Chile. Y estoy seguro de que seguiremos sumando."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/editorial-selfie-cancha.jpg",
+          "pie": "Un domingo más en La Ligua Park."
+        },
+        {
+          "t": "p",
+          "x": "Migner Acosta Yánez\nPresidente de la Liga de Sóftbol de La Ligua y de la Copa City 9"
+        }
+      ]
+    },
     {
       "id": "piratas-v-region-segunda-edicion",
       "tipo": "noticia",
