@@ -297,6 +297,30 @@ window.SITIO = {
         { nombre: "Jhon Aljuria", numero: "6", posicion: "", foto: "assets/jugadores/bravos-jhon-aljuria.jpg" },
         { nombre: "Kirson Brito", numero: "27", posicion: "", foto: "assets/jugadores/bravos-kirson-brito.jpg" }
       ]
+    },
+    pandas: {
+      jugadores: [
+        { nombre: "Alfonso Burgos", numero: "24", posicion: "", foto: "assets/jugadores/pandas-alfonso-burgos.jpg" },
+        { nombre: "Luis Burgos", numero: "26", posicion: "", foto: "assets/jugadores/pandas-luis-burgos.jpg" },
+        { nombre: "Carlos Burgos", numero: "15", posicion: "", foto: "assets/jugadores/pandas-carlos-burgos.jpg" },
+        { nombre: "Julio Romero", numero: "11", posicion: "", foto: "assets/jugadores/pandas-julio-romero.jpg" },
+        { nombre: "Edwin Romero", numero: "48", posicion: "", foto: "assets/jugadores/pandas-edwin-romero.jpg" },
+        { nombre: "José Rojas", numero: "27", posicion: "", foto: "assets/jugadores/pandas-jose-rojas.jpg" },
+        { nombre: "José León", numero: "1", posicion: "", foto: "assets/jugadores/pandas-jose-leon.jpg" },
+        { nombre: "Simón Velásquez", numero: "", posicion: "", foto: "assets/jugadores/pandas-simon-velasquez.jpg" },
+        { nombre: "Ricardo Burgos", numero: "14", posicion: "", foto: "assets/jugadores/pandas-ricardo-burgos.jpg" },
+        { nombre: "Jorge Páez", numero: "18", posicion: "", foto: "assets/jugadores/pandas-jorge-paez.jpg" },
+        { nombre: "Víctor Páez", numero: "13", posicion: "", foto: "assets/jugadores/pandas-victor-paez.jpg" },
+        { nombre: "Henry Fuentes", numero: "21", posicion: "", foto: "assets/jugadores/pandas-henry-fuentes.jpg" },
+        { nombre: "Anexis Aguilar", numero: "12", posicion: "", foto: "assets/jugadores/pandas-anexis-aguilar.jpg" },
+        { nombre: "Yonny Torres", numero: "57", posicion: "", foto: "assets/jugadores/pandas-yonny-torres.jpg" },
+        { nombre: "Jheiner Torres", numero: "2", posicion: "", foto: "assets/jugadores/pandas-jheiner-torres.jpg" },
+        { nombre: "Lesker Viskel", numero: "28", posicion: "", foto: "assets/jugadores/pandas-lesker-viskel.jpg" },
+        { nombre: "Junior Guaramato", numero: "94", posicion: "", foto: "assets/jugadores/pandas-junior-guaramato.jpg" },
+        { nombre: "Julio Quintero", numero: "34", posicion: "", foto: "assets/jugadores/pandas-julio-quintero.jpg" },
+        { nombre: "José Silva", numero: "7", posicion: "", foto: "assets/jugadores/pandas-jose-silva.jpg" },
+        { nombre: "Anderson Escorihuela", numero: "", posicion: "", foto: "assets/jugadores/pandas-anderson-escorihuela.jpg" }
+      ]
     }
   },
 
