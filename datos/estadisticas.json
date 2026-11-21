@@ -1497,13 +1497,6 @@
       "posicion": ""
     },
     {
-      "id": "j4y8d2n5",
-      "equipoId": "ybkhxq6e",
-      "numero": "19",
-      "nombre": "HUGO RINCON",
-      "posicion": ""
-    },
-    {
       "id": "0oa5pec6",
       "equipoId": "acit89ln",
       "numero": "18",
@@ -12221,20 +12214,6 @@
           "sac": 0,
           "roe": 0,
           "jugadorId": "cogrcwef"
-        },
-        {
-          "ap": 3,
-          "b1": 0,
-          "d": 0,
-          "t": 0,
-          "hr": 1,
-          "ci": 2,
-          "ca": 1,
-          "bb": 0,
-          "k": 0,
-          "sac": 0,
-          "roe": 0,
-          "jugadorId": "j4y8d2n5"
         },
         {
           "ap": 2,
