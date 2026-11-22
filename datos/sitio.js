@@ -381,7 +381,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
-      {"tag": "Regreso · Pumas de Salamanca", "img": "assets/noticias/daniel-carballo-portada.jpg", "pos": "center 30%", "alt": "Daniel “El Loco” Carballo, lanzador de Pumas de Salamanca", "titulo": "Volvió la locura", "bajada": "Daniel “El Loco” Carballo regresa a La Ligua Park este domingo 22 de noviembre para enfrentar al campeón Guaros de San Felipe.", "corto": "Volvió “El Loco” Carballo", "link": "#articulo-volvio-la-locura-daniel-carballo"},
+      {"tag": "Regreso · Pumas de Salamanca", "img": "assets/noticias/daniel-carballo-portada.jpg", "pos": "center 30%", "alt": "Daniel “El Loco” Carballo, lanzador de Pumas de Salamanca", "titulo": "Vuelve el loco", "bajada": "Daniel “El Loco” Carballo regresa a La Ligua Park este domingo 22 de noviembre para enfrentar al campeón Guaros de San Felipe.", "corto": "Vuelve “El Loco” Carballo", "link": "#articulo-volvio-la-locura-daniel-carballo"},
       {"tag": "Opinión · Editorial del presidente", "img": "assets/noticias/editorial-tres-meses-portada.jpg", "pos": "center 30%", "alt": "Jugadores de Pumas de Salamanca y Blessed Barber's abrazados en el Estadio La Ligua Park", "titulo": "Tres meses sumando voluntades", "bajada": "De cinco a diez equipos en tres meses. Migner Acosta Yánez hace un balance del trabajo compartido de la directiva de la Copa City 9.", "corto": "Editorial: tres meses sumando voluntades", "link": "#articulo-editorial-tres-meses-sumando-voluntades"},
       {"tag": "Segunda edición · Bienvenidos", "img": "assets/noticias/piratas-v-region-portada.jpg", "pos": "75% 45%", "alt": "Bandera de Los Piratas de la V Región, nuevo equipo de la Copa City 9", "titulo": "¡Al abordaje! Llegan los Piratas", "bajada": "Los Piratas de la V Región se suman oficialmente a la segunda edición de la Copa City 9. Los cupos se están llenando.", "corto": "Llegan los Piratas de la V Región", "link": "#articulo-piratas-v-region-segunda-edicion"},
       {"tag": "Copa City 9 · Segunda edición", "img": "assets/noticias/segunda-edicion-portada.jpg", "pos": "78% 50%", "alt": "Hit de La Calera, Vikingos, Marabinos y Caribe Power, candidatos a la segunda edición de la Copa City 9", "titulo": "Nuevos equipos tocan la puerta", "bajada": "Hit de La Calera ya confirmó para la segunda edición. Vikingos, Marabinos y Caribe Power también quieren estar en la Copa de las 9 ciudades.", "corto": "Segunda edición: nuevos equipos", "link": "#articulo-segunda-edicion-nuevos-equipos"},
@@ -565,16 +565,16 @@ window.SITIO = {
     {
       "id": "volvio-la-locura-daniel-carballo",
       "tipo": "noticia",
-      "titulo": "Volvió la locura a La Ligua Park: regresa Daniel “El Loco” Carballo",
+      "titulo": "Vuelve el loco a La Ligua Park: Daniel Carballo regresa este domingo",
       "bajada": "El excéntrico lanzador de Pumas de Salamanca, figura de Los Guayos en Santiago, vuelve este domingo 22 de noviembre con su alegría, su carisma y su chispa para medirse a Guaros de San Felipe, el actual campeón de la liga.",
       "autor": "Migner Acosta",
-      "fecha": "2026-11-21",
+      "fecha": "2026-11-22",
       "equipo": "pumas",
       "portada": "assets/noticias/daniel-carballo-portada.jpg",
       "bloques": [
         {
           "t": "p",
-          "x": "Este domingo 22 de noviembre vuelve la locura a La Ligua Park. Daniel “El Loco” Carballo, el pelotero más excéntrico de los Pumas de Salamanca, regresa al diamante con la alegría y las peculiaridades que lo caracterizan, esas que lo han convertido en un jugador apreciado, querido y ovacionado por todos los que lo han visto lanzar en la Copa City 9."
+          "x": "Este domingo 22 de noviembre vuelve el loco a La Ligua Park. Daniel “El Loco” Carballo, el pelotero más excéntrico de los Pumas de Salamanca, regresa al diamante con la alegría y las peculiaridades que lo caracterizan, esas que lo han convertido en un jugador apreciado, querido y ovacionado por todos los que lo han visto lanzar en la Copa City 9."
         },
         {
           "t": "img",
@@ -621,7 +621,7 @@ window.SITIO = {
         },
         {
           "t": "p",
-          "x": "La invitación está hecha. Este domingo, en La Ligua Park, vuelve la locura, y la fanaticada tiene un motivo más para llegar temprano al estadio."
+          "x": "La invitación está hecha. Este domingo, en La Ligua Park, vuelve el loco, y la fanaticada tiene un motivo más para llegar temprano al estadio."
         }
       ]
     },
