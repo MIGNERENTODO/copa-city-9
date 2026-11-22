@@ -381,6 +381,7 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Regreso · Pumas de Salamanca", "img": "assets/noticias/daniel-carballo-portada.jpg", "pos": "center 30%", "alt": "Daniel “El Loco” Carballo, lanzador de Pumas de Salamanca", "titulo": "Volvió la locura", "bajada": "Daniel “El Loco” Carballo regresa a La Ligua Park este domingo 22 de noviembre para enfrentar al campeón Guaros de San Felipe.", "corto": "Volvió “El Loco” Carballo", "link": "#articulo-volvio-la-locura-daniel-carballo"},
       {"tag": "Opinión · Editorial del presidente", "img": "assets/noticias/editorial-tres-meses-portada.jpg", "pos": "center 30%", "alt": "Jugadores de Pumas de Salamanca y Blessed Barber's abrazados en el Estadio La Ligua Park", "titulo": "Tres meses sumando voluntades", "bajada": "De cinco a diez equipos en tres meses. Migner Acosta Yánez hace un balance del trabajo compartido de la directiva de la Copa City 9.", "corto": "Editorial: tres meses sumando voluntades", "link": "#articulo-editorial-tres-meses-sumando-voluntades"},
       {"tag": "Segunda edición · Bienvenidos", "img": "assets/noticias/piratas-v-region-portada.jpg", "pos": "75% 45%", "alt": "Bandera de Los Piratas de la V Región, nuevo equipo de la Copa City 9", "titulo": "¡Al abordaje! Llegan los Piratas", "bajada": "Los Piratas de la V Región se suman oficialmente a la segunda edición de la Copa City 9. Los cupos se están llenando.", "corto": "Llegan los Piratas de la V Región", "link": "#articulo-piratas-v-region-segunda-edicion"},
       {"tag": "Copa City 9 · Segunda edición", "img": "assets/noticias/segunda-edicion-portada.jpg", "pos": "78% 50%", "alt": "Hit de La Calera, Vikingos, Marabinos y Caribe Power, candidatos a la segunda edición de la Copa City 9", "titulo": "Nuevos equipos tocan la puerta", "bajada": "Hit de La Calera ya confirmó para la segunda edición. Vikingos, Marabinos y Caribe Power también quieren estar en la Copa de las 9 ciudades.", "corto": "Segunda edición: nuevos equipos", "link": "#articulo-segunda-edicion-nuevos-equipos"},
@@ -561,6 +562,69 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "volvio-la-locura-daniel-carballo",
+      "tipo": "noticia",
+      "titulo": "Volvió la locura a La Ligua Park: regresa Daniel “El Loco” Carballo",
+      "bajada": "El excéntrico lanzador de Pumas de Salamanca, figura de Los Guayos en Santiago, vuelve este domingo 22 de noviembre con su alegría, su carisma y su chispa para medirse a Guaros de San Felipe, el actual campeón de la liga.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-21",
+      "equipo": "pumas",
+      "portada": "assets/noticias/daniel-carballo-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Este domingo 22 de noviembre vuelve la locura a La Ligua Park. Daniel “El Loco” Carballo, el pelotero más excéntrico de los Pumas de Salamanca, regresa al diamante con la alegría y las peculiaridades que lo caracterizan, esas que lo han convertido en un jugador apreciado, querido y ovacionado por todos los que lo han visto lanzar en la Copa City 9."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/daniel-carballo-flyer.jpg",
+          "pie": "Así anunció Pumas de Salamanca el regreso de su lanzador"
+        },
+        {
+          "t": "h",
+          "x": "Un personaje en la lomita"
+        },
+        {
+          "t": "p",
+          "x": "Carballo no pasa inadvertido. Su manera de vivir cada juego, con carisma, chispa y ese sello tan propio, contagia a la tribuna sin distinguir camisetas. Pero detrás del personaje hay un brazo de primer nivel: es uno de los mejores lanzadores de la categoría, y vuelve a La Ligua Park precisamente para demostrarlo."
+        },
+        {
+          "t": "p",
+          "x": "Los números lo respaldan. Las dos veces que subió al montículo en esta Copa, ambas el 27 de septiembre, se fue con la victoria: primero ante Blessed Barber's y luego frente a Litoral Maitencillo."
+        },
+        {
+          "t": "h",
+          "x": "De Los Guayos a La Ligua Park"
+        },
+        {
+          "t": "p",
+          "x": "En Santiago defiende los colores de Los Guayos, el club que fundó junto a Alexis Colina y Cristian Toro. Con ese recorrido capitalino y el azul de los Pumas en el pecho, llega a la Copa de las Nueve Ciudades para ponerle sabor a cada domingo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/daniel-carballo-los-guayos.jpg",
+          "pie": "Con la camiseta de Los Guayos, su equipo en Santiago"
+        },
+        {
+          "t": "h",
+          "x": "Frente al campeón"
+        },
+        {
+          "t": "p",
+          "x": "El desafío no podría ser mayor: al frente estará Guaros de San Felipe, el actual monarca de la liga, un rival que exige lo mejor de cualquier serpentinero. Carballo llega como lo que es, un líder indiscutible que engalana el torneo, dispuesto a poner su brazo y su chispa al servicio de su equipo."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/daniel-carballo-pumas.jpg",
+          "pie": "Junto a sus compañeros de Pumas de Salamanca"
+        },
+        {
+          "t": "p",
+          "x": "La invitación está hecha. Este domingo, en La Ligua Park, vuelve la locura, y la fanaticada tiene un motivo más para llegar temprano al estadio."
+        }
+      ]
+    },
     {
       "id": "editorial-tres-meses-sumando-voluntades",
       "tipo": "opinion",
