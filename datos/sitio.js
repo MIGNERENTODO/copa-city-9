@@ -381,6 +381,8 @@ window.SITIO = {
     jornada: "Jornada 11",
     fecha: "2026-11-15",
     slides: [
+      {"tag": "Evento especial · 13 de diciembre", "img": "assets/noticias/jonron-derby-portada.jpg", "pos": "left center", "alt": "Los 10 cañoneros del Jonrón Derby de la Copa City 9", "titulo": "Jonrón Derby: los 10 cañoneros", "bajada": "José Rojas, Carlos Gabriel, Cristian Toro, Maikol Matheus y Carlos Javier encabezan la lista. El duelo de cuadrangulares será el domingo 13 de diciembre.", "corto": "Jonrón Derby: los 10 elegidos", "link": "#articulo-jonron-derby-10-canoneros"},
+      {"tag": "Juego de Estrellas · 13 de diciembre", "img": "assets/noticias/juego-estrellas-portada.jpg", "pos": "center center", "alt": "Juego de Estrellas de la Copa City 9: Cordilleranos contra Costaneros", "titulo": "Cordilleranos vs. Costaneros", "bajada": "La cordillera y la costa se miden en el Juego de Estrellas. Conoce a los 14 elegidos de cada selección.", "corto": "Juego de Estrellas: los 28 elegidos", "link": "#articulo-juego-estrellas-cordilleranos-costaneros"},
       {"tag": "Regreso · Pumas de Salamanca", "img": "assets/noticias/daniel-carballo-portada.jpg", "pos": "center 30%", "alt": "Daniel “El Loco” Carballo, lanzador de Pumas de Salamanca", "titulo": "Vuelve el loco", "bajada": "Daniel “El Loco” Carballo regresa a La Ligua Park este domingo 22 de noviembre para enfrentar al campeón Guaros de San Felipe.", "corto": "Vuelve “El Loco” Carballo", "link": "#articulo-volvio-la-locura-daniel-carballo"},
       {"tag": "Opinión · Editorial del presidente", "img": "assets/noticias/editorial-tres-meses-portada.jpg", "pos": "center 30%", "alt": "Jugadores de Pumas de Salamanca y Blessed Barber's abrazados en el Estadio La Ligua Park", "titulo": "Tres meses sumando voluntades", "bajada": "De cinco a diez equipos en tres meses. Migner Acosta Yánez hace un balance del trabajo compartido de la directiva de la Copa City 9.", "corto": "Editorial: tres meses sumando voluntades", "link": "#articulo-editorial-tres-meses-sumando-voluntades"},
       {"tag": "Segunda edición · Bienvenidos", "img": "assets/noticias/piratas-v-region-portada.jpg", "pos": "75% 45%", "alt": "Bandera de Los Piratas de la V Región, nuevo equipo de la Copa City 9", "titulo": "¡Al abordaje! Llegan los Piratas", "bajada": "Los Piratas de la V Región se suman oficialmente a la segunda edición de la Copa City 9. Los cupos se están llenando.", "corto": "Llegan los Piratas de la V Región", "link": "#articulo-piratas-v-region-segunda-edicion"},
@@ -562,6 +564,282 @@ window.SITIO = {
   /* Publicaciones preparadas con Claude (se suman a las del panel; las del panel mandan).
      Formato igual al del panel. Las fotos van en assets/noticias/. */
   publicaciones: [
+    {
+      "id": "jonron-derby-10-canoneros",
+      "tipo": "noticia",
+      "titulo": "Jonrón Derby de la Copa City 9: estos son los 10 cañoneros",
+      "bajada": "Revisamos los números de las 12 jornadas y elegimos a los diez bateadores con más poder del torneo. El duelo de cuadrangulares será el domingo 13 de diciembre en La Ligua Park, junto al Juego de Estrellas.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-25",
+      "portada": "assets/noticias/jonron-derby-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "La Copa City 9 tendrá su gran fiesta de fin de temporada. El domingo 13 de diciembre, en el Estadio La Ligua Park, se vivirá el primer Jonrón Derby del torneo, una competencia de cuadrangulares que reunirá a los diez bateadores más poderosos de la Copa de las 9 ciudades. Esa misma jornada se jugará el Juego de Estrellas entre Cordilleranos y Costaneros."
+        },
+        {
+          "t": "h",
+          "x": "¿Cómo se eligieron?"
+        },
+        {
+          "t": "p",
+          "x": "La selección sale de las estadísticas oficiales de la página, con los números acumulados hasta la Jornada 12, disputada el domingo 22 de noviembre. En 41 juegos se han conectado 116 jonrones. El primer criterio fue la cantidad de cuadrangulares y, para separar a los empatados, se tomó en cuenta el slugging (bases totales por turno oficial). Nueve de los elegidos tienen cuatro o cinco vuelacercas; el décimo cupo fue para el bateador con más bases totales de toda la Copa."
+        },
+        {
+          "t": "h",
+          "x": "1. José Rojas · Pandas de Quillota"
+        },
+        {
+          "t": "p",
+          "x": "Es el bate más temido de la Copa. Suma cinco jonrones en apenas 19 turnos oficiales, uno cada 3,8 visitas al plato, y encabeza el torneo en slugging (1.526) y en OPS (2.222). A eso le agrega un average de .632, con 12 hits y 8 impulsadas."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-01.jpg",
+          "pie": "José Rojas (Pandas de Quillota): 5 HR, 8 CI, slugging 1.526."
+        },
+        {
+          "t": "h",
+          "x": "2. Carlos Gabriel · Bravos de La Calera"
+        },
+        {
+          "t": "p",
+          "x": "Cinco cuadrangulares, 13 carreras impulsadas y 32 bases totales, la segunda mejor cifra del campeonato. Batea para .500, con tres dobles y un triple, y ha estado presente en los ocho juegos de los Bravos."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-02.jpg",
+          "pie": "Carlos Gabriel (Bravos de La Calera): 5 HR, 13 CI, slugging 1.333."
+        },
+        {
+          "t": "h",
+          "x": "3. Cristian Toro · Pumas de Salamanca"
+        },
+        {
+          "t": "p",
+          "x": "De sus ocho hits, cinco se fueron por encima de la cerca. Entre los líderes de jonrones, nadie la saca con más frecuencia: uno cada 3,4 turnos oficiales. Slugging de 1.353 y 8 impulsadas."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-03.jpg",
+          "pie": "Cristian Toro (Pumas de Salamanca): 5 HR, 8 CI, slugging 1.353."
+        },
+        {
+          "t": "h",
+          "x": "4. Maikol Matheus · Blessed Barber's"
+        },
+        {
+          "t": "p",
+          "x": "El poder del colíder de la tabla. Cinco jonrones en 18 turnos, 11 impulsadas y 10 anotadas para un Blessed Barber's que pelea el primer lugar con 21 puntos."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-04.jpg",
+          "pie": "Maikol Matheus (Blessed Barber's): 5 HR, 11 CI, slugging 1.333."
+        },
+        {
+          "t": "h",
+          "x": "5. Carlos Javier · Bravos de La Calera"
+        },
+        {
+          "t": "p",
+          "x": "Líder de impulsadas de la Copa con 17 y de anotadas con 13, además de cinco cuadrangulares. Es el bateador con más turnos oficiales del torneo (30) y el que más carreras ha empujado."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-05.jpg",
+          "pie": "Carlos Javier (Bravos de La Calera): 5 HR, 17 CI, slugging 1.000."
+        },
+        {
+          "t": "h",
+          "x": "6. Maiyerson Echegaray · Blessed Barber's"
+        },
+        {
+          "t": "p",
+          "x": "La gran sorpresa. Jugó solo dos partidos, pero sus cuatro hits fueron jonrones, con 7 impulsadas. Su slugging de 2.667 es imposible de ignorar en una competencia de poder, aunque todavía no alcanza el mínimo de 10 turnos para figurar entre los líderes."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-06.jpg",
+          "pie": "Maiyerson Echegaray (Blessed Barber's): 4 HR, 7 CI, slugging 2.667."
+        },
+        {
+          "t": "h",
+          "x": "7. Roberto Cubillán · Bombarderos de Illapel"
+        },
+        {
+          "t": "p",
+          "x": "Doble campeón jonronero que llega con credenciales: cuatro cuadrangulares, 10 impulsadas, average de .625 y el tercer mejor OPS del torneo (2.122). El cátcher de Bombarderos de Illapel es candidato serio a la corona."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-07.jpg",
+          "pie": "Roberto Cubillán (Bombarderos de Illapel): 4 HR, 10 CI, slugging 1.438."
+        },
+        {
+          "t": "h",
+          "x": "8. Julio Parra · Pumas de Salamanca"
+        },
+        {
+          "t": "p",
+          "x": "El receptor de los Pumas conectó cuatro jonrones en apenas 14 turnos oficiales, con 11 impulsadas y un slugging de 1.429, empatado en el cuarto lugar de la Copa."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-08.jpg",
+          "pie": "Julio Parra (Pumas de Salamanca): 4 HR, 11 CI, slugging 1.429."
+        },
+        {
+          "t": "h",
+          "x": "9. Juan Romero · Guaros de San Felipe"
+        },
+        {
+          "t": "p",
+          "x": "El cañón de los Guaros de San Felipe: cuatro jonrones y 12 impulsadas, la tercera mejor marca del torneo. Su equipo es, junto a Blessed y Pumas, el que más cuadrangulares ha conectado (17)."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-09.jpg",
+          "pie": "Juan Romero (Guaros de San Felipe): 4 HR, 12 CI, slugging 1.158."
+        },
+        {
+          "t": "h",
+          "x": "10. Alfonso Burgos · Pandas de Quillota"
+        },
+        {
+          "t": "p",
+          "x": "Tiene “solo” tres jonrones, pero ningún otro bateador ha hecho tanto daño: lidera la Copa en hits (17), dobles (7), triples (5) y bases totales (43), con un slugging de 1.483, segundo del torneo. Su fuerza merece un lugar en el derby."
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/jonron-derby-10.jpg",
+          "pie": "Alfonso Burgos (Pandas de Quillota): 3 HR, 11 CI, slugging 1.483."
+        },
+        {
+          "t": "h",
+          "x": "Menciones de honor"
+        },
+        {
+          "t": "p",
+          "x": "Daniel Castillo (Bravos de La Calera) quedó en la puerta, con tres jonrones y un average de .571. También destacan como los principales jonroneros de sus equipos Ricardo Meléndez (Atléticos del Caribe), José Medina (Máster Pumas), José Gregorio Urbano y Luis Rivero (Los Andes) y Eliezer Castellano (Litoral Maitencillo), todos con dos cuadrangulares."
+        },
+        {
+          "t": "h",
+          "x": "Anota la fecha"
+        },
+        {
+          "t": "p",
+          "x": "Domingo 13 de diciembre, Estadio La Ligua Park: Jonrón Derby y Juego de Estrellas de la Copa City 9. El formato de la competencia y los horarios se darán a conocer en los próximos días. Transmisión en vivo por YouTube e Instagram: @ligadesoftbol_laligua y @mignerentodo."
+        }
+      ]
+    },
+    {
+      "id": "juego-estrellas-cordilleranos-costaneros",
+      "tipo": "noticia",
+      "titulo": "Juego de Estrellas: Cordilleranos vs. Costaneros, los 28 elegidos",
+      "bajada": "La cordillera y la costa se miden el domingo 13 de diciembre en La Ligua Park. Estos son los 14 jugadores de cada selección, elegidos por sus números en las 12 jornadas de la Copa City 9.",
+      "autor": "Migner Acosta",
+      "fecha": "2026-11-25",
+      "portada": "assets/noticias/juego-estrellas-portada.jpg",
+      "bloques": [
+        {
+          "t": "p",
+          "x": "Los mejores de la Copa City 9 se verán las caras en un mismo diamante. El domingo 13 de diciembre, en el Estadio La Ligua Park, se jugará el Juego de Estrellas de la Copa de las 9 ciudades, con dos selecciones armadas según la ubicación de cada club: los Cordilleranos, de los valles que miran a la cordillera de los Andes, y los Costaneros, de las ciudades más cercanas al océano Pacífico. Esa misma jornada se realizará el Jonrón Derby."
+        },
+        {
+          "t": "h",
+          "x": "Dos selecciones, una geografía"
+        },
+        {
+          "t": "p",
+          "x": "Cordilleranos reúne a los clubes del interior: Pumas de Salamanca y Máster Pumas (Salamanca), Bombarderos de Illapel, Guaros de San Felipe y Los Andes. Costaneros agrupa a los equipos más cercanos al litoral: Atléticos del Caribe y Blessed Barber's (La Ligua), Litoral Maitencillo, Pandas de Quillota y Bravos de La Calera."
+        },
+        {
+          "t": "h",
+          "x": "Cómo se eligieron"
+        },
+        {
+          "t": "p",
+          "x": "La selección se hizo con las estadísticas oficiales de la página, acumuladas hasta la Jornada 12 (22 de noviembre). Solo se consideraron jugadores con al menos 10 turnos oficiales, el mismo mínimo de la tabla de líderes. Cada club tiene asegurados a sus dos mejores bateadores según el OPS (porcentaje de embasado más slugging), y los cuatro cupos restantes de cada bando fueron para los OPS más altos, con un máximo de cuatro jugadores por equipo."
+        },
+        {
+          "t": "h",
+          "x": "Cordilleranos"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/juego-estrellas-cordilleranos.jpg",
+          "pie": "Los 14 Cordilleranos del Juego de Estrellas de la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "La ofensiva de la cordillera la encabeza Roberto Cubillán (Bombarderos), dueño del tercer mejor OPS de la Copa (2.122), junto a Maldoni Rebollo (Pumas), líder de average del torneo con .769. Pumas de Salamanca aporta además a Julio Parra, Daniel Romero y Cristian Toro, uno de los cinco bateadores con cinco jonrones. Guaros de San Felipe llega con cuatro bates: Anthony Freitez, Roberto Echemendia, Pedro Leal y Juan Romero. Completan la nómina Johan Quevedo y Argenis Soto, de Máster Pumas; Sergio González, de Bombarderos, y Arnaldo Rosa y Glenderson Gómez, de Los Andes."
+        },
+        {
+          "t": "lista",
+          "items": [
+            "Roberto Cubillán (Bombarderos de Illapel) · AVG .625, 4 HR, 10 CI, OPS 2.122",
+            "Maldoni Rebollo (Pumas de Salamanca) · AVG .769, 0 HR, 1 CI, OPS 2.000",
+            "Julio Parra (Pumas de Salamanca) · AVG .500, 4 HR, 11 CI, OPS 1.991",
+            "Daniel Romero (Pumas de Salamanca) · AVG .647, 1 HR, 9 CI, OPS 1.861",
+            "Cristian Toro (Pumas de Salamanca) · AVG .471, 5 HR, 8 CI, OPS 1.853",
+            "Anthony Freitez (Guaros de San Felipe) · AVG .500, 2 HR, 5 CI, OPS 1.777",
+            "Roberto Echemendia (Guaros de San Felipe) · AVG .500, 2 HR, 5 CI, OPS 1.766",
+            "Pedro Leal (Guaros de San Felipe) · AVG .562, 1 HR, 7 CI, OPS 1.712",
+            "Juan Romero (Guaros de San Felipe) · AVG .421, 4 HR, 12 CI, OPS 1.634",
+            "Johan Quevedo (Máster Pumas) · AVG .600, 0 HR, 5 CI, OPS 1.517",
+            "Sergio González (Bombarderos de Illapel) · AVG .526, 0 HR, 3 CI, OPS 1.486",
+            "Argenis Soto (Máster Pumas) · AVG .636, 0 HR, 2 CI, OPS 1.434",
+            "Arnaldo Rosa (Los Andes) · AVG .500, 0 HR, 2 CI, OPS 1.400",
+            "Glenderson Gómez (Los Andes) · AVG .538, 0 HR, 4 CI, OPS 1.292"
+          ]
+        },
+        {
+          "t": "h",
+          "x": "Costaneros"
+        },
+        {
+          "t": "img",
+          "id": "assets/noticias/juego-estrellas-costaneros.jpg",
+          "pie": "Los 14 Costaneros del Juego de Estrellas de la Copa City 9."
+        },
+        {
+          "t": "p",
+          "x": "La costa presenta una alineación de miedo. José Rojas (Pandas), mejor OPS de la Copa (2.222), y Yosleiker Saavedra (Litoral Maitencillo), segundo en esa casilla (2.186) y en average (.750), lideran un grupo que suma a Alfonso Burgos, rey de los hits y de las bases totales, y a Edwin Romero, ambos de Pandas. Bravos de La Calera aporta a Carlos Gabriel, Daniel Castillo y Carlos Javier, líder de impulsadas con 17. Blessed Barber's llega con Wilmer Urbina, Maikol Matheus y Ender Huz; Atléticos del Caribe, con Eliecer Cordero, Pedro Rojas y Wilson Terán, y Litoral Maitencillo completa con Marcos Gonzales."
+        },
+        {
+          "t": "lista",
+          "items": [
+            "José Rojas (Pandas de Quillota) · AVG .632, 5 HR, 8 CI, OPS 2.222",
+            "Yosleiker Saavedra (Litoral Maitencillo) · AVG .750, 1 HR, 5 CI, OPS 2.186",
+            "Alfonso Burgos (Pandas de Quillota) · AVG .586, 3 HR, 11 CI, OPS 2.049",
+            "Wilmer Urbina (Blessed Barber's) · AVG .571, 2 HR, 5 CI, OPS 2.029",
+            "Carlos Gabriel (Bravos de La Calera) · AVG .500, 5 HR, 13 CI, OPS 1.905",
+            "Daniel Castillo (Bravos de La Calera) · AVG .571, 3 HR, 8 CI, OPS 1.857",
+            "Maikol Matheus (Blessed Barber's) · AVG .444, 5 HR, 11 CI, OPS 1.833",
+            "Edwin Romero (Pandas de Quillota) · AVG .609, 1 HR, 7 CI, OPS 1.784",
+            "Marcos Gonzales (Litoral Maitencillo) · AVG .667, 1 HR, 3 CI, OPS 1.750",
+            "Eliecer Cordero (Atléticos del Caribe) · AVG .600, 0 HR, 6 CI, OPS 1.592",
+            "Pedro Rojas (Atléticos del Caribe) · AVG .478, 2 HR, 7 CI, OPS 1.441",
+            "Wilson Terán (Atléticos del Caribe) · AVG .565, 2 HR, 9 CI, OPS 1.411",
+            "Ender Huz (Blessed Barber's) · AVG .455, 2 HR, 8 CI, OPS 1.390",
+            "Carlos Javier (Bravos de La Calera) · AVG .367, 5 HR, 17 CI, OPS 1.375"
+          ]
+        },
+        {
+          "t": "h",
+          "x": "Pólvora contra constancia"
+        },
+        {
+          "t": "p",
+          "x": "Los Costaneros reúnen a cuatro de los cinco jugadores con cinco jonrones (José Rojas, Carlos Gabriel, Maikol Matheus y Carlos Javier) y, como grupo, suman 37 cuadrangulares y 118 impulsadas, contra 23 y 84 de los Cordilleranos. La cordillera, en cambio, batea para .552 entre sus 14 elegidos, por encima del .539 de la costa. Poder contra contacto: el domingo 13 de diciembre, el diamante decidirá."
+        },
+        {
+          "t": "p",
+          "x": "Las posiciones, el orden al bate y los lanzadores de cada selección se darán a conocer antes del juego. Transmisión en vivo por YouTube e Instagram: @ligadesoftbol_laligua y @mignerentodo."
+        }
+      ]
+    },
     {
       "id": "volvio-la-locura-daniel-carballo",
       "tipo": "noticia",
